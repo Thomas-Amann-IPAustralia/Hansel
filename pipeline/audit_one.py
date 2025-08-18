@@ -6,6 +6,8 @@ from pathlib import Path
 from typing import Dict, Any, List, Optional
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 from readability import Document
 from markdownify import markdownify as html2md
@@ -16,8 +18,35 @@ from pipeline.nlp_checks import run_heuristic_checks
 from pipeline.semantic_search import KBIndex
 from pipeline.utils import slugify, is_title_case, to_title_case
 
-def fetch_url_to_markdown(url: str) -> Dict[str, str]:
-    resp = requests.get(url, timeout=30)
+def _make_session(retries:int=5, backoff:float=1.0, connect_timeout:float=15.0, read_timeout:float=120.0):
+    sess = requests.Session()
+    retry = Retry(
+        total=retries,
+        connect=retries,
+        read=retries,
+        backoff_factor=backoff,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["GET", "HEAD"]
+    )
+    adapter = HTTPAdapter(max_retries=retry, pool_maxsize=10)
+    sess.mount("http://", adapter)
+    sess.mount("https://", adapter)
+    sess.headers.update({
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                      "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-AU,en;q=0.9"
+    })
+    sess.request_timeout = (connect_timeout, read_timeout)
+    return sess
+
+def fetch_url_to_markdown(url: str,
+                          retries:int=5,
+                          backoff:float=1.0,
+                          connect_timeout:float=15.0,
+                          read_timeout:float=120.0) -> Dict[str, str]:
+    sess = _make_session(retries, backoff, connect_timeout, read_timeout)
+    resp = sess.get(url, timeout=sess.request_timeout, allow_redirects=True)
     resp.raise_for_status()
     html = resp.text
     doc = Document(html)
@@ -157,13 +186,18 @@ def write_reports(out_dir: Path, page_meta: Dict[str, str], analysis: Dict[str, 
     return {'json': str(json_path), 'md': str(md_path)}
 
 def main():
-    ap = argparse.ArgumentParser()
-    group = ap.add_mutually_exclusive_group(required=True)
-    group.add_argument('--target-url')
-    group.add_argument('--markdown-file')
-    ap.add_argument('--kb-index', default='pipeline/kb/kb_index.json')
-    ap.add_argument('--output-dir', default='reports/')
-    args = ap.parse_args()
+     ap = argparse.ArgumentParser()
+     group = ap.add_mutually_exclusive_group(required=True)
+     group.add_argument('--target-url')
+     group.add_argument('--markdown-file')
+     group.add_argument('--html-file', help='Provide a pre-fetched HTML file to convert & audit')
+     ap.add_argument('--kb-index', default='pipeline/kb/kb_index.json')
+     ap.add_argument('--output-dir', default='reports/')
+     ap.add_argument('--retries', type=int, default=5)
+     ap.add_argument('--backoff', type=float, default=1.0)
+     ap.add_argument('--connect-timeout', type=float, default=15.0)
+     ap.add_argument('--read-timeout', type=float, default=120.0)
+     args = ap.parse_args()
 
     kb = None
     kb_path = Path(args.kb_index)
@@ -171,9 +205,25 @@ def main():
         kb = KBIndex.load(kb_path)
 
     if args.target_url:
-        page = fetch_url_to_markdown(args.target_url)
-        page_meta = {'url': args.target_url, 'title': page['title']}
-        md_text = page['markdown']
+        page = fetch_url_to_markdown(
+            args.target_url,
+            retries=args.retries,
+            backoff=args.backoff,
+            connect_timeout=args.connect_timeout,
+            read_timeout=args.read_timeout
+        )
+         page_meta = {'url': args.target_url, 'title': page['title']}
+         md_text = page['markdown']
+    elif args.html_file:
+        p = Path(args.html_file)
+        html = p.read_text(encoding='utf-8', errors='ignore')
+        soup = BeautifulSoup(html, 'lxml')
+        for sel in ['nav','footer','header','aside','script','style']:
+            for el in soup.select(sel):
+                el.decompose()
+        title = soup.title.get_text(strip=True) if soup.title else p.name
+        md_text = html2md(str(soup))
+        page_meta = {'url': None, 'title': title}
     else:
         p = Path(args.markdown_file)
         page_meta = {'url': None, 'title': p.name}
