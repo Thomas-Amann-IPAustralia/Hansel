@@ -8,3 +8,4 @@ numpy==2.0.1
 pandas==2.2.2
 scikit-learn==1.5.1
 PyYAML==6.0.2
+playwright==1.45.0
