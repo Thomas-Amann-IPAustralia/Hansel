@@ -28,7 +28,12 @@ try:
 except Exception:
     HAVE_PLAYWRIGHT = False
 
-def _make_session(retries:int=5, backoff:float=1.0, connect_timeout:float=15.0, read_timeout:float=120.0):
+def _make_session(
+    retries: int = 5,
+    backoff: float = 1.0,
+    connect_timeout: float = 15.0,
+    read_timeout: float = 120.0,
+):
     sess = requests.Session()
     retry = Retry(
         total=retries,
@@ -36,7 +41,7 @@ def _make_session(retries:int=5, backoff:float=1.0, connect_timeout:float=15.0, 
         read=retries,
         backoff_factor=backoff,
         status_forcelist=[429, 500, 502, 503, 504],
-        allowed_methods=["GET", "HEAD"]
+        allowed_methods=["GET", "HEAD"],
     )
     adapter = HTTPAdapter(max_retries=retry, pool_maxsize=10)
     sess.mount("http://", adapter)
@@ -52,12 +57,15 @@ def _make_session(retries:int=5, backoff:float=1.0, connect_timeout:float=15.0, 
     sess.cookies = cookiejar.CookieJar()
     return sess
 
-def fetch_url_to_markdown(url: str,
-                          retries:int=5,
-                          backoff:float=1.0,
-                          connect_timeout:float=15.0,
-                          read_timeout:float=120.0) -> Dict[str, str]:
-  if not can_fetch(url):
+
+def fetch_url_to_markdown(
+    url: str,
+    retries: int = 5,
+    backoff: float = 1.0,
+    connect_timeout: float = 15.0,
+    read_timeout: float = 120.0,
+) -> Dict[str, str]:
+    if not can_fetch(url):
         raise RuntimeError("robots.txt disallows fetching this URL for the configured user-agent.")
     sess = _make_session(retries, backoff, connect_timeout, read_timeout)
     attempts = retries + 1
