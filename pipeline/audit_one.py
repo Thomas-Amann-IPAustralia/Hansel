@@ -5,9 +5,11 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 
-import requests
+import requests, time
+from http import HTTPStatus
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+import http.cookiejar as cookiejar
 from bs4 import BeautifulSoup
 from readability import Document
 from markdownify import markdownify as html2md
@@ -17,6 +19,14 @@ from pipeline.regex_checks import run_regex_checks
 from pipeline.nlp_checks import run_heuristic_checks
 from pipeline.semantic_search import KBIndex
 from pipeline.utils import slugify, is_title_case, to_title_case
+from pipeline.polite import can_fetch, polite_sleep
+
+# Optional Playwright import (lazy)
+try:
+    from playwright.sync_api import sync_playwright
+    HAVE_PLAYWRIGHT = True
+except Exception:
+    HAVE_PLAYWRIGHT = False
 
 def _make_session(retries:int=5, backoff:float=1.0, connect_timeout:float=15.0, read_timeout:float=120.0):
     sess = requests.Session()
@@ -36,8 +46,10 @@ def _make_session(retries:int=5, backoff:float=1.0, connect_timeout:float=15.0, 
                       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "en-AU,en;q=0.9"
+        "Referer": "https://www.google.com/"
     })
     sess.request_timeout = (connect_timeout, read_timeout)
+    sess.cookies = cookiejar.CookieJar()
     return sess
 
 def fetch_url_to_markdown(url: str,
@@ -45,9 +57,30 @@ def fetch_url_to_markdown(url: str,
                           backoff:float=1.0,
                           connect_timeout:float=15.0,
                           read_timeout:float=120.0) -> Dict[str, str]:
+  if not can_fetch(url):
+        raise RuntimeError("robots.txt disallows fetching this URL for the configured user-agent.")
     sess = _make_session(retries, backoff, connect_timeout, read_timeout)
-    resp = sess.get(url, timeout=sess.request_timeout, allow_redirects=True)
-    resp.raise_for_status()
+    attempts = retries + 1
+    resp = None
+    for i in range(attempts):
+        try:
+            resp = sess.get(url, timeout=sess.request_timeout, allow_redirects=True)
+            if resp.status_code == HTTPStatus.TOO_MANY_REQUESTS:
+                retry_after = int(resp.headers.get("Retry-After", "0") or "0")
+                polite_sleep(1.0 + retry_after, 0.25)
+                continue
+            resp.raise_for_status()
+            break
+        except requests.exceptions.ReadTimeout:
+            if i == attempts - 1:
+                raise
+            polite_sleep(1.5 * (i + 1), 0.5)
+        except requests.exceptions.RequestException:
+            if i == attempts - 1:
+                raise
+            polite_sleep(1.0 * (i + 1), 0.5)
+    if resp is None:
+        raise RuntimeError("Unable to fetch the URL after retries.")
     html = resp.text
     doc = Document(html)
     title = doc.short_title()
@@ -60,6 +93,35 @@ def fetch_url_to_markdown(url: str,
     clean_html = str(soup)
     md = html2md(clean_html)
     return {'title': title, 'markdown': md}
+
+def fetch_html_via_playwright(url: str, wait_until: str = "networkidle", timeout_ms:int = 45000) -> str:
+    if not HAVE_PLAYWRIGHT:
+        raise RuntimeError("Playwright not installed.")
+    if not can_fetch(url):
+        raise RuntimeError("robots.txt disallows fetching this URL for the configured user-agent.")
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True, args=[
+            "--disable-gpu",
+            "--disable-dev-shm-usage",
+            "--no-sandbox",
+        ])
+        ctx = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+            locale="en-AU",
+        )
+        page = ctx.new_page()
+        page.set_default_timeout(timeout_ms)
+        page.goto(url, wait_until=wait_until)
+        # Gentle scroll to trigger lazy content
+        page.evaluate("""() => new Promise(resolve => {
+            let y=0, step=400; (function scroll(){ y+=step; window.scrollTo(0,y);
+            if(y<document.body.scrollHeight){ setTimeout(scroll, 150); } else { resolve(); } })();
+        })""")
+        page.wait_for_timeout(800)  # small settle time
+        html = page.content()
+        ctx.close(); browser.close()
+        return html
 
 def apply_layer1_rules(block: Dict[str, Any]) -> List[Dict[str, Any]]:
     issues = []
