@@ -2,7 +2,7 @@ markdown-it-py==3.0.0
 readability-lxml==0.8.1
 markdownify==0.13.1
 beautifulsoup4==4.12.3
-lxml==5.2.2
+lxml[html_clean]==5.2.2
 requests==2.32.3
 numpy==2.0.1
 pandas==2.2.2
