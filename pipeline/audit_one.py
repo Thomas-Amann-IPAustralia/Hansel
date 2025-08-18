@@ -45,8 +45,8 @@ def _make_session(retries:int=5, backoff:float=1.0, connect_timeout:float=15.0, 
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
                       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-AU,en;q=0.9"
-        "Referer": "https://www.google.com/"
+        "Accept-Language": "en-AU,en;q=0.9",
+        "Referer": "https://www.google.com/",
     })
     sess.request_timeout = (connect_timeout, read_timeout)
     sess.cookies = cookiejar.CookieJar()
