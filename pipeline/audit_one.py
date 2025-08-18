@@ -259,6 +259,8 @@ def main():
      ap.add_argument('--backoff', type=float, default=1.0)
      ap.add_argument('--connect-timeout', type=float, default=15.0)
      ap.add_argument('--read-timeout', type=float, default=120.0)
+     ap.add_argument('--use-playwright', action='store_true', help='Allow Playwright fallback')
+     args = ap.parse_args()
      args = ap.parse_args()
 
     kb = None
@@ -266,16 +268,44 @@ def main():
     if kb_path.exists():
         kb = KBIndex.load(kb_path)
 
-    if args.target_url:
-        page = fetch_url_to_markdown(
-            args.target_url,
-            retries=args.retries,
-            backoff=args.backoff,
-            connect_timeout=args.connect_timeout,
-            read_timeout=args.read_timeout
-        )
-         page_meta = {'url': args.target_url, 'title': page['title']}
-         md_text = page['markdown']
+if args.target_url:
+        # 1) If an HTML file was pre-fetched by the workflow (curl step), prefer it.
+        curl_path = Path(".cache/page.html")
+        if curl_path.exists():
+            html = curl_path.read_text(encoding='utf-8', errors='ignore')
+        else:
+            # 2) Try requests session
+            try:
+                page = fetch_url_to_markdown(
+                    args.target_url,
+                    retries=args.retries,
+                    backoff=args.backoff,
+                    connect_timeout=args.connect_timeout,
+                    read_timeout=args.read_timeout
+                )
+                page_meta = {'url': args.target_url, 'title': page['title']}
+                md_text = page['markdown']
+                analysis = analyze_markdown(md_text, kb)
+                out = write_reports(Path(args.output_dir), page_meta, analysis)
+                print(json.dumps({'report_json': out['json'], 'report_md': out['md']}, indent=2))
+                return
+            except Exception:
+                html = ""
+
+        # 3) If we have HTML (from curl or failed requests path), convert it. If it looks empty and allowed, try Playwright.
+        if not html.strip() and args.use_playwright and HAVE_PLAYWRIGHT:
+            html = fetch_html_via_playwright(args.target_url)
+
+        if not html.strip():
+            raise RuntimeError("Empty HTML content after all fetch attempts.")
+
+        soup = BeautifulSoup(html, 'lxml')
+        for sel in ['nav','footer','header','aside','script','style']:
+            for el in soup.select(sel):
+                el.decompose()
+        title = soup.title.get_text(strip=True) if soup.title else args.target_url
+        md_text = html2md(str(soup))
+        page_meta = {'url': args.target_url, 'title': title}
     elif args.html_file:
         p = Path(args.html_file)
         html = p.read_text(encoding='utf-8', errors='ignore')
