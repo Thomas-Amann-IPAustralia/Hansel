@@ -1,1 +1,74 @@
-Auditor? I hardly knower
+name: Audit one page
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: "URL to audit (one per run)"
+        required: true
+        type: string
+      kb_glob:
+        description: "Glob to JSONL chunks (optional if using XLSX)"
+        required: false
+        default: "pipeline/kb/chunks/**/*.jsonl"
+      kb_xlsx:
+        description: "Path to ChunkingExample.xlsx if you want to build from it"
+        required: false
+        default: ""
+      urls_map:
+        description: "Path to urls.map.csv"
+        required: false
+        default: "kb/urls.map.csv"
+
+permissions:
+  contents: write  # allow committing reports back to repo
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Build KB index
+        run: |
+          python -m pipeline.kb.build_kb_index \
+            --chunks-glob "${{ inputs.kb_glob }}" \
+            --xlsx "${{ inputs.kb_xlsx }}" \
+            --urls-map "${{ inputs.urls_map }}" \
+            --out pipeline/kb/kb_index.json
+
+      - name: Audit page
+        run: |
+          python -m pipeline.audit_one \
+            --target-url "${{ inputs.target_url }}" \
+            --kb-index pipeline/kb/kb_index.json \
+            --output-dir reports/
+
+      - name: Commit report back to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/
+          git commit -m "Add audit report for ${{ inputs.target_url }} [skip ci]" || echo "No changes to commit"
+          git push
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-report
+          path: reports/
