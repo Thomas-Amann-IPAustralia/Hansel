@@ -7,6 +7,18 @@ on:
         description: "URL to audit (one per run)"
         required: true
         type: string
+      fetch_via_curl:
+          description: "Use curl (with retries) to fetch HTML, then audit that file"
+          required: false
+          default: "true"
+          type: choice
+          options: ["true","false"]
+      use_playwright:
+        description: "If curl/requests fail or DOM looks empty, render with headless Chromium"
+        required: false
+        default: "true"
+        type: choice
+        options: ["true","false"]
       kb_glob:
         description: "Glob to JSONL chunks (optional if using XLSX)"
         required: false
@@ -19,6 +31,18 @@ on:
         description: "Path to urls.map.csv"
         required: false
         default: "kb/urls.map.csv"
+      retries:
+        description: "HTTP retries (Python fetch)"
+        required: false
+        default: "5"
+      connect_timeout:
+        description: "Connect timeout seconds (Python fetch)"
+        required: false
+        default: "15"
+      read_timeout:
+        description: "Read timeout seconds (Python fetch)"
+        required: false
+        default: "120"
 
 permissions:
   contents: write  # allow committing reports back to repo
@@ -34,7 +58,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
+          
+      - name: Install system deps for Playwright
+        if: ${{ inputs.use_playwright == 'true' }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libnss3 libxkbcommon0 libatspi2.0-0
+          
       - name: Cache pip
         uses: actions/cache@v4
         with:
@@ -43,6 +73,10 @@ jobs:
 
       - name: Install deps
         run: pip install -r requirements.txt
+        
+      - name: Install Playwright browsers
+        if: ${{ inputs.use_playwright == 'true' }}
+        run: python -m playwright install --with-deps chromium
 
       - name: Build KB index
         run: |
@@ -58,6 +92,35 @@ jobs:
             --target-url "${{ inputs.target_url }}" \
             --kb-index pipeline/kb/kb_index.json \
             --output-dir reports/
+
+      - name: Fetch HTML via curl (fallback path)
+        if: ${{ inputs.fetch_via_curl == 'true' }}
+        run: |
+          mkdir -p .cache
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          curl -L --retry 5 --retry-all-errors --max-time 180 \
+               -A "$UA" \
+               -o .cache/page.html \
+               "${{ inputs.target_url }}"
+
+      - name: Audit page (curl path)
+        if: ${{ inputs.fetch_via_curl == 'true' }}
+        run: |
+          python -m pipeline.audit_one \
+            --html-file ".cache/page.html" \
+            --kb-index pipeline/kb/kb_index.json \
+            --output-dir reports/
+
+      - name: Audit page (python requests path)
+        if: ${{ inputs.fetch_via_curl != 'true' }}
+        run: |
+          python -m pipeline.audit_one \
+            --target-url "${{ inputs.target_url }}" \
+            --kb-index pipeline/kb/kb_index.json \
+            --output-dir reports/ \
+            --retries "${{ inputs.retries }}" \
+            --connect-timeout "${{ inputs.connect_timeout }}" \
+            --read-timeout "${{ inputs.read_timeout }}"
 
       - name: Commit report back to repo
         run: |
