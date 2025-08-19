@@ -5,8 +5,8 @@
     "ruleId": "APS-GPC-Fullstops-R-001",
     "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
     "severity": "error",
-    "offendingText": "# Biography",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L1"
+    "offendingText": "top of page",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L1"
   },
   {
     "fileName": "TomAmannBiography.md",
@@ -14,8 +14,35 @@
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-001",
     "ruleDescription": "Do not end headings, page headers, footers, or captions with a full stop.",
     "severity": "warn",
-    "offendingText": "# Biography",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L1"
+    "offendingText": "top of page",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L1"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 1,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-006",
+    "ruleDescription": "The first word in sentences and headings must start with a capital letter.",
+    "severity": "error",
+    "offendingText": "top of page",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L1"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 1,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-008",
+    "ruleDescription": "Use capitals only when an official title precedes a name.",
+    "severity": "warn",
+    "offendingText": "top of page",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L1"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 1,
+    "ruleId": "APS-GPC-Shortenedwordsandphrases-R-003",
+    "ruleDescription": "Do not abbreviate the first word in a sentence.",
+    "severity": "error",
+    "offendingText": "top of page",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L1"
   },
   {
     "fileName": "TomAmannBiography.md",
@@ -24,7 +51,7 @@
     "ruleDescription": "Format Australian landlines as 0[2378] #### ####.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L2"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L2"
   },
   {
     "fileName": "TomAmannBiography.md",
@@ -33,7 +60,7 @@
     "ruleDescription": "Format Australian mobiles as 04## ### ###.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L2"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L2"
   },
   {
     "fileName": "TomAmannBiography.md",
@@ -42,7 +69,7 @@
     "ruleDescription": "Format 13 numbers as 13 ## ##.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L2"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L2"
   },
   {
     "fileName": "TomAmannBiography.md",
@@ -51,7 +78,7 @@
     "ruleDescription": "Format 1300 numbers as 1300 ### ###.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L2"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L2"
   },
   {
     "fileName": "TomAmannBiography.md",
@@ -60,7 +87,7 @@
     "ruleDescription": "Format 1800 numbers as 1800 ### ###.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L2"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L2"
   },
   {
     "fileName": "TomAmannBiography.md",
@@ -69,879 +96,1284 @@
     "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L2"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L2"
   },
   {
     "fileName": "TomAmannBiography.md",
     "lineNumber": 3,
+    "ruleId": "APS-GPC-Fullstops-R-001",
+    "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
+    "severity": "error",
+    "offendingText": "Skip to Main Content",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L3"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 3,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-001",
+    "ruleDescription": "Do not end headings, page headers, footers, or captions with a full stop.",
+    "severity": "warn",
+    "offendingText": "Skip to Main Content",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L3"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 3,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-006",
+    "ruleDescription": "The first word in sentences and headings must start with a capital letter.",
+    "severity": "error",
+    "offendingText": "Skip to Main Content",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L3"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 3,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-008",
+    "ruleDescription": "Use capitals only when an official title precedes a name.",
+    "severity": "warn",
+    "offendingText": "Skip to Main Content",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L3"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 3,
+    "ruleId": "APS-GPC-Shortenedwordsandphrases-R-003",
+    "ruleDescription": "Do not abbreviate the first word in a sentence.",
+    "severity": "error",
+    "offendingText": "Skip to Main Content",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L3"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 4,
+    "ruleId": "APS-GPC-Telephonenumbers-R-001",
+    "ruleDescription": "Format Australian landlines as 0[2378] #### ####.",
+    "severity": "error",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L4"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 4,
+    "ruleId": "APS-GPC-Telephonenumbers-R-002",
+    "ruleDescription": "Format Australian mobiles as 04## ### ###.",
+    "severity": "error",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L4"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 4,
+    "ruleId": "APS-GPC-Telephonenumbers-R-003",
+    "ruleDescription": "Format 13 numbers as 13 ## ##.",
+    "severity": "warn",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L4"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 4,
+    "ruleId": "APS-GPC-Telephonenumbers-R-004",
+    "ruleDescription": "Format 1300 numbers as 1300 ### ###.",
+    "severity": "warn",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L4"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 4,
+    "ruleId": "APS-GPC-Telephonenumbers-R-005",
+    "ruleDescription": "Format 1800 numbers as 1800 ### ###.",
+    "severity": "warn",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L4"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 4,
+    "ruleId": "APS-GPC-Fullstops-R-001",
+    "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
+    "severity": "error",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L4"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 5,
+    "ruleId": "APS-GPC-Fullstops-R-001",
+    "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
+    "severity": "error",
+    "offendingText": "# Biography",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L5"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 5,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-001",
+    "ruleDescription": "Do not end headings, page headers, footers, or captions with a full stop.",
+    "severity": "warn",
+    "offendingText": "# Biography",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L5"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 6,
+    "ruleId": "APS-GPC-Telephonenumbers-R-001",
+    "ruleDescription": "Format Australian landlines as 0[2378] #### ####.",
+    "severity": "error",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L6"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 6,
+    "ruleId": "APS-GPC-Telephonenumbers-R-002",
+    "ruleDescription": "Format Australian mobiles as 04## ### ###.",
+    "severity": "error",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L6"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 6,
+    "ruleId": "APS-GPC-Telephonenumbers-R-003",
+    "ruleDescription": "Format 13 numbers as 13 ## ##.",
+    "severity": "warn",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L6"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 6,
+    "ruleId": "APS-GPC-Telephonenumbers-R-004",
+    "ruleDescription": "Format 1300 numbers as 1300 ### ###.",
+    "severity": "warn",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L6"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 6,
+    "ruleId": "APS-GPC-Telephonenumbers-R-005",
+    "ruleDescription": "Format 1800 numbers as 1800 ### ###.",
+    "severity": "warn",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L6"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 6,
+    "ruleId": "APS-GPC-Fullstops-R-001",
+    "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
+    "severity": "error",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L6"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Australianplacenames-R-001",
     "ruleDescription": "Avoid diacritics and non-ASCII letters in Australian place names.",
     "severity": "warn",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Australianplacenames-R-002",
     "ruleDescription": "Avoid possessive \u2019s in official Australian place names.",
     "severity": "warn",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Personalnames-R-006",
     "ruleDescription": "Form plurals with s/es (e.g., \u2018the Murphys\u2019, \u20183 Alexes\u2019), not \u2019s.",
     "severity": "error",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Plantsandanimals-R-006",
     "ruleDescription": "Use an initial + full stop for abbreviated genus (e.g., \u2018O. anatinus\u2019).",
     "severity": "warn",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Currency-R-008",
     "ruleDescription": "Write former Australian currency as words: pounds, shillings and pence (avoid \u00a3, s, d).",
     "severity": "error",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Apostrophes-R-001",
     "ruleDescription": "Use an apostrophe to show possession.",
     "severity": "info",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Apostrophes-R-003",
     "ruleDescription": "Do not add another \u2019s after plural nouns ending in s.",
     "severity": "warn",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Apostrophes-R-006",
     "ruleDescription": "Add \u2019s to shortened forms to show possession.",
     "severity": "info",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Apostrophes-R-007",
     "ruleDescription": "Do not use apostrophe+s to pluralise shortened forms.",
     "severity": "error",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Apostrophes-R-011",
     "ruleDescription": "Do not use apostrophes to pluralise nouns.",
     "severity": "error",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Commas-R-003",
     "ruleDescription": "Place commas around nouns that define the same thing they follow.",
     "severity": "error",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Commas-R-006",
     "ruleDescription": "Do not join two independent sentences with a comma unless also using a coordinating conjunction.",
     "severity": "error",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Fullstops-R-001",
     "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
     "severity": "error",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Hyphens-R-001",
     "ruleDescription": "Insert hyphen when prefix ends with vowel and base starts with same vowel.",
     "severity": "error",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Hyphens-R-002",
     "ruleDescription": "Hyphenate when prefix precedes a capitalised word.",
     "severity": "warn",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-001",
     "ruleDescription": "Do not end headings, page headers, footers, or captions with a full stop.",
     "severity": "warn",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-004",
     "ruleDescription": "Most abbreviations should not take a final full stop.",
     "severity": "warn",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-006",
     "ruleDescription": "The first word in sentences and headings must start with a capital letter.",
     "severity": "error",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-008",
     "ruleDescription": "Use capitals only when an official title precedes a name.",
     "severity": "warn",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Shortenedwordsandphrases-R-001",
     "ruleDescription": "Don\u2019t end abbreviations with a full stop, except in listed exceptions.",
     "severity": "warn",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Shortenedwordsandphrases-R-004",
     "ruleDescription": "Form plurals by adding s, not apostrophe-s (except \u2018pp\u2019 for pages).",
     "severity": "warn",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Acronymsandinitialisms-R-001",
     "ruleDescription": "Do not end acronyms and initialisms with a full stop unless at sentence end.",
     "severity": "error",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-AustralianDefenceForce-R-003",
     "ruleDescription": "Do not use commas before or between post-nominals.",
     "severity": "error",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-AustralianDefenceForce-R-004",
     "ruleDescription": "Do not hyphenate multi-word ranks (exception: Air Vice\u2011Marshal).",
     "severity": "warn",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 3,
+    "lineNumber": 7,
     "ruleId": "APS-GPC-Awardsandhonours-R-001",
     "ruleDescription": "Remove commas before or between post\u2011nominals.",
     "severity": "error",
     "offendingText": "Thomas Amann is a contemporary artist engaged primarily with digital sculpture, 3D modelling, and texturing tools used in game and film production. Thomas\u2019s works have involved the use of photogrammetry, 3D simulation and modelling, visual scripting, algorithm-based fractals, animation, 3D printing, and real-time motion-tracking technology.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L3"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L7"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 4,
+    "lineNumber": 8,
     "ruleId": "APS-GPC-Telephonenumbers-R-001",
     "ruleDescription": "Format Australian landlines as 0[2378] #### ####.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L4"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L8"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 4,
+    "lineNumber": 8,
     "ruleId": "APS-GPC-Telephonenumbers-R-002",
     "ruleDescription": "Format Australian mobiles as 04## ### ###.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L4"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L8"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 4,
+    "lineNumber": 8,
     "ruleId": "APS-GPC-Telephonenumbers-R-003",
     "ruleDescription": "Format 13 numbers as 13 ## ##.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L4"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L8"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 4,
+    "lineNumber": 8,
     "ruleId": "APS-GPC-Telephonenumbers-R-004",
     "ruleDescription": "Format 1300 numbers as 1300 ### ###.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L4"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L8"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 4,
+    "lineNumber": 8,
     "ruleId": "APS-GPC-Telephonenumbers-R-005",
     "ruleDescription": "Format 1800 numbers as 1800 ### ###.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L4"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L8"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 4,
+    "lineNumber": 8,
     "ruleId": "APS-GPC-Fullstops-R-001",
     "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L4"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L8"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 5,
+    "lineNumber": 9,
+    "ruleId": "APS-GPC-Australianplacenames-R-001",
+    "ruleDescription": "Avoid diacritics and non-ASCII letters in Australian place names.",
+    "severity": "warn",
+    "offendingText": "\u200b",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L9"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 9,
+    "ruleId": "APS-GPC-Fullstops-R-001",
+    "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
+    "severity": "error",
+    "offendingText": "\u200b",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L9"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 9,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-001",
+    "ruleDescription": "Do not end headings, page headers, footers, or captions with a full stop.",
+    "severity": "warn",
+    "offendingText": "\u200b",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L9"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 10,
     "ruleId": "APS-GPC-Telephonenumbers-R-001",
     "ruleDescription": "Format Australian landlines as 0[2378] #### ####.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L5"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L10"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 5,
+    "lineNumber": 10,
     "ruleId": "APS-GPC-Telephonenumbers-R-002",
     "ruleDescription": "Format Australian mobiles as 04## ### ###.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L5"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L10"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 5,
+    "lineNumber": 10,
     "ruleId": "APS-GPC-Telephonenumbers-R-003",
     "ruleDescription": "Format 13 numbers as 13 ## ##.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L5"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L10"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 5,
+    "lineNumber": 10,
     "ruleId": "APS-GPC-Telephonenumbers-R-004",
     "ruleDescription": "Format 1300 numbers as 1300 ### ###.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L5"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L10"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 5,
+    "lineNumber": 10,
     "ruleId": "APS-GPC-Telephonenumbers-R-005",
     "ruleDescription": "Format 1800 numbers as 1800 ### ###.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L5"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L10"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 5,
+    "lineNumber": 10,
     "ruleId": "APS-GPC-Fullstops-R-001",
     "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L5"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L10"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Australianplacenames-R-001",
     "ruleDescription": "Avoid diacritics and non-ASCII letters in Australian place names.",
     "severity": "warn",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Plantsandanimals-R-006",
     "ruleDescription": "Use an initial + full stop for abbreviated genus (e.g., \u2018O. anatinus\u2019).",
     "severity": "warn",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Measurementandunits-R-004",
     "ruleDescription": "Unit symbols do not take a plural \u201cs\u201d (write 56 km, not 56 kms).",
     "severity": "error",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Ordinalnumbers-R-010",
     "ruleDescription": "Use a non-breaking space (U+00A0) between name and regnal number.",
     "severity": "info",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Phrases-R-001",
     "ruleDescription": "Generic plural modifiers before a singular head noun take no apostrophe (e.g., write 'visitors book', not 'visitors\u2019 book').",
     "severity": "error",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Apostrophes-R-002",
     "ruleDescription": "Add \u2019s to singular nouns to show possession.",
     "severity": "warn",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Commas-R-006",
     "ruleDescription": "Do not join two independent sentences with a comma unless also using a coordinating conjunction.",
     "severity": "error",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Fullstops-R-001",
     "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
     "severity": "error",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Hyphens-R-001",
     "ruleDescription": "Insert hyphen when prefix ends with vowel and base starts with same vowel.",
     "severity": "error",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-001",
     "ruleDescription": "Do not end headings, page headers, footers, or captions with a full stop.",
     "severity": "warn",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-004",
     "ruleDescription": "Most abbreviations should not take a final full stop.",
     "severity": "warn",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-006",
     "ruleDescription": "The first word in sentences and headings must start with a capital letter.",
     "severity": "error",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-008",
     "ruleDescription": "Use capitals only when an official title precedes a name.",
     "severity": "warn",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Shortenedwordsandphrases-R-001",
     "ruleDescription": "Don\u2019t end abbreviations with a full stop, except in listed exceptions.",
     "severity": "warn",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Shortenedwordsandphrases-R-002",
     "ruleDescription": "Use the same capitalisation as the spelt-out form.",
     "severity": "error",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Acronymsandinitialisms-R-001",
     "ruleDescription": "Do not end acronyms and initialisms with a full stop unless at sentence end.",
     "severity": "error",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-AustralianDefenceForce-R-003",
     "ruleDescription": "Do not use commas before or between post-nominals.",
     "severity": "error",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Awardsandhonours-R-001",
     "ruleDescription": "Remove commas before or between post\u2011nominals.",
     "severity": "error",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Royalty,vice-royaltyandnobility-R-004",
     "ruleDescription": "Write regnal roman numerals in uppercase (e.g. \u201cIII\u201d, not \u201ciii\u201d).",
     "severity": "warn",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 6,
+    "lineNumber": 11,
     "ruleId": "APS-GPC-Royalty,vice-royaltyandnobility-R-005",
     "ruleDescription": "Insert a non\u2011breaking space (U+00A0 or &nbsp;) between the name and regnal numeral.",
     "severity": "warn",
     "offendingText": "Thomas holds a Cert II in Creative Media Industries and a Diploma in Screen and Media from the Academy of Interactive Entertainment, Canberra. He has also studied visual arts at the ANU School of Art and Design, majoring in video and animation. Thomas\u2019 growing accomplishments include winning the Australian STEM Video Game Challenge run by the Australian Council for Educational Research.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L6"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L11"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 7,
+    "lineNumber": 12,
     "ruleId": "APS-GPC-Telephonenumbers-R-001",
     "ruleDescription": "Format Australian landlines as 0[2378] #### ####.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L7"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L12"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 7,
+    "lineNumber": 12,
     "ruleId": "APS-GPC-Telephonenumbers-R-002",
     "ruleDescription": "Format Australian mobiles as 04## ### ###.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L7"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L12"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 7,
+    "lineNumber": 12,
     "ruleId": "APS-GPC-Telephonenumbers-R-003",
     "ruleDescription": "Format 13 numbers as 13 ## ##.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L7"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L12"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 7,
+    "lineNumber": 12,
     "ruleId": "APS-GPC-Telephonenumbers-R-004",
     "ruleDescription": "Format 1300 numbers as 1300 ### ###.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L7"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L12"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 7,
+    "lineNumber": 12,
     "ruleId": "APS-GPC-Telephonenumbers-R-005",
     "ruleDescription": "Format 1800 numbers as 1800 ### ###.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L7"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L12"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 7,
+    "lineNumber": 12,
     "ruleId": "APS-GPC-Fullstops-R-001",
     "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L7"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L12"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 8,
+    "lineNumber": 13,
+    "ruleId": "APS-GPC-Australianplacenames-R-001",
+    "ruleDescription": "Avoid diacritics and non-ASCII letters in Australian place names.",
+    "severity": "warn",
+    "offendingText": "\u200b",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L13"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 13,
+    "ruleId": "APS-GPC-Fullstops-R-001",
+    "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
+    "severity": "error",
+    "offendingText": "\u200b",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L13"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 13,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-001",
+    "ruleDescription": "Do not end headings, page headers, footers, or captions with a full stop.",
+    "severity": "warn",
+    "offendingText": "\u200b",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L13"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 14,
     "ruleId": "APS-GPC-Telephonenumbers-R-001",
     "ruleDescription": "Format Australian landlines as 0[2378] #### ####.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L8"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L14"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 8,
+    "lineNumber": 14,
     "ruleId": "APS-GPC-Telephonenumbers-R-002",
     "ruleDescription": "Format Australian mobiles as 04## ### ###.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L8"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L14"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 8,
+    "lineNumber": 14,
     "ruleId": "APS-GPC-Telephonenumbers-R-003",
     "ruleDescription": "Format 13 numbers as 13 ## ##.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L8"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L14"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 8,
+    "lineNumber": 14,
     "ruleId": "APS-GPC-Telephonenumbers-R-004",
     "ruleDescription": "Format 1300 numbers as 1300 ### ###.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L8"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L14"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 8,
+    "lineNumber": 14,
     "ruleId": "APS-GPC-Telephonenumbers-R-005",
     "ruleDescription": "Format 1800 numbers as 1800 ### ###.",
     "severity": "warn",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L8"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L14"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 8,
+    "lineNumber": 14,
     "ruleId": "APS-GPC-Fullstops-R-001",
     "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
     "severity": "error",
     "offendingText": "",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L8"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L14"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Australianplacenames-R-001",
     "ruleDescription": "Avoid diacritics and non-ASCII letters in Australian place names.",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Australianplacenames-R-002",
     "ruleDescription": "Avoid possessive \u2019s in official Australian place names.",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Personalnames-R-006",
     "ruleDescription": "Form plurals with s/es (e.g., \u2018the Murphys\u2019, \u20183 Alexes\u2019), not \u2019s.",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Plantsandanimals-R-006",
     "ruleDescription": "Use an initial + full stop for abbreviated genus (e.g., \u2018O. anatinus\u2019).",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Measurementandunits-R-004",
     "ruleDescription": "Unit symbols do not take a plural \u201cs\u201d (write 56 km, not 56 kms).",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Partsofsentences-H-009",
     "ruleDescription": "Use passive voice only when the actor is unknown, irrelevant, or must be concealed.",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Apostrophes-R-001",
     "ruleDescription": "Use an apostrophe to show possession.",
     "severity": "info",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Apostrophes-R-003",
     "ruleDescription": "Do not add another \u2019s after plural nouns ending in s.",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Apostrophes-R-006",
     "ruleDescription": "Add \u2019s to shortened forms to show possession.",
     "severity": "info",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Apostrophes-R-007",
     "ruleDescription": "Do not use apostrophe+s to pluralise shortened forms.",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Apostrophes-R-011",
     "ruleDescription": "Do not use apostrophes to pluralise nouns.",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Commas-R-001",
     "ruleDescription": "Place a comma after introductory words, phrases, or clauses.",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Commas-R-003",
     "ruleDescription": "Place commas around nouns that define the same thing they follow.",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Commas-R-006",
     "ruleDescription": "Do not join two independent sentences with a comma unless also using a coordinating conjunction.",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Fullstops-R-001",
     "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Hyphens-R-001",
     "ruleDescription": "Insert hyphen when prefix ends with vowel and base starts with same vowel.",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Hyphens-R-002",
     "ruleDescription": "Hyphenate when prefix precedes a capitalised word.",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-001",
     "ruleDescription": "Do not end headings, page headers, footers, or captions with a full stop.",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-004",
     "ruleDescription": "Most abbreviations should not take a final full stop.",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-006",
     "ruleDescription": "The first word in sentences and headings must start with a capital letter.",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Punctuationandcapitalisation-R-008",
     "ruleDescription": "Use capitals only when an official title precedes a name.",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Quotationmarks-R-001",
     "ruleDescription": "Enclose direct speech in single quotation marks; use double quotes only for quotations within quotations.",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Shortenedwordsandphrases-R-001",
     "ruleDescription": "Don\u2019t end abbreviations with a full stop, except in listed exceptions.",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Shortenedwordsandphrases-R-004",
     "ruleDescription": "Form plurals by adding s, not apostrophe-s (except \u2018pp\u2019 for pages).",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Acronymsandinitialisms-R-001",
     "ruleDescription": "Do not end acronyms and initialisms with a full stop unless at sentence end.",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-AustralianDefenceForce-R-003",
     "ruleDescription": "Do not use commas before or between post-nominals.",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-AustralianDefenceForce-R-004",
     "ruleDescription": "Do not hyphenate multi-word ranks (exception: Air Vice\u2011Marshal).",
     "severity": "warn",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
   },
   {
     "fileName": "TomAmannBiography.md",
-    "lineNumber": 9,
+    "lineNumber": 15,
     "ruleId": "APS-GPC-Awardsandhonours-R-001",
     "ruleDescription": "Remove commas before or between post\u2011nominals.",
     "severity": "error",
     "offendingText": "While studying at the ANU, Thomas\u2019s work has been commissioned and entered into the collection at the ANU Medical School. His works during this period have sought to examine the relationship between humans and technology, attempting to understand how this burgeoning symbiosis affects the human experience. Rather than hiding behind a glossy, inauthentic photorealism, Thomas\u2019s works have embraced the artificiality and malleability of the medium. Most recently in his work Life in Silicon, Thomas has utilised real-time motion tracking data to create an immersive and interactive work both exploring and highlighting the connection between humanity and the technology surrounding it.",
-    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/39a756696623fc9378f2d9c094359d6605bf6cac/markdown/TomAmannBiography.md#L9"
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L15"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 16,
+    "ruleId": "APS-GPC-Telephonenumbers-R-001",
+    "ruleDescription": "Format Australian landlines as 0[2378] #### ####.",
+    "severity": "error",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L16"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 16,
+    "ruleId": "APS-GPC-Telephonenumbers-R-002",
+    "ruleDescription": "Format Australian mobiles as 04## ### ###.",
+    "severity": "error",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L16"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 16,
+    "ruleId": "APS-GPC-Telephonenumbers-R-003",
+    "ruleDescription": "Format 13 numbers as 13 ## ##.",
+    "severity": "warn",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L16"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 16,
+    "ruleId": "APS-GPC-Telephonenumbers-R-004",
+    "ruleDescription": "Format 1300 numbers as 1300 ### ###.",
+    "severity": "warn",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L16"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 16,
+    "ruleId": "APS-GPC-Telephonenumbers-R-005",
+    "ruleDescription": "Format 1800 numbers as 1800 ### ###.",
+    "severity": "warn",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L16"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 16,
+    "ruleId": "APS-GPC-Fullstops-R-001",
+    "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
+    "severity": "error",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L16"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 17,
+    "ruleId": "APS-GPC-Australianplacenames-R-003",
+    "ruleDescription": "For dual names, put single spaces on both sides of the slash.",
+    "severity": "error",
+    "offendingText": "![RAWScanRender.png](https://static.wixstatic.com/media/ba8ba7_7ba2e9ed64d34525ab9ddb3956037c75~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/RAWScanRender.png)",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L17"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 17,
+    "ruleId": "APS-GPC-Australianplacenames-R-009",
+    "ruleDescription": "Ensure a single space on both sides of \u2018/\u2019 where required.",
+    "severity": "warn",
+    "offendingText": "![RAWScanRender.png](https://static.wixstatic.com/media/ba8ba7_7ba2e9ed64d34525ab9ddb3956037c75~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/RAWScanRender.png)",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L17"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 17,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-001",
+    "ruleDescription": "Do not end headings, page headers, footers, or captions with a full stop.",
+    "severity": "warn",
+    "offendingText": "![RAWScanRender.png](https://static.wixstatic.com/media/ba8ba7_7ba2e9ed64d34525ab9ddb3956037c75~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/RAWScanRender.png)",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L17"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 17,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-004",
+    "ruleDescription": "Most abbreviations should not take a final full stop.",
+    "severity": "warn",
+    "offendingText": "![RAWScanRender.png](https://static.wixstatic.com/media/ba8ba7_7ba2e9ed64d34525ab9ddb3956037c75~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/RAWScanRender.png)",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L17"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 18,
+    "ruleId": "APS-GPC-Telephonenumbers-R-001",
+    "ruleDescription": "Format Australian landlines as 0[2378] #### ####.",
+    "severity": "error",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L18"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 18,
+    "ruleId": "APS-GPC-Telephonenumbers-R-002",
+    "ruleDescription": "Format Australian mobiles as 04## ### ###.",
+    "severity": "error",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L18"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 18,
+    "ruleId": "APS-GPC-Telephonenumbers-R-003",
+    "ruleDescription": "Format 13 numbers as 13 ## ##.",
+    "severity": "warn",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L18"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 18,
+    "ruleId": "APS-GPC-Telephonenumbers-R-004",
+    "ruleDescription": "Format 1300 numbers as 1300 ### ###.",
+    "severity": "warn",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L18"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 18,
+    "ruleId": "APS-GPC-Telephonenumbers-R-005",
+    "ruleDescription": "Format 1800 numbers as 1800 ### ###.",
+    "severity": "warn",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L18"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 18,
+    "ruleId": "APS-GPC-Fullstops-R-001",
+    "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
+    "severity": "error",
+    "offendingText": "",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L18"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 19,
+    "ruleId": "APS-GPC-Fullstops-R-001",
+    "ruleDescription": "End sentences with a full stop unless they are questions or exclamations.",
+    "severity": "error",
+    "offendingText": "bottom of page",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L19"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 19,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-001",
+    "ruleDescription": "Do not end headings, page headers, footers, or captions with a full stop.",
+    "severity": "warn",
+    "offendingText": "bottom of page",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L19"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 19,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-006",
+    "ruleDescription": "The first word in sentences and headings must start with a capital letter.",
+    "severity": "error",
+    "offendingText": "bottom of page",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L19"
+  },
+  {
+    "fileName": "TomAmannBiography.md",
+    "lineNumber": 19,
+    "ruleId": "APS-GPC-Punctuationandcapitalisation-R-008",
+    "ruleDescription": "Use capitals only when an official title precedes a name.",
+    "severity": "warn",
+    "offendingText": "bottom of page",
+    "githubUrl": "https://github.com/Thomas-Amann-IPAustralia/Hansel/blob/500a46db87dec8915f8db4fb60e3911f4900c26d/markdown/TomAmannBiography.md#L19"
   }
 ]
