@@ -1,51 +1,26 @@
-# Hansel - APS Website Auditor (Single-Page, GitHub-Only)
-He's stylish and helpful. What more could you want?
+Web Content Scraper & APS Style Linter
+This project is a GitHub Application designed to automate the process of scraping web content, converting it to Markdown, and auditing it against a set of rules based on the Australian Public Service (APS) style guide.
 
-This repo runs an automated one-page audit against APS Style guidance.
+How It Works
+The process is orchestrated by a GitHub Action (.github/workflows/audit.yml) and is composed of two main Python scripts:
 
-## How it works
-1. **Scrape** → Clean HTML via Readability → **Markdown**
-2. **Layer 1** AST → Headings, lists, etc. + rules (e.g. H2 must be Title Case)
-3. **Layer 2** Regex → citations, `et al` punctuation, spacing, DOIs/URLs
-4. **Layer 3** Heuristics → sentence length, passive voice; **Semantic search** via TF‑IDF over the APS chunked KB to attach relevant guidance
+scripts/scrape.py: This script reads a list of target URLs from config.json. For each URL, it uses Playwright to fetch the page, aggressively clean the HTML of unwanted elements (like ads, social sharing buttons, and scripts), and then convert the cleaned content into a Markdown file.
 
-## Inputs
-- Place your chunked JSONL under `pipeline/kb/chunks/` (glob configurable).
-- Place `kb/urls.map.csv` (maps filename → source URL).
-- Optionally use `kb/ChunkingExample.xlsx` (first column contains JSON rows) instead of JSONL.
+scripts/lint.py: This is a unified linting engine that analyzes the generated Markdown files. It applies two types of rules:
 
-## Running (one page per action run)
-- Go to **Actions** → **Audit one page** → **Run workflow**
-  - `target_url` = URL to audit (required)
-  - `kb_glob` = `pipeline/kb/chunks/**/*.jsonl` (default)
-  - `kb_xlsx` = `kb/ChunkingExample.xlsx` (leave blank if you’re using JSONL)
-  - `urls_map` = `kb/urls.map.csv`
+Regex-based rules: Simple, pattern-matching rules for common style issues.
 
-## Outputs
-- `reports/<timestamp>_<slug>.json` and `.md` committed to repo and uploaded as an artifact.
+Heuristic (NLP) rules: Complex, context-aware rules using the spaCy library to detect grammatical issues, such as the use of passive voice.
 
-## Example rule hits (from Layer 1 + 2)
-Input heading:
-The Study's conclusions (Jones et al 2024)
-Findings:
-- H2 not in Title Case → suggest `The Study's Conclusions`
-- Citation in heading → suggest moving it to body text
-- `et al` missing period → suggest `et al.`
+The final output is a report.json file, which is uploaded as a workflow artifact. This report provides a detailed list of all issues found, including the file, line number, and a direct permalink to the offending line in the GitHub repository for easy remediation.
 
-## Local testing
+Configuration
+To add new pages to the audit, simply edit the config.json file in the root of the repository. Add a new object to the array with the following keys:
 
+url: The full URL of the page to scrape.
 
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+selector: The CSS selector for the main content container on the page.
 
-Build KB (from JSONL)
+output: The desired filename for the resulting Markdown file (e.g., page-one.md).
 
-python -m pipeline.kb.build_kb_index --chunks-glob "pipeline/kb/chunks/**/*.jsonl" --urls-map kb/urls.map.csv
-
-Or build KB (from provided XLSX example)
-
-python -m pipeline.kb.build_kb_index --xlsx kb/ChunkingExample.xlsx --urls-map kb/urls.map.csv
-
-Audit a local Markdown file
-
-python -m pipeline.audit_one --markdown-file samples/example.md --kb-index pipeline/kb/kb_index.json
+The GitHub Action is configured to run automatically whenever config.json is modified on the main branch. It can also be triggered manually from the Actions tab in GitHub.
