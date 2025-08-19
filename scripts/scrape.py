@@ -8,70 +8,28 @@ from markdownify import markdownify as md
 # --- Configuration ---
 CONFIG_FILE = 'config.json'
 OUTPUT_DIR = 'markdown'
-# List of selectors for elements to be aggressively removed before markdown conversion.
-# This is crucial for cleaning the content of ads, navs, footers, etc.
-UNWANTED_ELEMENTS_SELECTORS = [
-    'script',
-    'style',
-    'header',
-    'footer',
-    'nav',
-    '.social-share',
-    '.related-articles',
-    '#comments',
-    '[aria-hidden="true"]',
-    'iframe'
-]
-
-def clean_html_content(page, selector):
-    """
-    Uses Playwright's DOM evaluation to remove unwanted elements from the main content.
-    This pre-processing step is vital for generating clean Markdown.
-    """
-    main_content_handle = page.query_selector(selector)
-    if not main_content_handle:
-        print(f"Warning: Content selector '{selector}' not found on page.")
-        return ""
-
-    # This JavaScript function will be executed in the browser's context.
-    # It finds the main content element, clones it, removes unwanted children from the clone,
-    # and then returns the cleaned HTML.
-    cleaned_html = main_content_handle.evaluate(f"""(element) => {{
-        const clonedElement = element.cloneNode(true);
-        const selectorsToRemove = {json.dumps(UNWANTED_ELEMENTS_SELECTORS)};
-
-        // Remove unwanted elements from the cloned node
-        selectorsToRemove.forEach(sel => {{
-            clonedElement.querySelectorAll(sel).forEach(el => el.remove());
-        }});
-
-        return clonedElement.innerHTML;
-    }}""")
-
-    return cleaned_html
-
 
 def scrape_url(page, target):
     """
     Scrapes a single URL based on the configuration provided.
+    This version scrapes the entire body for a "noisy" but complete capture.
     """
     url = target['url']
-    selector = target['selector']
     output_filename = target['output']
 
     print(f"Scraping {url}...")
     try:
         page.goto(url, wait_until='domcontentloaded')
         
-        # Get the cleaned HTML content from the specified selector
-        html_content = clean_html_content(page, selector)
+        # Get the full HTML content of the page
+        html_content = page.content()
 
         if not html_content:
-            print(f"Could not extract content for {url}. Skipping.")
+            print(f"Could not retrieve content for {url}. Skipping.")
             return
 
-        # Convert the cleaned HTML to Markdown
-        markdown_content = md(html_content, heading_style="ATX")
+        # Convert the HTML to Markdown, stripping out script and style tags which are pure noise.
+        markdown_content = md(html_content, heading_style="ATX", strip=['script', 'style', 'header', 'footer', 'nav'])
 
         # Ensure the output directory exists
         if not os.path.exists(OUTPUT_DIR):
