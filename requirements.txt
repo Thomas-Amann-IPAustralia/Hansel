@@ -1,17 +1,17 @@
-For converting HTML to Markdown
+# For converting HTML to Markdown
 markdownify
 
-For Natural Language Processing (NLP)
+# For Natural Language Processing (NLP)
 spacy
 
-For parsing HTML content
+# For parsing HTML content
 beautifulsoup4
 
-For web browser automation and scraping
+# For web browser automation and scraping
 selenium
 selenium-stealth
 webdriver-manager
 
-Direct link to the specific spaCy model to ensure deterministic builds
-and enable effective caching in CI/CD workflows.
-https://www.google.com/search?q=https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
+# Direct link to the specific spaCy model to ensure deterministic builds
+# and enable effective caching in CI/CD workflows.
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
