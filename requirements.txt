@@ -1,4 +1,4 @@
 playwright
 markdownify
 spacy
-trafilatura
+beautifulsoup4
