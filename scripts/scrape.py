@@ -6,6 +6,8 @@ import random
 import time
 import logging
 import re
+from typing import Dict, Optional
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.support.ui import WebDriverWait
@@ -18,10 +20,10 @@ from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 
 # --- Configuration ---
-CONFIG_FILE = 'config.json'
-OUTPUT_DIR = 'markdown'
-LOG_DIR = 'logs'
-MAX_RETRIES = 2
+CONFIG_FILE: str = 'config.json'
+OUTPUT_DIR: str = 'markdown'
+LOG_DIR: str = 'logs'
+MAX_RETRIES: int = 2
 
 # --- Setup Structured Logging ---
 os.makedirs(LOG_DIR, exist_ok=True)
@@ -35,14 +37,17 @@ logging.basicConfig(
 )
 
 # --- Content Cleaning & Detection Configuration ---
-TAGS_TO_EXCLUDE = ['nav', 'footer', 'header', 'script', 'style', 'aside', '.noprint', '#sidebar', 'iframe']
-BLOCK_PAGE_SIGNATURES = [
+TAGS_TO_EXCLUDE: list[str] = ['nav', 'footer', 'header', 'script', 'style', 'aside', '.noprint', '#sidebar', 'iframe']
+BLOCK_PAGE_SIGNATURES: list[str] = [
     "access denied", "enable javascript", "checking if the site connection is secure",
     "just a moment...", "verifying you are human", "ddos protection by", "site can’t be reached"
 ]
 
-def initialize_driver():
-    """Initializes a stealth-configured Selenium WebDriver."""
+def initialize_driver() -> Optional[webdriver.Chrome]:
+    """
+    Initializes a stealth-configured Selenium WebDriver.
+    Adds type hinting for clarity on the return type.
+    """
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless=new')
     chrome_options.add_argument('--no-sandbox')
@@ -72,8 +77,11 @@ def initialize_driver():
         logging.error(f"Failed to initialize WebDriver: {e}")
         return None
 
-def clean_html_content(html):
-    """Uses BeautifulSoup to parse HTML and remove unwanted tags."""
+def clean_html_content(html: str) -> str:
+    """
+    Uses BeautifulSoup to parse HTML and remove unwanted tags.
+    Adds type hinting for input and output strings.
+    """
     soup = BeautifulSoup(html, 'html.parser')
     page_body = soup.body
     if page_body:
@@ -83,8 +91,11 @@ def clean_html_content(html):
         return str(page_body)
     return ""
 
-def scrape_url(driver, target):
-    """Scrapes a single URL using the provided Selenium driver."""
+def scrape_url(driver: webdriver.Chrome, target: Dict[str, str]) -> None:
+    """
+    Scrapes a single URL using the provided Selenium driver.
+    Adds type hinting for the driver and target dictionary.
+    """
     url = target['url']
     output_filename = target['output']
 
@@ -96,7 +107,6 @@ def scrape_url(driver, target):
     for attempt in range(MAX_RETRIES + 1):
         try:
             driver.get(url)
-            # Wait for the body tag to ensure the page has started loading.
             WebDriverWait(driver, 45).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
 
             # Human-like interaction
@@ -144,7 +154,11 @@ def scrape_url(driver, target):
         else:
             logging.error(f"Failed to scrape {url} after {MAX_RETRIES + 1} attempts.")
 
-def main():
+def main() -> None:
+    """
+    Main function to orchestrate the scraping process.
+    Adds type hinting.
+    """
     try:
         with open(CONFIG_FILE, 'r') as f:
             targets = json.load(f)
@@ -161,7 +175,8 @@ def main():
         for target in targets:
             scrape_url(driver, target)
     finally:
-        driver.quit()
+        if driver:
+            driver.quit()
         
     logging.info("Scraping process complete.")
 
