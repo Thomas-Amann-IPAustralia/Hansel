@@ -6,7 +6,7 @@ import json
 import spacy
 import logging
 import bisect
-from typing import List, Dict, Callable, Any
+from typing import List, Dict, Callable, Any, Optional, Pattern
 from spacy.tokens import Doc
 
 # --- Configuration ---
@@ -28,7 +28,6 @@ logging.basicConfig(
 
 # --- spaCy Model Loading ---
 try:
-    # The model is now installed via requirements.txt, making this more reliable.
     nlp = spacy.load("en_core_web_sm")
 except OSError:
     logging.error("spaCy model 'en_core_web_sm' not found. Please ensure it's in your requirements.txt or run 'python -m spacy download en_core_web_sm'")
@@ -36,17 +35,10 @@ except OSError:
 
 # --- Helper Functions ---
 def get_line_number_from_offset(offset: int, line_offsets: List[int]) -> int:
-    """
-    Finds the line number for a given character offset using binary search.
-    This is crucial for mapping spaCy's findings back to the original file lines.
-    """
-    # bisect_right finds the insertion point, which corresponds to the line number.
+    """Finds the line number for a given character offset using binary search."""
     return bisect.bisect_right(line_offsets, offset)
 
 # --- Heuristic Rule Implementations ---
-# Each heuristic function now accepts a spaCy Doc object and line offsets.
-# They return a list of findings, each with a line number and the offending text.
-
 def check_passive_voice(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
     """Heuristic check for passive voice using spaCy's dependency parser."""
     findings = []
@@ -54,7 +46,6 @@ def check_passive_voice(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any
         if token.dep_ in ("nsubjpass", "auxpass"):
             sent = token.sent
             line_num = get_line_number_from_offset(sent.start_char, line_offsets)
-            # Avoid adding the same sentence multiple times
             if not any(f['line_number'] == line_num for f in findings):
                 findings.append({
                     "line_number": line_num,
@@ -66,11 +57,8 @@ def check_complete_sentence(doc: Doc, line_offsets: List[int]) -> List[Dict[str,
     """Heuristic to check if a sentence is complete (has a subject and a root verb)."""
     findings = []
     for sent in doc.sents:
-        # A simple check for sentence fragments. Imperative sentences might be flagged.
         has_root = any(token.dep_ == "ROOT" for token in sent)
         has_subject = any("subj" in token.dep_ for token in sent)
-        
-        # Ignore very short lines (likely headings/list items) and check for fragments.
         if not (has_root and has_subject) and len(sent.text.strip().split()) > 3:
             line_num = get_line_number_from_offset(sent.start_char, line_offsets)
             findings.append({
@@ -85,7 +73,6 @@ def check_collective_noun_agreement(doc: Doc, line_offsets: List[int]) -> List[D
     collective_nouns = {"government", "committee", "crowd", "team", "family", "group", "staff"}
     plural_verbs = {"are", "were", "have", "do"}
     for token in doc:
-        # Check if a known collective noun is followed by a plural verb
         if token.lemma_.lower() in collective_nouns and token.head.lemma_.lower() in plural_verbs:
             line_num = get_line_number_from_offset(token.idx, line_offsets)
             findings.append({
@@ -94,8 +81,6 @@ def check_collective_noun_agreement(doc: Doc, line_offsets: List[int]) -> List[D
             })
     return findings
 
-# This dictionary maps rule IDs from Trinity.json to our implemented functions.
-# This addresses the supervisor's note about implementing more heuristics.
 HEURISTIC_CHECKS: Dict[str, Callable[[Doc, List[int]], List[Dict[str, Any]]]] = {
     "APS-GPC-Partsofsentences-H-009": check_passive_voice,
     "APS-GPC-Partsofsentences-H-001": check_complete_sentence,
@@ -103,7 +88,7 @@ HEURISTIC_CHECKS: Dict[str, Callable[[Doc, List[int]], List[Dict[str, Any]]]] = 
 }
 
 def load_rules_from_rulebook(file_path: str) -> List[Dict[str, Any]]:
-    """Loads and parses linting rules from the specified JSON rulebook."""
+    """Loads, validates, and compiles linting rules from the specified JSON rulebook."""
     if not os.path.exists(file_path):
         logging.error(f"Rulebook file '{file_path}' not found.")
         return []
@@ -131,8 +116,16 @@ def load_rules_from_rulebook(file_path: str) -> List[Dict[str, Any]]:
         }
 
         if rule_type == "regex" and "pattern" in rule:
-            new_rule["pattern"] = rule.get("pattern")
-            transformed_rules.append(new_rule)
+            pattern = rule.get("pattern", "")
+            try:
+                # Pre-compile regex to catch errors early.
+                # This addresses the invalid regex warnings from the logs.
+                flags = re.IGNORECASE if not pattern.startswith("(?i)") else 0
+                new_rule["compiled_pattern"] = re.compile(pattern, flags)
+                transformed_rules.append(new_rule)
+            except re.error as e:
+                logging.warning(f"Skipping invalid regex for rule '{rule_id}': {e}")
+
         elif rule_type == "heuristic":
             if rule_id in HEURISTIC_CHECKS:
                 new_rule["check"] = HEURISTIC_CHECKS[rule_id]
@@ -157,11 +150,7 @@ def build_github_url(file_name: str, line_number: int) -> str:
     return f"{server_url}/{repository}/blob/{sha}/{MARKDOWN_DIR}/{file_name}#L{line_number}"
 
 def lint_file(file_path: str, file_name: str, linting_rules: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """
-    Applies all defined linting rules to a single file.
-    This function is refactored to read the whole file at once, enabling
-    context-aware heuristic checks that span multiple lines.
-    """
+    """Applies all defined linting rules to a single file."""
     findings: List[Dict[str, Any]] = []
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -171,20 +160,20 @@ def lint_file(file_path: str, file_name: str, linting_rules: List[Dict[str, Any]
         return []
 
     lines = content.splitlines()
-    # Pre-calculate the starting character offset of each line for fast lookups.
     line_offsets = [0]
     for line in lines:
         line_offsets.append(line_offsets[-1] + len(line) + 1)
 
-    # Process the entire document with spaCy once for efficiency.
     doc = nlp(content)
 
     for rule in linting_rules:
         try:
             if rule.get('type') == 'regex':
-                # Regex checks still operate line-by-line.
+                compiled_pattern = rule.get("compiled_pattern")
+                if not compiled_pattern:
+                    continue
                 for line_num, line in enumerate(lines, 1):
-                    if re.search(rule['pattern'], line, re.IGNORECASE):
+                    if compiled_pattern.search(line):
                         findings.append({
                             "fileName": file_name, "lineNumber": line_num,
                             "ruleId": rule.get('id'), "ruleDescription": rule.get('description'),
@@ -192,7 +181,6 @@ def lint_file(file_path: str, file_name: str, linting_rules: List[Dict[str, Any]
                             "githubUrl": build_github_url(file_name, line_num)
                         })
             elif rule.get('type') == 'heuristic':
-                # Heuristic checks receive the full spaCy doc for context.
                 heuristic_findings = rule['check'](doc, line_offsets)
                 for h_finding in heuristic_findings:
                     findings.append({
@@ -201,8 +189,6 @@ def lint_file(file_path: str, file_name: str, linting_rules: List[Dict[str, Any]
                         "severity": rule.get('severity'), "offendingText": h_finding['offending_text'],
                         "githubUrl": build_github_url(file_name, h_finding['line_number'])
                     })
-        except re.error as e:
-            logging.warning(f"Skipping invalid regex for rule '{rule.get('id', 'N/A')}': {e}")
         except Exception as e:
             logging.error(f"Error applying rule '{rule.get('id', 'N/A')}' to {file_name}: {e}")
 
@@ -227,6 +213,9 @@ def main() -> None:
                 all_findings.extend(findings)
     else:
         logging.warning(f"Markdown directory '{MARKDOWN_DIR}' not found. No files to lint.")
+
+    # Sort findings for consistency
+    all_findings.sort(key=lambda x: (x['fileName'], x['lineNumber']))
 
     with open(REPORT_FILE, 'w', encoding='utf-8') as f:
         json.dump(all_findings, f, indent=2)
