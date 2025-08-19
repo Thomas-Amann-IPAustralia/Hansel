@@ -1,104 +1,170 @@
-# scripts/scrape.py
+# scripts/lint.py
 
-import json
 import os
-import random
-import time
-from playwright.sync_api import sync_playwright, Error
-import trafilatura
+import re
+import json
+import spacy
 
 # --- Configuration ---
-CONFIG_FILE = 'config.json'
-OUTPUT_DIR = 'markdown'
-MAX_RETRIES = 3
-USER_AGENTS = [
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/108.0',
-]
+MARKDOWN_DIR = 'markdown'
+REPORT_FILE = 'report.json'
+RULEBOOK_FILE = 'Codebook.json' 
 
-def scrape_url(context, target):
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    print("spaCy model 'en_core_web_sm' not found. Please run 'python -m spacy download en_core_web_sm'")
+    exit()
+
+
+# --- Heuristic Rule Implementation ---
+
+def check_passive_voice(text):
     """
-    Scrapes a single URL by using Playwright to load the page and then
-    trafilatura to intelligently extract the main content.
+    Heuristic check for passive voice using spaCy's dependency parser.
     """
-    url = target['url']
-    output_filename = target['output']
+    doc = nlp(text)
+    for token in doc:
+        if token.dep_ in ("nsubjpass", "auxpass"):
+            return True
+    return False
 
-    if url.lower().endswith('.pdf'):
-        print(f"Skipping PDF link: {url}")
-        return
+HEURISTIC_CHECKS = {
+    "APS-GPC-Partsofsentences-H-009": check_passive_voice,
+}
 
-    print(f"Processing {url}...")
-    page = None
-    for attempt in range(MAX_RETRIES):
-        try:
-            page = context.new_page()
-            # Use Playwright to robustly navigate and load the page content.
-            page.goto(url, wait_until='networkidle', timeout=60000)
-            html_content = page.content()
-            page.close() # Close the page to conserve resources
 
-            if not html_content:
-                print(f"Attempt {attempt + 1}/{MAX_RETRIES}: Page loaded but content is empty. Retrying...")
-                time.sleep(2 ** attempt)
-                continue
+def load_rules_from_rulebook(file_path):
+    """
+    Loads and parses linting rules from the rulebook file.
+    """
+    if not os.path.exists(file_path):
+        print(f"Error: Rulebook file '{file_path}' not found.")
+        return []
 
-            # Now, use trafilatura on the fetched HTML to extract the main article.
-            markdown_content = trafilatura.extract(html_content, output_format='markdown', include_comments=False, include_tables=True)
+    all_rules = []
+    with open(file_path, 'r', encoding='utf-8') as f:
+        decoder = json.JSONDecoder()
+        content = f.read().strip()
+        pos = 0
+        while pos < len(content):
+            try:
+                obj, end_pos = decoder.raw_decode(content, pos)
+                if 'rules' in obj:
+                    all_rules.extend(obj['rules'])
+                pos = end_pos
+                while pos < len(content) and content[pos].isspace():
+                    pos += 1
+            except json.JSONDecodeError:
+                print(f"Error decoding JSON object near position {pos}. Skipping rest of file.")
+                break
 
-            if not markdown_content:
-                print(f"Could not extract main content from {url}. Skipping.")
-                return
+    transformed_rules = []
+    for rule in all_rules:
+        rule_type = rule.get("category")
+        rule_id = rule.get("id")
 
-            if not os.path.exists(OUTPUT_DIR):
-                os.makedirs(OUTPUT_DIR)
+        new_rule = {
+            "id": rule_id,
+            "description": rule.get("message"),
+            "severity": rule.get("severity"),
+            "type": rule_type
+        }
 
-            output_path = os.path.join(OUTPUT_DIR, output_filename)
-            with open(output_path, 'w', encoding='utf-8') as f:
-                f.write(markdown_content)
+        if rule_type == "regex" and "pattern" in rule:
+            new_rule["pattern"] = rule.get("pattern")
+            transformed_rules.append(new_rule)
+        elif rule_type == "heuristic" and rule_id in HEURISTIC_CHECKS:
+            new_rule["check"] = HEURISTIC_CHECKS[rule_id]
+            transformed_rules.append(new_rule)
+            
+    return transformed_rules
 
-            print(f"Successfully extracted and saved content to {output_path}")
-            return
 
-        except Error as e:
-            print(f"Attempt {attempt + 1}/{MAX_RETRIES}: A Playwright error occurred for {url}: {e}")
-            if page:
-                page.close()
-            if attempt < MAX_RETRIES - 1:
-                time.sleep(2 ** attempt)
-            else:
-                print(f"Failed to scrape {url} after {MAX_RETRIES} attempts.")
-        except Exception as e:
-            print(f"Attempt {attempt + 1}/{MAX_RETRIES}: A general error occurred for {url}: {e}")
-            if page:
-                page.close()
-            if attempt < MAX_RETRIES - 1:
-                time.sleep(2 ** attempt)
-            else:
-                print(f"Failed to process {url} after {MAX_RETRIES} attempts.")
+def build_github_url(file_name, line_number):
+    """
+    Constructs a permalink to a specific line in a file on GitHub.
+    """
+    server_url = os.getenv("GITHUB_SERVER_URL")
+    repository = os.getenv("GITHUB_REPOSITORY")
+    sha = os.getenv("GITHUB_SHA")
+
+    if not all([server_url, repository, sha]):
+        return f"local://{file_name}#L{line_number}"
+
+    return f"{server_url}/{repository}/blob/{sha}/{MARKDOWN_DIR}/{file_name}#L{line_number}"
+
+
+def lint_file(file_path, file_name, linting_rules):
+    """
+    Applies all defined linting rules to a single file.
+    """
+    findings = []
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            for line_num, line in enumerate(f, 1):
+                for rule in linting_rules:
+                    issue_found = False
+                    try:
+                        if rule['type'] == 'regex':
+                            if re.search(rule['pattern'], line, re.IGNORECASE):
+                                issue_found = True
+                        elif rule['type'] == 'heuristic':
+                            if rule['check'](line):
+                                issue_found = True
+                    # --- ROBUSTNESS IMPROVEMENT ---
+                    # Catch invalid regex patterns from the rulebook and skip them.
+                    except re.error as e:
+                        print(f"WARNING: Skipping invalid regex for rule '{rule['id']}': {e}")
+                        # To prevent this warning on every line, we can disable the rule.
+                        rule['type'] = 'invalid' 
+                        continue # Move to the next rule
+
+                    if issue_found:
+                        finding = {
+                            "fileName": file_name,
+                            "lineNumber": line_num,
+                            "ruleId": rule['id'],
+                            "ruleDescription": rule['description'],
+                            "severity": rule['severity'],
+                            "offendingText": line.strip(),
+                            "githubUrl": build_github_url(file_name, line_num)
+                        }
+                        findings.append(finding)
+    except FileNotFoundError:
+        print(f"Error: Could not find file {file_path}")
+
+    return findings
 
 
 def main():
     """
-    Main function to orchestrate the scraping process.
+    Main function to orchestrate the linting process and generate the report.
     """
-    try:
-        with open(CONFIG_FILE, 'r') as f:
-            targets = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: Configuration file '{CONFIG_FILE}' not found.")
-        return
+    all_findings = []
+    linting_rules = load_rules_from_rulebook(RULEBOOK_FILE)
+    
+    if not linting_rules:
+        print("No linting rules were loaded. An empty report will be created.")
+    else:
+        print(f"Successfully loaded {len(linting_rules)} rules from {RULEBOOK_FILE}.")
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        # Create a single browser context with a random user agent.
-        context = browser.new_context(user_agent=random.choice(USER_AGENTS))
-        
-        for target in targets:
-            scrape_url(context, target)
+    if os.path.exists(MARKDOWN_DIR):
+        for file_name in os.listdir(MARKDOWN_DIR):
+            if file_name.endswith('.md'):
+                file_path = os.path.join(MARKDOWN_DIR, file_name)
+                print(f"Linting {file_path}...")
+                findings = lint_file(file_path, file_name, linting_rules)
+                all_findings.extend(findings)
+    else:
+        print(f"Markdown directory '{MARKDOWN_DIR}' not found. No files to lint.")
 
-        browser.close()
+    with open(REPORT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(all_findings, f, indent=2)
+
+    print(f"Linting complete. Report generated at {REPORT_FILE}")
+    print(f"Found {len(all_findings)} issues.")
+
 
 if __name__ == "__main__":
     main()
