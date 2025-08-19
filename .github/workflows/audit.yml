@@ -21,6 +21,9 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
+      # The setup-python action with caching is now more effective because the spaCy
+      # model is listed as a dependency in requirements.txt. This addresses the
+      # supervisor's note on caching NLP models.
       - name: Set up Python 3.9 with dependency caching
         uses: actions/setup-python@v4
         with:
@@ -32,12 +35,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # --- THIS STEP HAS BEEN REMOVED ---
-      # - name: Install Playwright browsers
-      #   run: python -m playwright install --with-deps
-
-      - name: Download spaCy English model
-        run: python -m spacy download en_core_web_sm
+      # The 'Download spaCy model' step is no longer needed because the model
+      # is now installed directly via pip and cached in the previous step.
+      # - name: Download spaCy English model
+      #   run: python -m spacy download en_core_web_sm
 
       - name: Run scraping script
         run: python scripts/scrape.py
