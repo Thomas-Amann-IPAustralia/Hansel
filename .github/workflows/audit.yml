@@ -21,9 +21,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      # --- MODIFIED STEP ---
-      # Added caching to the Python setup. This will save installed packages
-      # and restore them on subsequent runs, dramatically speeding up the workflow.
       - name: Set up Python 3.9 with dependency caching
         uses: actions/setup-python@v4
         with:
@@ -44,10 +41,6 @@ jobs:
       - name: Run scraping script
         run: python scripts/scrape.py
 
-      # --- DEBUGGING STEP ADDED HERE ---
-      - name: List files after scraping
-        run: ls -R
-
       - name: Run linting script
         env:
           # Pass GitHub context variables to the linting script to build permalinks
@@ -56,8 +49,16 @@ jobs:
           GITHUB_SHA: ${{ github.sha }}
         run: python scripts/lint.py
 
-      - name: Upload audit report
+      - name: Upload audit report as artifact
         uses: actions/upload-artifact@v4
         with:
           name: audit-report
           path: report.json
+      
+      # --- NEW STEP ADDED HERE ---
+      # This step commits the generated report.json back to the repository.
+      - name: Commit report.json
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: Update content audit report"
+          file_pattern: report.json
