@@ -5,53 +5,50 @@ import os
 import random
 import time
 from playwright.sync_api import sync_playwright, Error
-# trafilatura is a powerful library for extracting the main content from a webpage.
 import trafilatura
 
 # --- Configuration ---
 CONFIG_FILE = 'config.json'
 OUTPUT_DIR = 'markdown'
-MAX_RETRIES = 3 # Number of times to retry a failed scrape
-
-# A list of common browser user agents to rotate through.
+MAX_RETRIES = 3
 USER_AGENTS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/108.0',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/108.0',
 ]
 
-def scrape_url(browser, target):
+def scrape_url(context, target):
     """
-    Scrapes a single URL using intelligent content extraction and retry logic.
+    Scrapes a single URL by using Playwright to load the page and then
+    trafilatura to intelligently extract the main content.
     """
     url = target['url']
     output_filename = target['output']
 
-    # Gracefully handle links that point directly to PDF files.
     if url.lower().endswith('.pdf'):
         print(f"Skipping PDF link: {url}")
         return
 
     print(f"Processing {url}...")
-    
+    page = None
     for attempt in range(MAX_RETRIES):
         try:
-            # Use trafilatura to download and intelligently extract the main content.
-            # It handles many anti-scraping measures and focuses on the core text.
-            downloaded = trafilatura.fetch_url(url)
-            
-            if downloaded is None:
-                print(f"Attempt {attempt + 1}/{MAX_RETRIES}: Failed to download content from {url}. Retrying...")
-                time.sleep(2 ** attempt) # Exponential backoff: 1s, 2s, 4s
+            page = context.new_page()
+            # Use Playwright to robustly navigate and load the page content.
+            page.goto(url, wait_until='networkidle', timeout=60000)
+            html_content = page.content()
+            page.close() # Close the page to conserve resources
+
+            if not html_content:
+                print(f"Attempt {attempt + 1}/{MAX_RETRIES}: Page loaded but content is empty. Retrying...")
+                time.sleep(2 ** attempt)
                 continue
 
-            # Extract the main content and convert it to Markdown.
-            # This is much cleaner than scraping the whole body.
-            markdown_content = trafilatura.extract(downloaded, output_format='markdown', include_comments=False, include_tables=True)
+            # Now, use trafilatura on the fetched HTML to extract the main article.
+            markdown_content = trafilatura.extract(html_content, output_format='markdown', include_comments=False, include_tables=True)
 
             if not markdown_content:
-                print(f"Could not extract main content from {url}. The page might be empty or a non-standard format. Skipping.")
+                print(f"Could not extract main content from {url}. Skipping.")
                 return
 
             if not os.path.exists(OUTPUT_DIR):
@@ -62,14 +59,25 @@ def scrape_url(browser, target):
                 f.write(markdown_content)
 
             print(f"Successfully extracted and saved content to {output_path}")
-            return # Exit the retry loop on success
+            return
 
-        except Exception as e:
-            print(f"Attempt {attempt + 1}/{MAX_RETRIES}: An error occurred for {url}: {e}")
+        except Error as e:
+            print(f"Attempt {attempt + 1}/{MAX_RETRIES}: A Playwright error occurred for {url}: {e}")
+            if page:
+                page.close()
             if attempt < MAX_RETRIES - 1:
-                time.sleep(2 ** attempt) # Wait before retrying
+                time.sleep(2 ** attempt)
             else:
                 print(f"Failed to scrape {url} after {MAX_RETRIES} attempts.")
+        except Exception as e:
+            print(f"Attempt {attempt + 1}/{MAX_RETRIES}: A general error occurred for {url}: {e}")
+            if page:
+                page.close()
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(2 ** attempt)
+            else:
+                print(f"Failed to process {url} after {MAX_RETRIES} attempts.")
+
 
 def main():
     """
@@ -82,15 +90,13 @@ def main():
         print(f"Error: Configuration file '{CONFIG_FILE}' not found.")
         return
 
-    # Playwright is still useful for its robust browser environment,
-    # even though trafilatura is handling the direct download.
     with sync_playwright() as p:
         browser = p.chromium.launch()
+        # Create a single browser context with a random user agent.
+        context = browser.new_context(user_agent=random.choice(USER_AGENTS))
         
-        # We don't need to create a page or context here anymore,
-        # but we pass the browser instance for potential future use.
         for target in targets:
-            scrape_url(browser, target)
+            scrape_url(context, target)
 
         browser.close()
 
