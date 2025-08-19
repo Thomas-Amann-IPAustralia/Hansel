@@ -1,3 +1,4 @@
 playwright
 markdownify
 spacy
+trafilatura
