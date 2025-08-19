@@ -1,0 +1,12 @@
+[
+  {
+    "url": "https://www.stylemanual.gov.au/grammar-punctuation-and-conventions/numbers-and-measurements/units-measurement",
+    "selector": "main#main-content",
+    "output": "style-manual-units.md"
+  },
+  {
+    "url": "https://www.dta.gov.au/help-and-advice/digital-service-standard/digital-service-standard-criteria/8-make-it-accessible",
+    "selector": ".au-body",
+    "output": "dta-accessibility.md"
+  }
+]
