@@ -29,7 +29,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install --prefer-binary -r requirements.txt
 
       - name: Install Playwright browsers
         run: python -m playwright install --with-deps
@@ -39,6 +39,10 @@ jobs:
 
       - name: Run scraping script
         run: python scripts/scrape.py
+
+      # --- DEBUGGING STEP ADDED HERE ---
+      - name: List files after scraping
+        run: ls -R
 
       - name: Run linting script
         env:
