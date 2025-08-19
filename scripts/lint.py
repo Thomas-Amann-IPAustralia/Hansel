@@ -1,113 +1,192 @@
-# scripts/scrape.py
+# scripts/lint.py
 
-import json
 import os
-from playwright.sync_api import sync_playwright
-from markdownify import markdownify as md
+import re
+import json
+import spacy
 
 # --- Configuration ---
-CONFIG_FILE = 'config.json'
-OUTPUT_DIR = 'markdown'
-# List of selectors for elements to be aggressively removed before markdown conversion.
-# This is crucial for cleaning the content of ads, navs, footers, etc.
-UNWANTED_ELEMENTS_SELECTORS = [
-    'script',
-    'style',
-    'header',
-    'footer',
-    'nav',
-    '.social-share',
-    '.related-articles',
-    '#comments',
-    '[aria-hidden="true"]',
-    'iframe'
-]
+MARKDOWN_DIR = 'markdown'
+REPORT_FILE = 'report.json'
+# The rulebook file is now the source of truth for all linting rules.
+RULEBOOK_FILE = 'Codebook.json' 
 
-def clean_html_content(page, selector):
+# Load the small English model for spaCy.
+# This model is efficient and sufficient for dependency parsing to detect passive voice.
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    print("spaCy model 'en_core_web_sm' not found. Please run 'python -m spacy download en_core_web_sm'")
+    exit()
+
+
+# --- Heuristic Rule Implementation ---
+
+def check_passive_voice(text):
     """
-    Uses Playwright's DOM evaluation to remove unwanted elements from the main content.
-    This pre-processing step is vital for generating clean Markdown.
+    Heuristic check for passive voice using spaCy's dependency parser.
+    A sentence is likely passive if it contains a passive nominal subject ('nsubjpass')
+    or a passive auxiliary ('auxpass').
     """
-    main_content_handle = page.query_selector(selector)
-    if not main_content_handle:
-        print(f"Warning: Content selector '{selector}' not found on page.")
-        return ""
+    doc = nlp(text)
+    for token in doc:
+        if token.dep_ in ("nsubjpass", "auxpass"):
+            return True
+    return False
 
-    # This JavaScript function will be executed in the browser's context.
-    # It finds the main content element, clones it, removes unwanted children from the clone,
-    # and then returns the cleaned HTML.
-    cleaned_html = main_content_handle.evaluate(f"""(element) => {{
-        const clonedElement = element.cloneNode(true);
-        const selectorsToRemove = {json.dumps(UNWANTED_ELEMENTS_SELECTORS)};
-
-        // Remove unwanted elements from the cloned node
-        selectorsToRemove.forEach(sel => {{
-            clonedElement.querySelectorAll(sel).forEach(el => el.remove());
-        }});
-
-        return clonedElement.innerHTML;
-    }}""")
-
-    return cleaned_html
+# This dictionary maps the ID of a heuristic rule from the rulebook
+# to the Python function that implements its logic.
+HEURISTIC_CHECKS = {
+    "APS-GPC-Partsofsentences-H-009": check_passive_voice,
+    # Add other heuristic check functions here as they are implemented.
+    # "APS-GPC-Someother-H-001": check_something_else,
+}
 
 
-def scrape_url(page, target):
+def load_rules_from_rulebook(file_path):
     """
-    Scrapes a single URL based on the configuration provided.
+    Loads, parses, and transforms linting rules from the external rulebook file.
     """
-    url = target['url']
-    selector = target['selector']
-    output_filename = target['output']
+    if not os.path.exists(file_path):
+        print(f"Error: Rulebook file '{file_path}' not found.")
+        return []
 
-    print(f"Scraping {url}...")
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # The rulebook file is a stream of JSON objects, not a valid JSON array.
+    # We can make it a valid array by wrapping it in brackets and adding commas between objects.
+    json_array_str = '[' + content.replace('}\n{', '},{') + ']'
+    
     try:
-        page.goto(url, wait_until='domcontentloaded')
+        rule_sets = json.loads(json_array_str)
+    except json.JSONDecodeError as e:
+        print(f"Error decoding JSON from rulebook: {e}")
+        return []
+
+    all_rules = []
+    for rule_set in rule_sets:
+        if 'rules' in rule_set:
+            all_rules.extend(rule_set['rules'])
+
+    # Transform the loaded rules into the format the linter expects.
+    transformed_rules = []
+    for rule in all_rules:
+        rule_type = rule.get("category")
+        rule_id = rule.get("id")
+
+        new_rule = {
+            "id": rule_id,
+            "description": rule.get("message"),
+            "severity": rule.get("severity"),
+            "type": rule_type
+        }
+
+        if rule_type == "regex":
+            new_rule["pattern"] = rule.get("pattern")
+            if not new_rule["pattern"]:
+                print(f"Warning: Regex rule {rule_id} has no pattern. Skipping.")
+                continue
+        elif rule_type == "heuristic":
+            check_function = HEURISTIC_CHECKS.get(rule_id)
+            if check_function:
+                new_rule["check"] = check_function
+            else:
+                # Skip heuristic rules that don't have a check function implemented in this script.
+                # This allows the rulebook to contain rules that are not yet implemented.
+                continue
+        else:
+            print(f"Warning: Unknown rule type '{rule_type}' for rule {rule_id}. Skipping.")
+            continue
         
-        # Get the cleaned HTML content from the specified selector
-        html_content = clean_html_content(page, selector)
+        transformed_rules.append(new_rule)
 
-        if not html_content:
-            print(f"Could not extract content for {url}. Skipping.")
-            return
+    return transformed_rules
 
-        # Convert the cleaned HTML to Markdown
-        markdown_content = md(html_content, heading_style="ATX")
 
-        # Ensure the output directory exists
-        if not os.path.exists(OUTPUT_DIR):
-            os.makedirs(OUTPUT_DIR)
+def build_github_url(file_name, line_number):
+    """
+    Constructs a permalink to a specific line in a file on GitHub.
+    It reads repository information from environment variables set by the GitHub Action.
+    """
+    server_url = os.getenv("GITHUB_SERVER_URL")
+    repository = os.getenv("GITHUB_REPOSITORY")
+    sha = os.getenv("GITHUB_SHA")
 
-        # Save the Markdown content to a file
-        output_path = os.path.join(OUTPUT_DIR, output_filename)
-        with open(output_path, 'w', encoding='utf-8') as f:
-            f.write(markdown_content)
+    if not all([server_url, repository, sha]):
+        # Return a placeholder if environment variables are not set (e.g., local run)
+        return f"local://{file_name}#L{line_number}"
 
-        print(f"Successfully saved content to {output_path}")
+    return f"{server_url}/{repository}/blob/{sha}/{MARKDOWN_DIR}/{file_name}#L{line_number}"
 
-    except Exception as e:
-        print(f"An error occurred while scraping {url}: {e}")
+
+def lint_file(file_path, file_name, linting_rules):
+    """
+    Applies all defined linting rules to a single file.
+    """
+    findings = []
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            for line_num, line in enumerate(f, 1):
+                for rule in linting_rules:
+                    issue_found = False
+                    # Handle regex-based rules
+                    if rule['type'] == 'regex':
+                        if re.search(rule['pattern'], line, re.IGNORECASE):
+                            issue_found = True
+                    # Handle heuristic-based rules (e.g., spaCy)
+                    elif rule['type'] == 'heuristic':
+                        if rule['check'](line):
+                            issue_found = True
+
+                    if issue_found:
+                        finding = {
+                            "fileName": file_name,
+                            "lineNumber": line_num,
+                            "ruleId": rule['id'],
+                            "ruleDescription": rule['description'],
+                            "severity": rule['severity'],
+                            "offendingText": line.strip(),
+                            "githubUrl": build_github_url(file_name, line_num)
+                        }
+                        findings.append(finding)
+    except FileNotFoundError:
+        print(f"Error: Could not find file {file_path}")
+
+    return findings
 
 
 def main():
     """
-    Main function to orchestrate the scraping process.
+    Main function to orchestrate the linting process and generate the report.
     """
-    # Load configuration from JSON file
-    try:
-        with open(CONFIG_FILE, 'r') as f:
-            targets = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: Configuration file '{CONFIG_FILE}' not found.")
+    # Load rules dynamically from the rulebook instead of using a hardcoded list.
+    linting_rules = load_rules_from_rulebook(RULEBOOK_FILE)
+    if not linting_rules:
+        print("No linting rules were loaded. Exiting.")
         return
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page()
+    print(f"Successfully loaded {len(linting_rules)} rules from {RULEBOOK_FILE}.")
 
-        for target in targets:
-            scrape_url(page, target)
+    all_findings = []
+    if not os.path.exists(MARKDOWN_DIR):
+        print(f"Markdown directory '{MARKDOWN_DIR}' not found. Run scrape.py first.")
+        return
 
-        browser.close()
+    for file_name in os.listdir(MARKDOWN_DIR):
+        if file_name.endswith('.md'):
+            file_path = os.path.join(MARKDOWN_DIR, file_name)
+            print(f"Linting {file_path}...")
+            findings = lint_file(file_path, file_name, linting_rules)
+            all_findings.extend(findings)
+
+    # Write the findings to the JSON report file
+    with open(REPORT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(all_findings, f, indent=2)
+
+    print(f"Linting complete. Report generated at {REPORT_FILE}")
+    print(f"Found {len(all_findings)} issues.")
+
 
 if __name__ == "__main__":
     main()
