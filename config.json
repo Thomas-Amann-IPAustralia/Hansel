@@ -1,12 +1,10 @@
 [
   {
     "url": "https://ipfirstresponse.ipaustralia.gov.au/options/develop-strategy-manage-your-ip",
-    "selector": ".option-overview-body",
     "output": "Develop-a-strategy-to-manage-your-IP.md"
   },
   {
-    "url": "https://www.dta.gov.au/help-and-advice/digital-service-standard/digital-service-standard-criteria/8-make-it-accessible",
-    "selector": ".au-body",
-    "output": "dta-accessibility.md"
+    "url": "https://www.tomamann.com/about",
+    "output": "TomAmannBiography.md"
   }
 ]
