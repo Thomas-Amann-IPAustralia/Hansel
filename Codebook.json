@@ -1,0 +1,1120 @@
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Names and terms",
+  "RuleSet": "Australian place names",
+  "rules": [
+    {"id":"APS-GPC-Australianplacenames-H-001","title":"Use official place names","category":"heuristic","severity":"warn","message":"Check spelling and capitalisation against the official authority."},
+    {"id":"APS-GPC-Australianplacenames-R-001","title":"AU place names: standard alphabet (no diacritics)","category":"regex","severity":"warn","pattern":"[^\\x00-\\x7F]","message":"Avoid diacritics and non-ASCII letters in Australian place names."},
+    {"id":"APS-GPC-Australianplacenames-R-002","title":"Place names are not possessive","category":"regex","severity":"warn","pattern":"\\b[A-Z][a-z]+['’]s\\b","message":"Avoid possessive ’s in official Australian place names."},
+    {"id":"APS-GPC-Australianplacenames-H-002","title":"Hyphens/apostrophes only if official","category":"heuristic","severity":"info","message":"Use hyphens/apostrophes only when they are part of the official name."},
+    {"id":"APS-GPC-Australianplacenames-R-003","title":"Dual names use a spaced slash","category":"regex","severity":"error","pattern":"\\S/\\S","message":"For dual names, put single spaces on both sides of the slash."},
+    {"id":"APS-GPC-Australianplacenames-H-003","title":"Capitalise place/region names","category":"heuristic","severity":"warn","message":"Capitalise proper place and region names."},
+    {"id":"APS-GPC-Australianplacenames-R-004","title":"Capitalise road/street types in names","category":"regex","severity":"warn","pattern":"\\b[A-Z][a-z]+\\s(?:street|road|terrace|highway|avenue|drive|crescent|parade|place|grove|circuit|esplanade|heights)\\b","message":"Capitalise the thoroughfare type when it forms part of the name."},
+    {"id":"APS-GPC-Australianplacenames-R-005","title":"Address abbreviations: no full stops","category":"regex","severity":"error","pattern":"\\b(?:Av|Cct|Cr|Ct|Dr|Esp|Gr|Hts|Hwy|Pde|Pl|Rd|St|Tce)\\.","message":"Do not use full stops with shortened address forms."},
+    {"id":"APS-GPC-Australianplacenames-H-004","title":"Common address types: approved list","category":"heuristic","severity":"info","message":"Prefer standard abbreviations for address types (Av, Cct, Cr, Ct, Dr, Esp, Gr, Hts, Hwy, Pde, Pl, Rd, St, Tce)."},
+    {"id":"APS-GPC-Australianplacenames-R-006","title":"Last line of AU address format","category":"regex","severity":"error","pattern":"^[A-Z ]+\\s(?:NSW|VIC|QLD|WA|SA|TAS|ACT|NT)\\s\\d{4}$","message":"Use ALL CAPS locality + state/territory code + 4-digit postcode; no punctuation."},
+    {"id":"APS-GPC-Australianplacenames-R-007","title":"State/territory short forms: no full stops","category":"regex","severity":"error","pattern":"\\b(?:NSW|VIC|QLD|WA|SA|TAS|ACT|NT|Vic|Tas|Qld)\\.","message":"Do not add full stops to state/territory abbreviations."},
+    {"id":"APS-GPC-Australianplacenames-H-005","title":"Short forms only in 4 situations","category":"heuristic","severity":"warn","message":"Use shortened state/territory names only when adjectival, space-limited, avoiding repetition, or in addresses."},
+    {"id":"APS-GPC-Australianplacenames-H-006","title":"Buildings/structures/public places: initial caps","category":"heuristic","severity":"info","message":"Capitalise proper names of buildings/structures/public places; keep generic/plurals lower case."},
+    {"id":"APS-GPC-Australianplacenames-H-007","title":"Private property names: initial caps","category":"heuristic","severity":"info","message":"Capitalise names of private properties (e.g., stations, homesteads)."},
+    {"id":"APS-GPC-Australianplacenames-R-008","title":"No punctuation in address service lines","category":"regex","severity":"warn","pattern":"\\b(?:P\\.?O\\.?\\sBox|R\\.?M\\.?B\\.?)(?=\\s)","message":"Write ‘PO Box’ and ‘RMB’ without full stops in addresses."},
+    {"id":"APS-GPC-Australianplacenames-R-009","title":"Slash spacing (generic check)","category":"regex","severity":"warn","pattern":"(?:^|\\S)/(?:\\S|$)","message":"Ensure a single space on both sides of ‘/’ where required."},
+    {"id":"APS-GPC-Australianplacenames-H-008","title":"Generic plurals lower case after named features","category":"heuristic","severity":"info","message":"Keep plural generic terms in lower case when following named features."},
+    {"id":"APS-GPC-Australianplacenames-H-009","title":"List states/territories consistently","category":"heuristic","severity":"info","message":"Order multiple jurisdictions consistently (e.g., alphabetical) suited to context."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Names and terms",
+  "RuleSet": "Commercial terms",
+  "rules": [
+    {"id":"APS-GPC-Commercialterms-H-001","title":"Prefer generic product terms","category":"heuristic","severity":"warn","message":"Use a common, non‑proprietary word instead of a brand where possible."},
+    {"id":"APS-GPC-Commercialterms-H-002","title":"Capitalise proprietary names","category":"heuristic","severity":"warn","message":"Use initial capitals for trade marks, brands and business names (except stylised brands)."},
+    {"id":"APS-GPC-Commercialterms-H-003","title":"Capitalise proprietary drug names; lowercase generics","category":"heuristic","severity":"warn","message":"Use capitals for proprietary drug/chemical names; lowercase for generic names."},
+    {"id":"APS-GPC-Commercialterms-H-004","title":"Preserve brand stylisation (mixed/lowercase)","category":"heuristic","severity":"error","message":"Write brands exactly as styled by the owner (casing/spacing)."},
+    {"id":"APS-GPC-Commercialterms-H-005","title":"Don’t auto-capitalise lowercase brands at sentence start","category":"heuristic","severity":"warn","message":"Keep a brand’s lowercase style even at the start of a sentence."},
+    {"id":"APS-GPC-Commercialterms-R-001","title":"Spell ‘trade mark’ as 2 words","category":"regex","severity":"error","pattern":"\\b[Tt]rade-?mark(s)?\\b","message":"Use ‘trade mark’ as 2 words. Replace one-word or hyphenated forms."},
+    {"id":"APS-GPC-Commercialterms-R-002","title":"Avoid ® and ™ symbols","category":"regex","severity":"warn","pattern":"[®™]","message":"Avoid using ® or ™ in running text unless absolutely required."},
+    {"id":"APS-GPC-Commercialterms-H-006","title":"Use brand name only for that brand","category":"heuristic","severity":"warn","message":"If a term is a registered trade mark, use it only for that brand and capitalise it."},
+    {"id":"APS-GPC-Commercialterms-H-007","title":"Treat genericised former brands as common nouns","category":"heuristic","severity":"info","message":"Use lowercase for genericised terms (e.g. aspirin, elevator, dry ice, linoleum, trampoline)."},
+    {"id":"APS-GPC-Commercialterms-R-003","title":"Lowercase ‘google’ when used as a verb","category":"regex","severity":"warn","pattern":"\\bGoogle(?:d|s|ing)\\b","message":"Use lowercase ‘google’ when it functions as a verb."},
+    {"id":"APS-GPC-Commercialterms-H-008","title":"Don’t rely on dictionaries for trade mark status","category":"heuristic","severity":"info","message":"Dictionary treatment doesn’t determine legal status; verify separately."},
+    {"id":"APS-GPC-Commercialterms-H-009","title":"Reference Australian trade mark search","category":"heuristic","severity":"info","message":"When in doubt, verify status using Australian trade mark search."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Names and terms",
+  "RuleSet": "Government terms",
+  "rules": [
+    {"id":"APS-GPC-Governmentterms-H-001","title":"Capitalise “Australian Government” only when words occur together","category":"heuristic","severity":"warn","message":"Use “Australian Government” (caps) only when the 2 words occur together; use lower-case “government” for generic mentions."},
+    {"id":"APS-GPC-Governmentterms-R-001","title":"Bench is lower case","category":"regex","severity":"warn","pattern":"\\bthe\\s+Bench\\b","message":"Use lower case for “bench” and “full bench”."},
+    {"id":"APS-GPC-Governmentterms-H-002","title":"Capitalise “the Budget” (proper noun), lower generic budget","category":"heuristic","severity":"info","message":"Use cap B for the federal “Budget”; lower case for generic budget terms and adjectival uses."},
+    {"id":"APS-GPC-Governmentterms-R-002","title":"Capitalise “the Cabinet”","category":"regex","severity":"error","pattern":"\\bthe\\s+cabinet\\b","message":"Always capitalise “the Cabinet”."},
+    {"id":"APS-GPC-Governmentterms-R-003","title":"Avoid “Commonwealth government” for Australian Government","category":"regex","severity":"error","pattern":"\\bCommonwealth\\s+government\\b","message":"Use “Australian Government”, not “Commonwealth government” (unless referring to “Commonwealth of Australia” as a constitutional name)."},
+    {"id":"APS-GPC-Governmentterms-R-004","title":"Capitalise “the Crown”","category":"regex","severity":"error","pattern":"\\bthe\\s+crown\\b","message":"Always capitalise “the Crown”."},
+    {"id":"APS-GPC-Governmentterms-H-003","title":"Departments/agencies: cap formal names only","category":"heuristic","severity":"warn","message":"Cap only formal department/agency names; use lower case for generic “the department/agency/commission/authority”."},
+    {"id":"APS-GPC-Governmentterms-R-005","title":"Always capitalise “the Treasury”","category":"regex","severity":"error","pattern":"\\bthe\\s+treasury\\b","message":"Use “the Treasury” with a capital T."},
+    {"id":"APS-GPC-Governmentterms-H-004","title":"Divisions/groups: cap formal unit names; lower generic","category":"heuristic","severity":"info","message":"Use caps for formal internal unit names; lower case for generic references like “the division” or “the group”."},
+    {"id":"APS-GPC-Governmentterms-H-005","title":"Capitalise “Federal” only in formal names","category":"heuristic","severity":"info","message":"Use “Federal” only when it is part of a formal name; otherwise use lower case “federal”."},
+    {"id":"APS-GPC-Governmentterms-H-006","title":"Capitalise “Federation” for 1901 event only","category":"heuristic","severity":"info","message":"Use cap F when referring to Australia’s Federation in 1901; otherwise follow term usage conventions."},
+    {"id":"APS-GPC-Governmentterms-H-007","title":"Government: cap only in formal names","category":"heuristic","severity":"warn","message":"Capitalise “Government” only when part of a formal name (e.g., Victorian Government); otherwise lower case."},
+    {"id":"APS-GPC-Governmentterms-H-008","title":"Programs/treaties: cap full names; lower generic/abbrev generics","category":"heuristic","severity":"info","message":"Use caps for full names and specific abbreviations; lower case for generic references like “the initiative”."},
+    {"id":"APS-GPC-Governmentterms-H-009","title":"Heads of state/PM titles: cap current holders; lower generic/former","category":"heuristic","severity":"warn","message":"Capitalise formal titles of current office holders; use lower case for generic mentions and previous incumbents."},
+    {"id":"APS-GPC-Governmentterms-H-010","title":"Legislation terms: cap Act/Ordinance/Regulation/Bill; lower generic","category":"heuristic","severity":"warn","message":"Use initial caps for Act, Ordinance, Regulation, Bill and for any Act references; lower case for generic bills, regulations and ordinances."},
+    {"id":"APS-GPC-Governmentterms-H-011","title":"Ministers/Secretaries: cap titles; lower generic","category":"heuristic","severity":"warn","message":"Cap official titles; use lower case for generic references to ministers and secretaries."},
+    {"id":"APS-GPC-Governmentterms-R-006","title":"Prepositions: “Minister for…”, “Secretary of…”","category":"regex","severity":"error","pattern":"\\b(?:Minister\\s+of\\b|Secretary\\s+for\\s+the\\s+Department)","message":"Use “Minister for [Portfolio]” and “Secretary of the Department of …”."},
+    {"id":"APS-GPC-Governmentterms-H-012","title":"Principals/CEOs titles: cap formal; lower generic/plurals","category":"heuristic","severity":"info","message":"Cap titles like “Chief Justice”, “Attorney‑General”, “Premier of …”; lower case for generic plurals (e.g., attorneys‑general)."},
+    {"id":"APS-GPC-Governmentterms-H-013","title":"States/territories: cap formal names; lower generic/plurals; NT special case","category":"heuristic","severity":"warn","message":"Use caps for formal state/territory names; lower case for generic/plural; “the Territory” may be used for NT."},
+    {"id":"APS-GPC-Governmentterms-H-014","title":"Parliamentary terms: cap formal names/titles; lower generic","category":"heuristic","severity":"warn","message":"Cap Parliament House, Parliamentary Library, chamber officers; lower “parliamentary procedures”, “member of parliament”, etc."},
+    {"id":"APS-GPC-Governmentterms-H-015","title":"Houses of parliament: cap chambers; lower “houses of parliament”","category":"heuristic","severity":"warn","message":"Cap “the Senate”, “the House of Representatives”, and equivalents; use lower case for the generic phrase “houses of parliament”."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Names and terms",
+  "RuleSet": "Medical terms",
+  "rules": [
+    {"id":"APS-GPC-Medicalterms-H-001","title":"Lower-case general medical terms","category":"heuristic","severity":"warn","message":"Use lower case for diseases, viruses, diagnostic procedures, syndromes and anatomical parts unless they are proper nouns."},
+    {"id":"APS-GPC-Medicalterms-H-002","title":"Capitalise genus names","category":"heuristic","severity":"info","message":"Capitalise the genus when writing scientific names."},
+    {"id":"APS-GPC-Medicalterms-H-003","title":"Italicise organism names","category":"heuristic","severity":"error","message":"Scientific names of infectious organisms must be italicised."},
+    {"id":"APS-GPC-Medicalterms-R-001","title":"Species epithet is lower case (in italics)","category":"regex","severity":"error","pattern":"\\*([A-Z][a-z]+)\\s+([A-Z][a-z]+)\\*","message":"In italicised binomials, the species epithet must be lower case (e.g. *Streptococcus pneumoniae*)."},
+    {"id":"APS-GPC-Medicalterms-R-002","title":"Genus is capitalised (in italics)","category":"regex","severity":"error","pattern":"\\*([a-z]+)\\s+([a-z]+)\\*","message":"In italicised binomials, capitalise the genus (e.g. *Streptococcus pneumoniae*)."},
+    {"id":"APS-GPC-Medicalterms-R-003","title":"Acronym in caps after full term","category":"regex","severity":"warn","pattern":"\\b[a-z][\\w\\s-]+\\s+\\(([a-z]{2,})\\)","message":"Write acronyms/initialisms in UPPER CASE in parentheses after the full term."},
+    {"id":"APS-GPC-Medicalterms-H-004","title":"Full term is lower case (unless proper/genus)","category":"heuristic","severity":"info","message":"Spell out the full term in lower case before the acronym unless it includes a proper name or a genus."},
+    {"id":"APS-GPC-Medicalterms-R-004","title":"Drug: generic lower case + brand in parentheses","category":"regex","severity":"warn","pattern":"\\b([A-Z][a-z]+)\\s+\\([A-Za-z][A-Za-z0-9]+\\)","message":"Use a lower‑case generic drug name, with any Brand in parentheses (e.g. paracetamol (Panadol))."},
+    {"id":"APS-GPC-Medicalterms-H-005","title":"Avoid brand names alone for drugs","category":"heuristic","severity":"info","message":"Prefer generic drug names to brands unless there is a specific need to mention the brand."},
+    {"id":"APS-GPC-Medicalterms-R-005","title":"Person‑first language","category":"regex","severity":"error","pattern":"\\b(diabetics?|asthma\\s+sufferers?|cancer\\s+patient[s]?)\\b","message":"Use person‑first language (e.g. 'people with asthma', not 'Asthma sufferers')."},
+    {"id":"APS-GPC-Medicalterms-H-006","title":"Scientific name in parentheses, not 'or'","category":"heuristic","severity":"warn","message":"If providing both common and scientific names, put the scientific name in parentheses, not linked with 'or'."},
+    {"id":"APS-GPC-Medicalterms-R-006","title":"Eponyms: non‑possessive forms (discoverers/describers)","category":"regex","severity":"error","pattern":"\\b(Alzheimer'?s\\s+disease|Down'?s\\s+syndrome|Henle'?s\\s+loop)\\b","message":"Use non‑possessive forms: 'Alzheimer disease', 'Down syndrome', 'Henle loop'."},
+    {"id":"APS-GPC-Medicalterms-R-007","title":"Eponyms: possessive forms (named for sufferers)","category":"regex","severity":"warn","pattern":"\\b(Lou\\s+Gehrig(?:s)?\\s+disease|Legionnaires\\s+disease)\\b","message":"Use possessive forms where named for sufferers: 'Lou Gehrig’s disease', 'Legionnaires’ disease'."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Names and terms",
+  "RuleSet": "Nationalities, peoples and places outside Australia",
+  "rules": [
+    {"id":"APS-GPC-Nationalities,peoplesandplacesoutsideAustralia-H-001","title":"Prefer official country/place names","category":"heuristic","severity":"warn","message":"Use current official names from DFAT/UN/ABS and be consistent with the chosen form."},
+    {"id":"APS-GPC-Nationalities,peoplesandplacesoutsideAustralia-H-002","title":"Capitalise country and state names","category":"heuristic","severity":"warn","message":"Countries and their states/territories/provinces take initial capitals."},
+    {"id":"APS-GPC-Nationalities,peoplesandplacesoutsideAustralia-H-003","title":"Lowercase article ‘the’ before country names","category":"heuristic","severity":"info","message":"Don’t capitalise ‘the’ before country/place names unless starting a sentence."},
+    {"id":"APS-GPC-Nationalities,peoplesandplacesoutsideAustralia-H-004","title":"Use shortened country names only when clear","category":"heuristic","severity":"info","message":"Short forms are acceptable only when unambiguous to users."},
+    {"id":"APS-GPC-Nationalities,peoplesandplacesoutsideAustralia-H-005","title":"Use English forms for places (noted exceptions)","category":"heuristic","severity":"warn","message":"Prefer established English names; retain official non‑English forms where required (e.g. Côte d’Ivoire, Eswatini)."},
+    {"id":"APS-GPC-Nationalities,peoplesandplacesoutsideAustralia-R-001","title":"‘the Hague’ takes lowercase article","category":"regex","severity":"warn","pattern":"\\bThe Hague\\b","message":"Use “the Hague” (lowercase ‘the’)."},
+    {"id":"APS-GPC-Nationalities,peoplesandplacesoutsideAustralia-R-002","title":"Lowercase generic eponyms","category":"regex","severity":"warn","pattern":"\\b(?:Brussels sprout|Venetian blind|French door)s?\\b","message":"Lowercase generic eponyms: brussels sprout, venetian blind, french door."},
+    {"id":"APS-GPC-Nationalities,peoplesandplacesoutsideAustralia-H-006","title":"Capitalise recognised regions; lowercase generic compass areas","category":"heuristic","severity":"warn","message":"Capitalise official regions (e.g. South‑East Asia); lowercase generic compass areas (e.g. southern Germany)."},
+    {"id":"APS-GPC-Nationalities,peoplesandplacesoutsideAustralia-R-003","title":"Capitalise demonyms and peoples","category":"regex","severity":"error","pattern":"\\b(?:asian|european|sumatran|basque|emirati|filipino|turkish|melanesian|congolese|new zealander|hispanic|sentinelese|sámi|jewish|christian|muslim|buddhist|hindu|greek orthodox)\\b","message":"Nationalities, peoples and religions should be capitalised (e.g. Filipino, Emirati, Sámi, Jewish)."},
+    {"id":"APS-GPC-Nationalities,peoplesandplacesoutsideAustralia-R-004","title":"Avoid outdated country names","category":"regex","severity":"warn","pattern":"\\b(?:Zaire|Swaziland|Ivory Coast)\\b","message":"Replace deprecated names with current official names (e.g. Democratic Republic of the Congo, Eswatini, Côte d’Ivoire)."},
+    {"id":"APS-GPC-Nationalities,peoplesandplacesoutsideAustralia-H-007","title":"Language names may differ from country names","category":"heuristic","severity":"info","message":"Verify language names; they may not derive from the country name (e.g. Farsi in Iran; Dari and Pashto in Afghanistan)."},
+    {"id":"APS-GPC-Nationalities,peoplesandplacesoutsideAustralia-H-008","title":"Capitalise clans and language‑based modifiers","category":"heuristic","severity":"warn","message":"Capitalise clans (e.g. Clan Campbell) and language terms when used as proper modifiers (e.g. Hokkien‑speaking)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Names and terms",
+  "RuleSet": "Natural phenomena",
+  "rules": [
+    {"id":"APS-GPC-Naturalphenomena-R-001","title":"Lowercase generic climate terms","category":"regex","severity":"warn","pattern":"\\b(?:Climate change|Global warming|Greenhouse gases)\\b","message":"Write generic climate/weather terms in lower case (e.g. ‘climate change’)."},
+    {"id":"APS-GPC-Naturalphenomena-R-002","title":"Lowercase cloud types","category":"regex","severity":"warn","pattern":"\\b(?:Cumulonimbus|Cirrus|Stratus)\\b","message":"Use lower case for scientific cloud names (e.g. ‘cumulonimbus’)."},
+    {"id":"APS-GPC-Naturalphenomena-R-003","title":"Capitalise formal phenomenon names","category":"regex","severity":"warn","pattern":"(?i)\\b(indian ocean dipole|southern oscillation index)\\b","message":"Use Initial Caps for spelled-out phenomenon names (e.g. ‘Indian Ocean Dipole’)."},
+    {"id":"APS-GPC-Naturalphenomena-R-004","title":"Acronyms for phenomena are ALL CAPS","category":"regex","severity":"error","pattern":"\\b(?:Iod|Soi)\\b","message":"Write acronyms like IOD and SOI in full capitals."},
+    {"id":"APS-GPC-Naturalphenomena-R-005","title":"Cap event-type before named storms","category":"regex","severity":"error","pattern":"\\b(?:cyclone|tropical cyclone|severe tropical cyclone|hurricane|typhoon)\\s+[A-Z][a-z]+\\b","message":"Capitalise ‘Cyclone/Tropical Cyclone/Severe Tropical Cyclone/Hurricane/Typhoon’ when part of the official name."},
+    {"id":"APS-GPC-Naturalphenomena-H-001","title":"Include “Cyclone” on first mention","category":"heuristic","severity":"warn","message":"On first mention of a specific cyclone, include ‘Cyclone’ with the given name unless clearly established by surrounding text."},
+    {"id":"APS-GPC-Naturalphenomena-H-002","title":"No italics for phenomena terms","category":"heuristic","severity":"warn","message":"Avoid italics for climate and weather terminology."},
+    {"id":"APS-GPC-Naturalphenomena-H-003","title":"Drought naming case","category":"heuristic","severity":"info","message":"Capitalise formal period names (e.g. Millennium drought); keep generic year/descriptor terms lower case."},
+    {"id":"APS-GPC-Naturalphenomena-H-004","title":"Fire naming case","category":"heuristic","severity":"info","message":"Capitalise adjectival/proper parts of fire names; keep ‘fire/bushfires’ lower case."},
+    {"id":"APS-GPC-Naturalphenomena-R-006","title":"Year Location event casing","category":"regex","severity":"warn","pattern":"\\b\\d{4}\\s+[A-Z][A-Za-z]+(?:\\s[A-Z][A-Za-z]+)*\\s+(Flood|Earthquake|Tsunami)\\b","message":"In ‘year Location event’ names, only the location is capitalised; the event word is lower case (e.g. ‘1974 Brisbane flood’)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Names and terms",
+  "RuleSet": "Organisation names",
+  "rules": [
+    {"id":"APS-GPC-Organisationnames-H-001","title":"Write names exactly as the organisation does","category":"heuristic","severity":"error","message":"Match the organisation’s official spelling, capitals, punctuation and logograms; include all words and don’t add extras."},
+    {"id":"APS-GPC-Organisationnames-H-002","title":"Capitalise all‑lowercase brand names in body text","category":"heuristic","severity":"warn","message":"If an official name is all lowercase, use an initial capital in running text so it reads as a proper noun."},
+    {"id":"APS-GPC-Organisationnames-H-003","title":"Preserve medial capitals even at sentence start","category":"heuristic","severity":"warn","message":"Keep internal capitals (e.g. eBay) exactly as styled, including when the name begins a sentence."},
+    {"id":"APS-GPC-Organisationnames-H-004","title":"Don’t invent or misuse shortened forms","category":"heuristic","severity":"error","message":"Use a shortened form only if the organisation uses it; spell out the full name on first mention unless the name is known only by the shortened form."},
+    {"id":"APS-GPC-Organisationnames-R-001","title":"No full stops in Co/Inc","category":"regex","severity":"warn","pattern":"\\b(?:Co|Inc)\\.(?!\\s*[)”’\"\\]\\.!?\\-]*$)","message":"Remove the full stop after ‘Co’ or ‘Inc’ unless it ends the sentence."},
+    {"id":"APS-GPC-Organisationnames-R-002","title":"No full stops in Pty/Ltd","category":"regex","severity":"warn","pattern":"\\b(?:Pty|Ltd)\\.","message":"Don’t punctuate ‘Pty’ or ‘Ltd’ with a full stop."},
+    {"id":"APS-GPC-Organisationnames-H-005","title":"First mention uses full legal name","category":"heuristic","severity":"warn","message":"Use the organisation’s full legal title on first mention in a publication."},
+    {"id":"APS-GPC-Organisationnames-H-006","title":"Follow preferred capitalisation (incl. ABR names)","category":"heuristic","severity":"info","message":"If ABR shows ALL CAPS, still follow the organisation’s preferred capitalisation from its site/publications."},
+    {"id":"APS-GPC-Organisationnames-H-007","title":"Lowercase generic references","category":"heuristic","severity":"warn","message":"Use lower case for generic terms like ‘the department/agency/university/company/council/summit/academy/royal commission’ when not part of a full name."},
+    {"id":"APS-GPC-Organisationnames-H-008","title":"Lowercase ‘the’ in body text","category":"heuristic","severity":"info","message":"In running text, use lower‑case ‘the’ before organisation names even if ‘The’ is part of the official name (except in letters/emails and alphabetised lists)."},
+    {"id":"APS-GPC-Organisationnames-H-009","title":"Apostrophes only if official","category":"heuristic","severity":"warn","message":"Include a possessive apostrophe in an organisation’s name only when it forms part of the official name."},
+    {"id":"APS-GPC-Organisationnames-H-010","title":"Use singular verbs with organisation names","category":"heuristic","severity":"warn","message":"Take a singular verb with organisation names, even if they look plural or end in ‘s’."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Names and terms",
+  "RuleSet": "Personal names",
+  "rules": [
+    {"id":"APS-GPC-Personalnames-H-001","title":"Use the form of name the person uses","category":"heuristic","severity":"warn","message":"Use the person’s preferred spelling, punctuation and capitalisation; consult reliable sources if unsure."},
+    {"id":"APS-GPC-Personalnames-H-002","title":"Use APS-preferred terms for name parts","category":"heuristic","severity":"info","message":"Prefer ‘given name’, ‘family name’, and ‘previous names’."},
+    {"id":"APS-GPC-Personalnames-R-001","title":"Ban “Christian name”","category":"regex","severity":"error","pattern":"\\b[Cc]hristian name(s)?\\b","message":"Use ‘given name’ instead of ‘Christian name’."},
+    {"id":"APS-GPC-Personalnames-R-002","title":"Prefer “family name” over “surname”","category":"regex","severity":"warn","pattern":"\\b[Ss]urname(s)?\\b","message":"Use ‘family name’ instead of ‘surname’."},
+    {"id":"APS-GPC-Personalnames-R-003","title":"Prefer “previous names” over “maiden name”","category":"regex","severity":"warn","pattern":"\\b[Mm]aiden name(s)?\\b","message":"Use ‘previous names’ instead of ‘maiden name’."},
+    {"id":"APS-GPC-Personalnames-H-003","title":"Capitalise names","category":"heuristic","severity":"warn","message":"Capitalise names of real/fictitious people, except where individuals deliberately use lowercase."},
+    {"id":"APS-GPC-Personalnames-R-004","title":"Initials: no full stops","category":"regex","severity":"warn","pattern":"\\b([A-Z])\\.(?:\\s*([A-Z])\\.)+\\s+[A-Z][a-z]+\\b","message":"Remove full stops from initials (e.g., ‘A.D. Hope’ → ‘AD Hope’)."},
+    {"id":"APS-GPC-Personalnames-R-005","title":"Initials: unspaced between letters","category":"regex","severity":"warn","pattern":"\\b([A-Z])\\s+([A-Z])\\s+[A-Z][a-z]+\\b","message":"Join multiple initials with no spaces (e.g., ‘A D Hope’ → ‘AD Hope’)."},
+    {"id":"APS-GPC-Personalnames-H-004","title":"Nicknames quoted and capitalised on first mention","category":"heuristic","severity":"info","message":"Put nicknames in quotation marks and capitalise them on first mention."},
+    {"id":"APS-GPC-Personalnames-R-006","title":"No apostrophes in plural family names","category":"regex","severity":"error","pattern":"\\b(?:[Tt]he\\s+)?[A-Z][a-z]+['’]s\\b|\\b\\d+\\s+[A-Z][a-z]+['’]s\\b","message":"Form plurals with s/es (e.g., ‘the Murphys’, ‘3 Alexes’), not ’s."},
+    {"id":"APS-GPC-Personalnames-R-007","title":"Possessive singular takes ’s even after s","category":"regex","severity":"warn","pattern":"\\b([A-Z][a-z]+s)'\\b(?=\\s+\\w)","message":"For a single person’s name ending in s, use ’s (e.g., ‘Jas’s report’)."},
+    {"id":"APS-GPC-Personalnames-R-008","title":"Possessive plural of names: only apostrophe","category":"regex","severity":"error","pattern":"\\b([A-Z][a-z]+)es['’]s\\b","message":"For plural family names, add only an apostrophe after -es (e.g., ‘Joneses’ → ‘Joneses’ car’)."},
+    {"id":"APS-GPC-Personalnames-H-005","title":"Retain hyphens in names","category":"heuristic","severity":"warn","message":"Keep hyphens in hyphenated given or family names."},
+    {"id":"APS-GPC-Personalnames-H-006","title":"Write all parts of compound family names","category":"heuristic","severity":"info","message":"Include all parts on first mention; then use the well-known family name."},
+    {"id":"APS-GPC-Personalnames-H-007","title":"Respect case of particles; cap at sentence start","category":"heuristic","severity":"info","message":"Follow the person’s capitalisation; capitalise the particle when the name starts a sentence."},
+    {"id":"APS-GPC-Personalnames-H-008","title":"Keep diacritics in names","category":"heuristic","severity":"warn","message":"Retain diacritic marks unless the person uses a simplified form."},
+    {"id":"APS-GPC-Personalnames-H-009","title":"Non-English names: follow person’s order/spelling","category":"heuristic","severity":"info","message":"Use the name order and spelling the person uses; be mindful of cultural conventions."},
+    {"id":"APS-GPC-Personalnames-H-010","title":"Reference lists: family name first","category":"heuristic","severity":"info","message":"In reference lists, put family name first for lead author and use initials."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Names and terms",
+  "RuleSet": "Plants and animals",
+  "rules": [
+    {"id":"APS-GPC-Plantsandanimals-H-001","title":"Scientific binomials must be italicised","category":"heuristic","severity":"error","message":"Write genus + species in italics; genus capitalised, species lower case. Include italics markup in Markdown/HTML."},
+    {"id":"APS-GPC-Plantsandanimals-R-001","title":"Genus capital; species lower case (within italics)","category":"regex","severity":"error","pattern":"\\*([A-Z][a-z]+)\\s([A-Z][a-z]+)\\*|\\*([a-z][a-z]+)\\s([a-z]+)\\*","message":"Within italicised binomials, flag capitalised species or lowercase genus."},
+    {"id":"APS-GPC-Plantsandanimals-R-002","title":"Don’t italicise ranks above genus","category":"regex","severity":"warn","pattern":"\\*[^*]*?(?:[A-Z][a-z]+(?:idae|ceae)|Monotremata|Myrtaceae)[^*]*?\\*","message":"Family/order/class names should be roman type with initial capitals, not italic."},
+    {"id":"APS-GPC-Plantsandanimals-R-003","title":"Family names start with a capital","category":"regex","severity":"warn","pattern":"\\b([a-z][a-z]+(?:idae|ceae))\\b","message":"Capitalise zoological/botanical family names (‑idae/‑ceae)."},
+    {"id":"APS-GPC-Plantsandanimals-R-004","title":"Subspecies/variety abbreviations take a full stop","category":"regex","severity":"error","pattern":"\\b(?:subsp|subspp|var|subvar|f|subf)(?!\\.)\\b","message":"Use ‘subsp.’, ‘subspp.’, ‘var.’, ‘subvar.’, ‘f.’, ‘subf.’ with a full stop."},
+    {"id":"APS-GPC-Plantsandanimals-R-005","title":"Keep taxon abbreviations roman (not italic)","category":"regex","severity":"warn","pattern":"\\*[^*]*\\b(?:subsp\\.|subspp\\.|var\\.|subvar\\.|f\\.|subf\\.)\\b[^*]*\\*","message":"Do not italicise the abbreviations; only the names are italic."},
+    {"id":"APS-GPC-Plantsandanimals-H-002","title":"Common names are lower case and not italic","category":"heuristic","severity":"warn","message":"Use lower case roman for common names unless a proper noun or trade mark."},
+    {"id":"APS-GPC-Plantsandanimals-H-003","title":"Proper nouns in common names take capitals","category":"heuristic","severity":"info","message":"Capitalise embedded proper nouns in common names (e.g., ‘Norfolk Island pine’)."},
+    {"id":"APS-GPC-Plantsandanimals-H-004","title":"Include scientific name at first mention","category":"heuristic","severity":"warn","message":"At the first mention of a common name, include the genus and species in parentheses."},
+    {"id":"APS-GPC-Plantsandanimals-R-006","title":"Abbreviate repeated genus with a dot","category":"regex","severity":"warn","pattern":"\\b[A-Z]\\s[a-z]{3,}\\b","message":"Use an initial + full stop for abbreviated genus (e.g., ‘O. anatinus’)."},
+    {"id":"APS-GPC-Plantsandanimals-H-005","title":"Disambiguate genus abbreviations when needed","category":"heuristic","severity":"info","message":"When multiple genera share an initial, use two-letter abbreviations (e.g., ‘An.’, ‘Al.’)."},
+    {"id":"APS-GPC-Plantsandanimals-R-007","title":"Prefer <em> over <i> for italics","category":"regex","severity":"warn","pattern":"<\\s*i\\s*>[\\s\\S]*?<\\s*/\\s*i\\s*>","message":"Use semantic <em>…</em> for italics in HTML for accessibility."},
+    {"id":"APS-GPC-Plantsandanimals-R-008","title":"Don’t italicise single common words by mistake","category":"regex","severity":"info","pattern":"\\*(?:[a-z]{2,})\\*","message":"Avoid italicising single lowercase common nouns (reserve italics for scientific names)."},
+    {"id":"APS-GPC-Plantsandanimals-H-006","title":"Bird names lower case in generalist content","category":"heuristic","severity":"info","message":"Write bird common names in lower case unless a proper noun; lists of common names are lower case."},
+    {"id":"APS-GPC-Plantsandanimals-H-007","title":"Genes italic; proteins roman","category":"heuristic","severity":"info","message":"Italicise gene names; write proteins in roman with initial capital only."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Numbers and measurements",
+  "RuleSet": "Choosing numerals or words",
+  "rules": [
+    {"id":"APS-GPC-Choosingnumeralsorwords-H-001","title":"Use numerals for 2+ in running text","category":"heuristic","severity":"warn","message":"In prose and headings, use numerals for 2 and above; write ‘zero’ and ‘one’ as words. Be consistent."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-R-001","title":"Write ‘zero’ and ‘one’ (avoid 0/1)","category":"regex","severity":"warn","pattern":"\\b(?:0|1)\\b","message":"Avoid standalone digits 0 or 1 in prose; write ‘zero’ and ‘one’ unless technical context requires numerals."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-R-002","title":"Don’t start a sentence with numerals","category":"regex","severity":"warn","pattern":"(^|[.!?]\\s+)\\d","message":"Rewrite or spell out numbers that begin a sentence."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-H-002","title":"Fractions in general text use words","category":"heuristic","severity":"info","message":"Write fractions as words in general text; use decimals when precision matters."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-H-003","title":"Proper names/titles keep words-as-words","category":"heuristic","severity":"info","message":"Preserve number-as-word styling when it is part of a proper noun or publication title."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-H-004","title":"Figures of speech use words","category":"heuristic","severity":"info","message":"Write numbers as words in idioms and figures of speech."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-R-003","title":"Units of measurement use numerals","category":"regex","severity":"error","pattern":"\\b(?:one|two|three|four|five|six|seven|eight|nine|ten)\\s+(?:km|kilometre(?:s)?|m|metre(?:s)?|cm|mm|kg|kilogram(?:s)?|g|gram(?:s)?|L|litre(?:s)?|ml|hour(?:s)?|h|kW|MW|°C|ha|km\\/h)\\b","message":"Use a numeral with units of measurement (e.g. ‘1 km’, ‘5 kg’)."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-H-005","title":"Maths/ratios/decimals use numerals","category":"heuristic","severity":"warn","message":"Show equations, ratios and decimals with numerals and proper operators/spaces (e.g. ‘7∶1’, ‘8 + 1 = 9’)."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-H-006","title":"Comparisons use like-with-like numerals","category":"heuristic","severity":"info","message":"Use numerals (decimal with decimal) for quantitative comparisons; avoid vague ‘twice’ unless clearer for users."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-H-007","title":"Data displays use numerals","category":"heuristic","severity":"warn","message":"In tables, graphs and charts, use numerals rather than words for values."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-R-004","title":"Dates and times use numerals","category":"regex","severity":"warn","pattern":"\\b(?:[0-3]?\\d)\\s+[A-Z][a-z]+\\s+\\d{4}\\b|\\b(?:[01]?\\d|2[0-3])\\s*(?:am|pm|AM|PM)\\b","message":"Write dates and times with numerals (e.g. ‘1 April 2020’, ‘1 pm’)."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-H-008","title":"Series/statistics use numerals","category":"heuristic","severity":"info","message":"When content contains many numbers or statistics, use numerals consistently."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-R-005","title":"Steps and references use numerals","category":"regex","severity":"warn","pattern":"\\b(?:[Ss]tep|[Pp]oint)\\s+(?:one|two|three|four|five|six|seven|eight|nine|ten)\\b","message":"Use numerals for steps/point references (e.g. ‘Step 3’, ‘point 2’)."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-R-006","title":"Ages and school years use numerals","category":"regex","severity":"warn","pattern":"\\b(?:year\\s+(?:one|two|three|four|five|six|seven|eight|nine|ten)|(?:[Tt]en|[Nn]ine|[Ee]ight|[Ss]even|[Ss]ix|[Ff]ive|[Ff]our|[Tt]hree|[Tt]wo|[Oo]ne)-year-old(?:s)?)\\b","message":"Use numerals for ages and school years (e.g. ‘12‑year‑olds’, ‘year 5’)."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-R-007","title":"Use commas in 4+ digit numbers","category":"regex","severity":"error","pattern":"\\b\\d{4,}(?:\\.\\d+)?\\b","message":"Insert commas every three digits for numbers with 4+ digits (e.g. ‘2,500’)."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-R-008","title":"Ban spaced thousands","category":"regex","severity":"error","pattern":"\\b\\d{1,3}(?:[ \\u00A0]\\d{3})+\\b","message":"Do not separate thousands with spaces or NBSP; use commas."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-H-009","title":"Large rounded numbers: numeral + word","category":"heuristic","severity":"info","message":"Prefer compact ‘2.5 million’, ‘$50 billion’ over long digit strings when values are rounded."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-H-010","title":"‘1 million’ vs ‘one million’ (context)","category":"heuristic","severity":"info","message":"Use ‘1 million’ in technical/number‑heavy/comparison/currency contexts; ‘one million’ to start sentences or where numerals may be confused."},
+    {"id":"APS-GPC-Choosingnumeralsorwords-R-009","title":"Currency amounts use symbols","category":"regex","severity":"warn","pattern":"\\b\\d+(?:,\\d{3})*(?:\\.\\d+)?\\s*(?:dollars|AUD|USD|euros|pounds)\\b","message":"Use currency symbols with numerals (e.g. ‘$1’, ‘US$20,000’); reserve words for approximations/idioms."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Numbers and measurements",
+  "RuleSet": "Currency",
+  "rules": [
+    {"id":"APS-GPC-Currency-R-001","title":"No space between symbol and numerals","category":"regex","severity":"error","pattern":"\\$\\s+\\d","message":"Write currency symbol directly before numerals (no space): e.g., $27.99."},
+    {"id":"APS-GPC-Currency-R-002","title":"Exactly 2 decimals for dollar cents","category":"regex","severity":"warn","pattern":"\\$\\d+\\.(?:\\d{1}|\\d{3,})\\b","message":"Use exactly 2 decimal places for dollar amounts (e.g., $0.80)."},
+    {"id":"APS-GPC-Currency-R-003","title":"Leading zero for < $1 amounts","category":"regex","severity":"error","pattern":"\\$\\.\\d+","message":"Include a leading zero before the decimal for amounts under $1 (e.g., $0.04)."},
+    {"id":"APS-GPC-Currency-R-004","title":"Cents style: no space, no full stop","category":"regex","severity":"warn","pattern":"\\b\\d+\\s+c\\b|\\b\\d+c\\.(?!\\S)","message":"Write cents as digits + 'c' without a space and without a full stop (unless end of sentence)."},
+    {"id":"APS-GPC-Currency-H-001","title":"Use $ for clearly-AUD contexts","category":"heuristic","severity":"info","message":"When context is clearly Australian, use $ (not A$)."},
+    {"id":"APS-GPC-Currency-H-002","title":"Use A$ when currency may be unclear","category":"heuristic","severity":"warn","message":"Use A$ if there’s a chance readers could confuse the currency with another dollar currency."},
+    {"id":"APS-GPC-Currency-H-003","title":"Prefer IBAN codes for foreign currency","category":"heuristic","severity":"info","message":"Prefer 3-letter IBAN currency codes (AUD, USD, THB, etc.) across all currencies for accessibility."},
+    {"id":"APS-GPC-Currency-R-005","title":"IBAN code spacing","category":"regex","severity":"warn","pattern":"\\b(?:[A-Z]{3})\\s+\\d","message":"Don’t put a space between the IBAN currency code and the numerals (e.g., AUD19.49)."},
+    {"id":"APS-GPC-Currency-R-006","title":"No symbol + IBAN together","category":"regex","severity":"error","pattern":"\\$\\d+(?:\\.\\d+)?\\s*(?:AUD|USD|EUR|GBP|[A-Z]{3})\\b","message":"Don’t combine a currency symbol with a 3-letter currency code (e.g., $7.25 USD)."},
+    {"id":"APS-GPC-Currency-R-007","title":"Country-prefixed $: no space","category":"regex","severity":"warn","pattern":"\\b(?:US|NZ|A|C)\\$\\s+\\d","message":"For US$/NZ$/A$/C$, don’t insert a space before the numerals (e.g., US$7.25)."},
+    {"id":"APS-GPC-Currency-H-004","title":"Explain unfamiliar symbols on first use","category":"heuristic","severity":"info","message":"If using a foreign currency symbol that’s not widely known, explain it on first mention."},
+    {"id":"APS-GPC-Currency-H-005","title":"Avoid non-AUD symbols unless needed","category":"heuristic","severity":"info","message":"Avoid non-AUD currency symbols unless there’s a demonstrated user need."},
+    {"id":"APS-GPC-Currency-R-008","title":"Former Australian currency in words","category":"regex","severity":"error","pattern":"\\bA?£\\d+|\\b\\d+s\\b|\\b\\d+d\\b","message":"Write former Australian currency as words: pounds, shillings and pence (avoid £, s, d)."},
+    {"id":"APS-GPC-Currency-H-006","title":"Match precision to context","category":"heuristic","severity":"info","message":"Use appropriate precision: descriptive (‘more than $2.1 million’), reports ($2.195 million), tables ($2.195m with a note)."},
+    {"id":"APS-GPC-Currency-R-009","title":"'m' in tables: tight, no full stop","category":"regex","severity":"warn","pattern":"\\$\\d+(?:\\.\\d+)?\\s+m\\b|\\$\\d+(?:\\.\\d+)?m\\.","message":"In tables/charts write millions as $<amount>m with no space and no trailing full stop."},
+    {"id":"APS-GPC-Currency-H-007","title":"Use words for inexact amounts","category":"heuristic","severity":"info","message":"For inexact monetary amounts, use words (e.g., ‘several million dollars’)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Numbers and measurements",
+  "RuleSet": "Dates and time",
+  "rules": [
+    {"id":"APS-GPC-Datesandtime-R-001","title":"Day–Month–Year in body text","category":"regex","severity":"error","pattern":"\\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\\b\\s+\\d{1,2},\\s+\\d{4}\\b","message":"Use Australian sequence “d Month yyyy” without a comma (e.g., 31 December 2020)."},
+    {"id":"APS-GPC-Datesandtime-R-002","title":"No ordinals in full dates","category":"regex","severity":"warn","pattern":"\\b\\d{1,2}(?:st|nd|rd|th)\\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\\b","message":"Don’t use ordinal suffixes in dates with a month (write ‘1 May’, not ‘1st May’)."},
+    {"id":"APS-GPC-Datesandtime-R-003","title":"US month–day–year banned","category":"regex","severity":"error","pattern":"\\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\\s+\\d{1,2},\\s+\\d{4}\\b","message":"Avoid US order ‘Month 1, 2024’; use ‘1 Month 2024’."},
+    {"id":"APS-GPC-Datesandtime-R-004","title":"No comma after weekday","category":"regex","severity":"warn","pattern":"\\b(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\\s+\\d","message":"Don’t insert a comma after the weekday in dates (write ‘Wednesday 7 August 2024’)."},
+    {"id":"APS-GPC-Datesandtime-R-005","title":"Numeric date uses slashes","category":"regex","severity":"warn","pattern":"\\b\\d{4}-\\d{2}-\\d{2}\\b|\\b\\d{1,2}\\.\\d{1,2}\\.\\d{4}\\b","message":"In general content, don’t use hyphens or full stops for dates; prefer slashes (d/m/yyyy)."},
+    {"id":"APS-GPC-Datesandtime-R-006","title":"Two‑digit year discouraged","category":"regex","severity":"warn","pattern":"\\b\\d{1,2}/\\d{1,2}/\\d{2}\\b","message":"Avoid 2‑digit years in dates unless context makes the century clear."},
+    {"id":"APS-GPC-Datesandtime-R-007","title":"No apostrophe in decades","category":"regex","severity":"error","pattern":"\\b\\d{4}['’]s\\b","message":"Write decades without an apostrophe (e.g., 1980s, not 1980’s)."},
+    {"id":"APS-GPC-Datesandtime-H-001","title":"Year spans in words (general)","category":"heuristic","severity":"info","message":"Prefer ‘from 2015 to 2019’ or ‘between 2015 and 2019’ in body text (reserve en dashes for specified cases)."},
+    {"id":"APS-GPC-Datesandtime-H-002","title":"En dash for specified year spans","category":"heuristic","severity":"info","message":"Use unspaced en dashes for financial/calendar years and in titles (e.g., 2021–22 financial year)."},
+    {"id":"APS-GPC-Datesandtime-H-003","title":"Spans of days/months in words","category":"heuristic","severity":"info","message":"Write ‘from 3 to 21 December’ or ‘between 6 and 8 September’; use en dashes only when space is limited."},
+    {"id":"APS-GPC-Datesandtime-R-008","title":"Colon in times, not full stop","category":"regex","severity":"error","pattern":"\\b\\d{1,2}\\.\\d{2}\\b","message":"Use a colon between hours and minutes (e.g., 9:45 am, not 9.45 am)."},
+    {"id":"APS-GPC-Datesandtime-R-009","title":"Lowercase am/pm with space","category":"regex","severity":"warn","pattern":"\\b\\d{1,2}(?::\\d{2})?(?:AM|PM)\\b|\\b\\d{1,2}(?::\\d{2})?(am|pm)\\b","message":"Write am/pm in lowercase with a (non‑breaking) space: ‘10 am’, ‘6:30 pm’. (Flags uppercase or missing space)."},
+    {"id":"APS-GPC-Datesandtime-R-010","title":"No am/pm + morning/afternoon","category":"regex","severity":"error","pattern":"\\b\\d{1,2}(?::\\d{2})?\\s?(?:am|pm)\\s+(?:in\\s+the\\s+)?(?:morning|afternoon|evening)\\b","message":"Don’t duplicate the time of day (‘10 am tomorrow morning’)."},
+    {"id":"APS-GPC-Datesandtime-R-011","title":"Prefer noon/midday/midnight","category":"regex","severity":"warn","pattern":"\\b12(?::00)?\\s?(?:am|pm)\\b","message":"Use ‘midnight/noon/midday’ instead of ‘12 am/pm’."},
+    {"id":"APS-GPC-Datesandtime-R-012","title":"24‑hour leading zero","category":"regex","severity":"warn","pattern":"\\b([0-9]):[0-5][0-9]\\b","message":"In 24‑hour format, include a leading zero for hours 0–9 (e.g., 05:30)."},
+    {"id":"APS-GPC-Datesandtime-R-013","title":"No am/pm with 24‑hour time","category":"regex","severity":"error","pattern":"\\b(?:[01]?\\d|2[0-3]):[0-5]\\d\\s?(?:am|pm)\\b","message":"Omit am/pm when using 24‑hour time."},
+    {"id":"APS-GPC-Datesandtime-R-014","title":"Uppercase AU time zones","category":"regex","severity":"warn","pattern":"\\b(?:aest|aedt|acst|acdt|awst|lhst|lhdt)\\b","message":"Write Australian time‑zone initialisms in uppercase (e.g., AEDT)."},
+    {"id":"APS-GPC-Datesandtime-R-015","title":"Spaced en dash with am/pm spans","category":"regex","severity":"warn","pattern":"\\b\\d{1,2}(?::\\d{2})?\\s?(?:am|pm)–\\d{1,2}(?::\\d{2})?\\s?(?:am|pm)\\b","message":"Add spaces around the en dash when am/pm appears on both sides (e.g., ‘7 am – 4 pm’)."},
+    {"id":"APS-GPC-Datesandtime-R-016","title":"Unspaced en dash in 24‑hour spans","category":"regex","severity":"warn","pattern":"\\b(?:[01]\\d|2[0-3]):[0-5]\\d\\s–\\s(?:[01]\\d|2[0-3]):[0-5]\\d\\b","message":"Remove spaces around the en dash for 24‑hour spans (e.g., ‘08:00–08:15’)."},
+    {"id":"APS-GPC-Datesandtime-R-017","title":"Don’t mix words with en dash","category":"regex","severity":"error","pattern":"\\b(?:between|from)\\b[^\\n–]*–","message":"Use words (‘from … to’, ‘between … and’) or an en dash—not both in the same span."},
+    {"id":"APS-GPC-Datesandtime-R-018","title":"No plural “s” on time units","category":"regex","severity":"error","pattern":"\\b\\d+\\s?(?:mins?|hrs?|wks?)\\b","message":"Use unit symbols without ‘s’: s, min, h, d, wk, mo, y/yr (e.g., ‘15 min’, not ‘15 mins’)."},
+    {"id":"APS-GPC-Datesandtime-R-019","title":"Avoid ambiguous ‘bi‑’ terms","category":"regex","severity":"warn","pattern":"\\bbi(?:monthly|annual(?:ly)?|ennial(?:ly)?)\\b","message":"Avoid bimonthly/biannual/biennial; state the exact frequency."},
+    {"id":"APS-GPC-Datesandtime-H-004","title":"ISO datetime (if used)","category":"heuristic","severity":"info","message":"When using ISO formats, prefer the extended form with ‘T’ (e.g., 2023-08-11T12:15:05)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Numbers and measurements",
+  "RuleSet": "Fractions and decimals",
+  "rules": [
+    {"id":"APS-GPC-Fractionsanddecimals-R-001","title":"Leading zero before decimals <1","category":"regex","severity":"error","pattern":"(?:^|\\D)\\.\\d+","message":"For values less than one, include a leading 0 before the decimal point (e.g., 0.59)."},
+    {"id":"APS-GPC-Fractionsanddecimals-R-002","title":"Decimal point is a full stop","category":"regex","severity":"error","pattern":"\\d+,(?!\\d{3}(?:\\D|$))\\d+","message":"Use a full stop (.) for decimal points, not a comma."},
+    {"id":"APS-GPC-Fractionsanddecimals-R-003","title":"Fractions in running text are words","category":"regex","severity":"warn","pattern":"\\b\\d{1,3}\\/\\d{1,3}\\b","message":"Write simple fractions as words in running text (for example, two-thirds), not 2/3."},
+    {"id":"APS-GPC-Fractionsanddecimals-H-001","title":"Decimals are numerals","category":"heuristic","severity":"warn","message":"Write decimal values as numerals in text (for example, 7.5)."},
+    {"id":"APS-GPC-Fractionsanddecimals-H-002","title":"Use decimals for precision","category":"heuristic","severity":"info","message":"Prefer decimals when an exact/precise value is required."},
+    {"id":"APS-GPC-Fractionsanddecimals-H-003","title":"Use fractions for approximate values","category":"heuristic","severity":"info","message":"Prefer worded fractions when precision is not important and readers only need a general idea."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Numbers and measurements",
+  "RuleSet": "Mathematical relationships",
+  "rules": [
+    {"id":"APS-GPC-Mathematicalrelationships-H-001","title":"Prefer words to symbols in general content","category":"heuristic","severity":"info","message":"Describe mathematical relationships in words unless user research supports symbols in this context."},
+    {"id":"APS-GPC-Mathematicalrelationships-R-001","title":"Use Unicode minus, not hyphen","category":"regex","severity":"error","pattern":"\\b\\d+\\s*-\\s*\\d+\\b|(?<=^|\\s)-\\d+","message":"Use the true minus (−, U+2212) for subtraction and negative numbers, not hyphen-minus (-)."},
+    {"id":"APS-GPC-Mathematicalrelationships-R-002","title":"No spaces around ratio colon","category":"regex","severity":"warn","pattern":"\\b\\d+\\s[:∶]|[:∶]\\s\\d+\\b","message":"Write ratios with no spaces around the colon: e.g. 5:1 or 5∶1."},
+    {"id":"APS-GPC-Mathematicalrelationships-R-003","title":"Addition spaced; positive sign unspaced","category":"regex","severity":"warn","pattern":"\\b\\d+\\+\\d+\\b|(?<=^|\\s)\\+\\s+\\d","message":"Use spaces around + for operations (e.g. 2 + 10) and no space after + for positive values (+3)."},
+    {"id":"APS-GPC-Mathematicalrelationships-R-004","title":"Subtraction spaced; negative sign unspaced","category":"regex","severity":"warn","pattern":"\\b\\d+−\\d+\\b|(?<=^|\\s)−\\s+\\d","message":"Use spaces around − for subtraction (e.g. 12 − 4) and no space after − for negative values (−5)."},
+    {"id":"APS-GPC-Mathematicalrelationships-R-005","title":"Use × for multiplication (not x, *, ⋅)","category":"regex","severity":"error","pattern":"(?i)(?<=\\b|\\))\\s*[x*⋅]\\s*(?=\\b|\\()","message":"Use × (U+00D7) for multiplication in prose; avoid letter x, asterisk, or dot operator."},
+    {"id":"APS-GPC-Mathematicalrelationships-R-006","title":"Space around ×","category":"regex","severity":"warn","pattern":"\\S×\\S","message":"Use spaces around × when used as an operator (e.g. 3 × 4)."},
+    {"id":"APS-GPC-Mathematicalrelationships-H-002","title":"Division symbol spaced; avoid slash in prose","category":"heuristic","severity":"info","message":"Use spaces around ÷ in prose; prefer ∕ (unspaced) for mathematical notation; avoid plain '/' except in code contexts."},
+    {"id":"APS-GPC-Mathematicalrelationships-R-007","title":"Space around ÷","category":"regex","severity":"warn","pattern":"\\S÷\\S","message":"Use spaces around ÷ (e.g. 8 ÷ 2)."},
+    {"id":"APS-GPC-Mathematicalrelationships-R-008","title":"Space around relational symbols","category":"regex","severity":"warn","pattern":"\\d[<>≤≥]\\d","message":"Add spaces around <, >, ≤, ≥ in comparisons (except compact range shorthand)."},
+    {"id":"APS-GPC-Mathematicalrelationships-R-009","title":"Compact range shorthand (no space)","category":"regex","severity":"info","pattern":"[<>]\\s+\\d","message":"When expressing a bound like <6.74 or >10, do not insert a space after the symbol."},
+    {"id":"APS-GPC-Mathematicalrelationships-R-010","title":"Don’t use >= or <=","category":"regex","severity":"error","pattern":"(?:>=|<=)","message":"Use the single-character forms ≤ and ≥ in general content."},
+    {"id":"APS-GPC-Mathematicalrelationships-R-011","title":"Equations: space around equals","category":"regex","severity":"warn","pattern":"\\S=\\S","message":"Insert spaces around = in equations (e.g. x + 1 = 2)."},
+    {"id":"APS-GPC-Mathematicalrelationships-H-003","title":"Numbers as numerals in maths expressions","category":"heuristic","severity":"info","message":"Write numbers as numerals in mathematical expressions (e.g. 0 does not equal 1)."},
+    {"id":"APS-GPC-Mathematicalrelationships-H-004","title":"Use coded symbols, not punctuation/images","category":"heuristic","severity":"warn","message":"Insert true symbol code points (Unicode/LaTeX/MathML); do not fake with punctuation or images."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Numbers and measurements",
+  "RuleSet": "Measurement and units",
+  "rules": [
+    {"id":"APS-GPC-Measurementandunits-R-001","title":"Use a non‑breaking space between number and unit","category":"regex","severity":"warn","pattern":"\\b\\d+(?:\\.\\d+)?\\s(?:km|m|cm|mm|µm|nm|kg|g|mg|µg|t|L|mL|kL|GL|W|kW|MW|GW|km\\/h|mmHg|ha|dB|km²|m²|cm²|mm²)\\b","message":"Use a non-breaking space (U+00A0) between numerals and unit symbols."},
+    {"id":"APS-GPC-Measurementandunits-R-002","title":"Don’t omit the space before unit","category":"regex","severity":"warn","pattern":"\\b\\d+(?:\\.\\d+)?(?:km|m|cm|mm|µm|nm|kg|g|mg|µg|t|L|mL|kL|GL|W|kW|MW|GW|km\\/h|mmHg|ha|dB|km²|m²|cm²|mm²)\\b","message":"Insert a space (prefer NBSP U+00A0) between the number and unit (avoid forms like 5kg)."},
+    {"id":"APS-GPC-Measurementandunits-R-003","title":"No full stop after unit symbols","category":"regex","severity":"warn","pattern":"\\b(?:km|m|cm|mm|µm|nm|kg|g|mg|µg|t|L|mL|kL|GL|W|kW|MW|GW|km\\/h|mmHg|ha|dB|km²|m²|cm²|mm²)\\.(?:\\s|$)","message":"Do not add a full stop after unit symbols."},
+    {"id":"APS-GPC-Measurementandunits-R-004","title":"No plural “s” on symbols","category":"regex","severity":"error","pattern":"\\b(?:km|m|cm|mm|µm|nm|kg|g|mg|µg|t|L|mL|kL|GL|W|kW|MW|GW|km\\/h|mmHg|ha|dB)s\\b","message":"Unit symbols do not take a plural “s” (write 56 km, not 56 kms)."},
+    {"id":"APS-GPC-Measurementandunits-R-005","title":"Use numerals with units (not words)","category":"regex","severity":"warn","pattern":"\\b(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\s+(?:km|m|cm|mm|µm|nm|kg|g|mg|µg|t|L|mL|kL|GL|W|kW|MW|GW|km\\/h|mmHg|ha|dB)\\b","message":"Use numerals next to units (e.g., 5 t, not “five t”)."},
+    {"id":"APS-GPC-Measurementandunits-R-006","title":"Don’t mix words with symbols like “square km”","category":"regex","severity":"warn","pattern":"\\b(?:square|cubic)\\s+(?:km|m|cm|mm)\\b","message":"Use the correct symbol (km², m³) instead of “square km” or “cubic m”."},
+    {"id":"APS-GPC-Measurementandunits-R-007","title":"Prefer standard SI prefixes and symbols","category":"regex","severity":"error","pattern":"\\b(?:mcg|dL)\\b","message":"Use standard symbols (e.g., µg, mL) and avoid non‑standard forms like mcg or uncommon dL."},
+    {"id":"APS-GPC-Measurementandunits-R-008","title":"Use ‘L’ for litre after numerals","category":"regex","severity":"warn","pattern":"\\b\\d+(?:\\.\\d+)?(?:\\u00A0| )l\\b","message":"Prefer capital ‘L’ for litre in most government content (e.g., 1.5 L)."},
+    {"id":"APS-GPC-Measurementandunits-R-009","title":"Use km/h for speed","category":"regex","severity":"warn","pattern":"\\b(?:kph|kmph)\\b","message":"Express speed as km/h (not kph or kmph)."},
+    {"id":"APS-GPC-Measurementandunits-R-010","title":"Avoid imperial units","category":"regex","severity":"warn","pattern":"\\b(?:mile|miles|gallon|gallons|inch|inches|foot|feet|ft|yard|yards|oz|ounce|ounces|lb|pound|pounds|fahrenheit|°F|barrel|barrels)\\b","message":"Avoid imperial units for AU content; if required, provide SI equivalents."},
+    {"id":"APS-GPC-Measurementandunits-R-011","title":"Spell out common time units in running text","category":"regex","severity":"warn","pattern":"\\b(?:hrs?|mins?|yrs?)\\b","message":"Spell out hours, minutes and years in running text (tables/lists may abbreviate)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Numbers and measurements",
+  "RuleSet": "Ordinal numbers",
+  "rules": [
+    {"id":"APS-GPC-Ordinalnumbers-R-001","title":"Spell out 1st–9th","category":"regex","severity":"warn","pattern":"\\b([1-9])(st|nd|rd|th)\\b","message":"Spell out ordinals from ‘first’ to ‘ninth’; use numerals from ‘10th’."},
+    {"id":"APS-GPC-Ordinalnumbers-R-002","title":"Numerals for centuries","category":"regex","severity":"warn","pattern":"\\b(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth)\\s+centur(?:y|ies)\\b","message":"Use ordinal numerals with centuries and keep ‘century’ lower case."},
+    {"id":"APS-GPC-Ordinalnumbers-R-003","title":"No superscript ordinal suffixes","category":"regex","severity":"error","pattern":"\\b\\d+\\s*<sup>(?:st|nd|rd|th)<\\/sup>","message":"Do not write ordinal suffixes in superscript."},
+    {"id":"APS-GPC-Ordinalnumbers-R-004","title":"Suffix on ordinal numerals","category":"regex","severity":"warn","pattern":"\\b\\d{1,}(?!st|nd|rd|th)\\b(?=\\s+(?:anniversary|birthday|visit(?:or)?|time|intake|round|centur(?:y|ies))\\b)","message":"Add the correct ordinal suffix (st/nd/rd/th) when a numeral functions as an ordinal."},
+    {"id":"APS-GPC-Ordinalnumbers-R-005","title":"Spell out very large rounded ordinals","category":"regex","severity":"info","pattern":"\\b\\d{1,3}(?:,\\d{3})+(?:st|nd|rd|th)\\b","message":"Spell out large rounded ordinals (for readability)."},
+    {"id":"APS-GPC-Ordinalnumbers-R-006","title":"Editions use numeral+suffix","category":"regex","severity":"warn","pattern":"\\b(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth)\\s+ed(?:ition|n)\\b","message":"In references, use numerals with suffix for editions (e.g. ‘2nd edn’)."},
+    {"id":"APS-GPC-Ordinalnumbers-H-001","title":"Avoid ordinals for steps","category":"heuristic","severity":"warn","message":"For instructions/sequences, prefer numbered lists instead of ‘first/second/third’ in prose."},
+    {"id":"APS-GPC-Ordinalnumbers-H-002","title":"‘Firstly/Secondly’ paired only","category":"heuristic","severity":"info","message":"If using ordinal adverbs in journals/reports, ensure ‘Firstly’ is paired with ‘Secondly’; otherwise avoid."},
+    {"id":"APS-GPC-Ordinalnumbers-R-007","title":"Ban ‘thirdly’","category":"regex","severity":"error","pattern":"\\b[Tt]hirdly\\b","message":"Do not use ‘thirdly’; recast as a simple list."},
+    {"id":"APS-GPC-Ordinalnumbers-R-008","title":"No ordinals in dates","category":"regex","severity":"error","pattern":"\\b\\d{1,2}(?:st|nd|rd|th)\\s+[A-Za-z]+\\s+\\d{4}\\b","message":"Write dates without ordinal suffixes (e.g. ‘12 February 2020’)."},
+    {"id":"APS-GPC-Ordinalnumbers-R-009","title":"Regnal numbers are Roman numerals","category":"regex","severity":"error","pattern":"\\b[A-Z][a-z]+\\s+(?:Ist|IInd|IIIrd|IVth|Vth|VIth|VIIth|VIIIth|IXth|Xth)\\b","message":"Use upper-case Roman numerals for regnal numbers (e.g. ‘Elizabeth I’)."},
+    {"id":"APS-GPC-Ordinalnumbers-R-010","title":"Non-breaking space before regnal numeral","category":"regex","severity":"info","pattern":"\\b([A-Z][a-z]+) ([IVXLCDM]{1,4})\\b","message":"Use a non-breaking space (U+00A0) between name and regnal number."},
+    {"id":"APS-GPC-Ordinalnumbers-R-011","title":"Lower case ‘century/centuries’","category":"regex","severity":"warn","pattern":"\\b(?:\\d{1,2}(?:st|nd|rd|th)\\s+)?Centur(?:y|ies)\\b","message":"Keep ‘century/centuries’ lower case (e.g. ‘9th century’)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Numbers and measurements",
+  "RuleSet": "Percentages",
+  "rules": [
+    {"id":"APS-GPC-Percentages-R-001","title":"Numerals with % sign","category":"regex","severity":"error","pattern":"\\b\\d+\\s%","message":"Write percentages with no space before the % sign."},
+    {"id":"APS-GPC-Percentages-R-002","title":"Use decimals not fractions","category":"regex","severity":"warn","pattern":"\\b\\d+/\\d+%","message":"Use decimals with % instead of fractions."},
+    {"id":"APS-GPC-Percentages-H-001","title":"Avoid sentence-starting %","category":"heuristic","severity":"warn","message":"Do not start sentences with a numeral + %; reword or spell out."},
+    {"id":"APS-GPC-Percentages-H-002","title":"Correct noun form","category":"heuristic","severity":"error","message":"Use ‘percentage’ as the noun, not ‘per cent’."},
+    {"id":"APS-GPC-Percentages-R-003","title":"AU spelling ‘per cent’","category":"regex","severity":"error","pattern":"\\b[Pp]ercent\\b","message":"Use Australian spelling ‘per cent’, not ‘percent’."},
+    {"id":"APS-GPC-Percentages-H-003","title":"Avoid % for describing change","category":"heuristic","severity":"warn","message":"Describe actual increase/decrease rather than a percentage change."},
+    {"id":"APS-GPC-Percentages-H-004","title":"Concise presentation of many %","category":"heuristic","severity":"info","message":"Use brackets or lists when citing multiple percentages."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Numbers and measurements",
+  "RuleSet": "Telephone numbers",
+  "rules": [
+    {"id":"APS-GPC-Telephonenumbers-R-001","title":"AU landline – national format","category":"regex","severity":"error","pattern":"\\b0(?:2|3|7|8)\\s\\d{4}\\s\\d{4}\\b|^$^","message":"Format Australian landlines as 0[2378] #### ####."},
+    {"id":"APS-GPC-Telephonenumbers-R-002","title":"AU mobile – national format","category":"regex","severity":"error","pattern":"\\b04\\d{2}\\s\\d{3}\\s\\d{3}\\b|^$^","message":"Format Australian mobiles as 04## ### ###."},
+    {"id":"APS-GPC-Telephonenumbers-R-003","title":"13 numbers","category":"regex","severity":"warn","pattern":"\\b13\\s\\d{2}\\s\\d{2}\\b|^$^","message":"Format 13 numbers as 13 ## ##."},
+    {"id":"APS-GPC-Telephonenumbers-R-004","title":"1300 numbers","category":"regex","severity":"warn","pattern":"\\b1300\\s\\d{3}\\s\\d{3}\\b|^$^","message":"Format 1300 numbers as 1300 ### ###."},
+    {"id":"APS-GPC-Telephonenumbers-R-005","title":"1800 numbers","category":"regex","severity":"warn","pattern":"\\b1800\\s\\d{3}\\s\\d{3}\\b|^$^","message":"Format 1800 numbers as 1800 ### ###."},
+    {"id":"APS-GPC-Telephonenumbers-R-006","title":"AU landline – international format","category":"regex","severity":"error","pattern":"\\+61\\s(?:2|3|7|8)\\s\\d{4}\\s\\d{4}","message":"Use +61 [2|3|7|8] #### #### (omit leading 0)."},
+    {"id":"APS-GPC-Telephonenumbers-R-007","title":"AU mobile – international format","category":"regex","severity":"error","pattern":"\\+61\\s4\\d{2}\\s\\d{3}\\s\\d{3}","message":"Use +61 4## ### ### (omit leading 0)."},
+    {"id":"APS-GPC-Telephonenumbers-R-008","title":"No unchunked AU landlines","category":"regex","severity":"warn","pattern":"\\b0(?:2|3|7|8)\\d{8}\\b","message":"Add spaces: 0[2378] #### ####."},
+    {"id":"APS-GPC-Telephonenumbers-R-009","title":"No unchunked AU mobiles","category":"regex","severity":"warn","pattern":"\\b04\\d{8}\\b","message":"Add spaces: 04## ### ###."},
+    {"id":"APS-GPC-Telephonenumbers-R-010","title":"No unchunked +61 numbers","category":"regex","severity":"warn","pattern":"\\b\\+61\\d{9,10}\\b","message":"Add spaces to +61 numbers per APS format."},
+    {"id":"APS-GPC-Telephonenumbers-R-011","title":"'tel:' href – no spaces","category":"regex","severity":"error","pattern":"href=\\\"tel:[^\\\"]*\\s","message":"Remove spaces from tel: URIs in HTML."},
+    {"id":"APS-GPC-Telephonenumbers-H-001","title":"'tel:' visible text uses no-break spaces","category":"heuristic","severity":"warn","message":"In HTML, use &nbsp; (or U+00A0) between chunks so numbers don’t wrap."},
+    {"id":"APS-GPC-Telephonenumbers-H-002","title":"Narrow no-break space for print","category":"heuristic","severity":"info","message":"Use U+202F between chunks in print/PDF to prevent wrapping and uneven spacing."},
+    {"id":"APS-GPC-Telephonenumbers-R-012","title":"No 'phone words'","category":"regex","severity":"error","pattern":"\\b(?:13|1300|1800)\\s*[A-Za-z][A-Za-z\\s]*\\b","message":"Don’t display digit–word phone numbers; use digits only."},
+    {"id":"APS-GPC-Telephonenumbers-H-003","title":"Foreign numbers – international format","category":"heuristic","severity":"warn","message":"Write foreign numbers in international format (e.g., +1…, +44…)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Parts of sentences",
+  "RuleSet": "Clauses",
+  "rules": [
+    {"id":"APS-GPC-Clauses-R-001","title":"Comma after fronted adverbial clause","category":"regex","severity":"warn","pattern":"^(?:Although|When|Before|After|If|Because|Since|While|Unless|Where|Whereas|Once|Until)\\b[^,]+$","message":"Insert a comma after an initial subordinate (adverbial) clause."},
+    {"id":"APS-GPC-Clauses-R-002","title":"Use ‘whether’ (not ‘if’) for explicit alternatives after ask/know/wonder/decide","category":"regex","severity":"warn","pattern":"\\b(?:ask(?:ed|s|ing)?|know(?:s|ing)?|knew|wonder(?:ed|s|ing)?|decid(?:e|ed|es|ing))\\s+if\\b[^.?!]*\\bor\\b","message":"Use ‘whether … or …’ (not ‘if … or …’) when presenting two alternatives after verbs like ask/know/wonder/decide."},
+    {"id":"APS-GPC-Clauses-H-001","title":"Clause must contain a verb","category":"heuristic","severity":"warn","message":"Flag clauses/sentences that appear to have no verb (likely fragments)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Parts of sentences",
+  "RuleSet": "Parts of sentences",
+  "rules": [
+    {"id":"APS-GPC-Partsofsentences-H-001","title":"Ensure a complete sentence","category":"heuristic","severity":"error","message":"Each sentence must express a complete idea and include at least a subject and a finite verb (subject may be implied in imperatives)."},
+    {"id":"APS-GPC-Partsofsentences-H-002","title":"Subject–predicate clarity","category":"heuristic","severity":"warn","message":"Make the subject and predicate clear; include an object or complement only when needed."},
+    {"id":"APS-GPC-Partsofsentences-H-003","title":"Imperative: omit ‘you’ subject","category":"heuristic","severity":"info","message":"Prefer imperative mood with an implied ‘you’ rather than explicitly writing ‘you’ in instructions."},
+    {"id":"APS-GPC-Partsofsentences-H-004","title":"Identify simple sentences","category":"heuristic","severity":"info","message":"Treat as simple only those sentences with one main clause and one complete verb."},
+    {"id":"APS-GPC-Partsofsentences-H-005","title":"Compound clauses: comma with different subjects","category":"heuristic","severity":"warn","message":"When two main clauses with different subjects are joined by and/or/but/so, insert a comma before the conjunction."},
+    {"id":"APS-GPC-Partsofsentences-H-006","title":"Compound clauses: no comma with shared subject","category":"heuristic","severity":"warn","message":"If two joined clauses share the same subject, do not repeat the subject and do not insert a comma before the conjunction."},
+    {"id":"APS-GPC-Partsofsentences-H-007","title":"Complex sentence comma after fronted subordinate clause","category":"heuristic","severity":"warn","message":"When a subordinate clause comes first, follow it with a comma before the main clause."},
+    {"id":"APS-GPC-Partsofsentences-H-008","title":"Prefer active voice (SVO)","category":"heuristic","severity":"info","message":"Prefer simple subject–verb–object order with active verbs for clarity."},
+    {"id":"APS-GPC-Partsofsentences-H-009","title":"Reserve passive voice for good reasons","category":"heuristic","severity":"warn","message":"Use passive voice only when the actor is unknown, irrelevant, or must be concealed."},
+    {"id":"APS-GPC-Partsofsentences-H-010","title":"Include agent in passive when useful","category":"heuristic","severity":"info","message":"If using passive and the agent adds clarity, include a ‘by …’ phrase."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Parts of sentences",
+  "RuleSet": "Phrases",
+  "rules": [
+    {"id":"APS-GPC-Phrases-R-001","title":"No apostrophe in generic plural modifiers","category":"regex","severity":"error","pattern":"\\b([A-Za-z]+)s['’]\\s+([A-Za-z]+)\\b","message":"Generic plural modifiers before a singular head noun take no apostrophe (e.g., write 'visitors book', not 'visitors’ book')."},
+    {"id":"APS-GPC-Phrases-H-001","title":"Possessive marker on end of compound","category":"heuristic","severity":"warn","message":"In hyphenated compounds used possessively, place the apostrophe at the end of the whole compound (e.g., 'commander-in-chief’s')."},
+    {"id":"APS-GPC-Phrases-H-002","title":"Avoid phrase fragments as sentences","category":"heuristic","severity":"error","message":"Flag sentences that appear to be standalone phrases lacking a subject and finite verb."},
+    {"id":"APS-GPC-Phrases-R-002","title":"Comma after “Best of all” opener","category":"regex","severity":"warn","pattern":"^\\s*Best of all(?!,)\\b.*","message":"Insert a comma after the introductory adverbial 'Best of all'."},
+    {"id":"APS-GPC-Phrases-R-003","title":"“Because of” adverbial allowed","category":"regex","severity":"info","pattern":"\\bbecause of\\s+\\b","message":"‘Because of + noun phrase’ is a valid adverbial of reason; don’t flag as an error."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Apostrophes",
+  "rules": [
+    {"id":"APS-GPC-Apostrophes-R-001","title":"Apostrophe shows possession","category":"regex","severity":"info","pattern":"\\b[A-Z][a-z]+['’]s\\b","message":"Use an apostrophe to show possession."},
+    {"id":"APS-GPC-Apostrophes-R-002","title":"Possession: singular noun","category":"regex","severity":"warn","pattern":"\\b\\w+s['’]\\s","message":"Add ’s to singular nouns to show possession."},
+    {"id":"APS-GPC-Apostrophes-R-003","title":"Possession: plural noun ending in s","category":"regex","severity":"warn","pattern":"\\b\\w+s['’]s\\b","message":"Do not add another ’s after plural nouns ending in s."},
+    {"id":"APS-GPC-Apostrophes-R-004","title":"Possession: plural noun not ending in s","category":"regex","severity":"warn","pattern":"\\b(?:children|men|women|people)['’]?s\\b","message":"Add ’s to plural nouns not ending in s."},
+    {"id":"APS-GPC-Apostrophes-R-005","title":"Proper names ending in s","category":"regex","severity":"warn","pattern":"\\b[A-Z][a-z]+['’](?!s)\\b","message":"Proper names ending in s take ’s (e.g., James’s)."},
+    {"id":"APS-GPC-Apostrophes-H-001","title":"Descriptive phrase","category":"heuristic","severity":"warn","message":"Do not use an apostrophe in descriptive noun phrases (e.g., workers compensation)."},
+    {"id":"APS-GPC-Apostrophes-R-006","title":"Shortened form possession","category":"regex","severity":"info","pattern":"\\b[A-Z]{2,}['’]s\\b","message":"Add ’s to shortened forms to show possession."},
+    {"id":"APS-GPC-Apostrophes-R-007","title":"Shortened form plural","category":"regex","severity":"error","pattern":"\\b[A-Z]{2,}’s\\b","message":"Do not use apostrophe+s to pluralise shortened forms."},
+    {"id":"APS-GPC-Apostrophes-R-008","title":"Don’t define shortened forms with possessive","category":"regex","severity":"warn","pattern":"\\([A-Z]{2,}['’]s\\)","message":"Do not put ’s after acronym when introducing it."},
+    {"id":"APS-GPC-Apostrophes-R-009","title":"Possessive pronouns","category":"regex","severity":"error","pattern":"\\b(it’s|your’s|their’s)\\b","message":"Possessive pronouns never take an apostrophe."},
+    {"id":"APS-GPC-Apostrophes-H-002","title":"Australian place names","category":"heuristic","severity":"warn","message":"Do not use apostrophes in official Australian place names (e.g., Kings Cross)."},
+    {"id":"APS-GPC-Apostrophes-H-003","title":"Time expressions","category":"heuristic","severity":"warn","message":"No apostrophe in plural time periods; use in singular."},
+    {"id":"APS-GPC-Apostrophes-R-010","title":"Apostrophe in contractions","category":"regex","severity":"info","pattern":"\\b(?:it’s|don’t|can’t|won’t|haven’t)\\b","message":"Use apostrophe for omitted letters in contractions."},
+    {"id":"APS-GPC-Apostrophes-R-011","title":"Apostrophe not for plurals","category":"regex","severity":"error","pattern":"\\b\\w+’s\\b","message":"Do not use apostrophes to pluralise nouns."},
+    {"id":"APS-GPC-Apostrophes-R-012","title":"Apostrophes for letters/digits","category":"regex","severity":"info","pattern":"\\b[0-9IiuU]’s\\b","message":"Use apostrophes for clarity with single letters or digits."},
+    {"id":"APS-GPC-Apostrophes-H-004","title":"Apostrophe as sound marker","category":"heuristic","severity":"info","message":"Apostrophes can mark glottal stops or sounds in transliterations."},
+    {"id":"APS-GPC-Apostrophes-H-005","title":"Official names","category":"heuristic","severity":"info","message":"Follow official names as published, including apostrophes."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Brackets and parentheses",
+  "rules": [
+    {"id":"APS-GPC-Bracketsandparentheses-H-001","title":"Use brackets for non-essential info","category":"heuristic","severity":"warn","message":"Use brackets only for text that can be removed without changing meaning."},
+    {"id":"APS-GPC-Bracketsandparentheses-H-002","title":"Parentheses for definitions/short forms","category":"heuristic","severity":"info","message":"Use parentheses for definitions, abbreviations, cross-references, citations, or extra detail."},
+    {"id":"APS-GPC-Bracketsandparentheses-H-003","title":"Avoid nesting parentheses","category":"heuristic","severity":"error","message":"Do not nest parentheses; if unavoidable, use square brackets inside parentheses."},
+    {"id":"APS-GPC-Bracketsandparentheses-H-004","title":"Square brackets for insertions in quotes","category":"heuristic","severity":"warn","message":"Use square brackets to mark insertions, clarifications, or paraphrases in quotations."},
+    {"id":"APS-GPC-Bracketsandparentheses-H-005","title":"Use [sic] for original errors","category":"heuristic","severity":"info","message":"Show original author’s errors in quotes with [sic] in square brackets."},
+    {"id":"APS-GPC-Bracketsandparentheses-H-006","title":"Punctuation inside brackets","category":"heuristic","severity":"warn","message":"Punctuate bracketed text as if outside; only use commas after closing brackets if required."},
+    {"id":"APS-GPC-Bracketsandparentheses-H-007","title":"Brackets match surrounding text style","category":"heuristic","severity":"info","message":"Format brackets in the same typeface as the surrounding text."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Colons",
+  "rules": [
+    {"id":"APS-GPC-Colons-H-001","title":"Limit colon use","category":"heuristic","severity":"warn","message":"Only use colons when essential; overuse creates confusion."},
+    {"id":"APS-GPC-Colons-H-002","title":"Introduce examples and contrasts","category":"heuristic","severity":"info","message":"Use a colon to add detail, examples, contrasts, or a question."},
+    {"id":"APS-GPC-Colons-H-003","title":"Start lists with colon","category":"heuristic","severity":"error","message":"Introduce lists with a colon; omit if the list continues the sentence."},
+    {"id":"APS-GPC-Colons-R-001","title":"Lower case after colon","category":"regex","severity":"error","pattern":":\\s+[A-Z][a-z]","message":"Use lower case after colon unless proper noun or full-sentence question."},
+    {"id":"APS-GPC-Colons-R-002","title":"Capitalise full question after colon","category":"regex","severity":"warn","pattern":":\\s+[Ww]hich|: \\s+[Ww]hat|: \\s+[Hh]ow","message":"Capitalise the first word of a full-sentence question introduced by a colon."},
+    {"id":"APS-GPC-Colons-R-003","title":"Book/article subtitles","category":"regex","severity":"info","pattern":".+:\\s+[a-z]","message":"Use colon before subtitles; lower case after unless proper noun."},
+    {"id":"APS-GPC-Colons-H-004","title":"Introduce block quotations","category":"heuristic","severity":"info","message":"Introduce block quotations with a colon."},
+    {"id":"APS-GPC-Colons-R-004","title":"Mathematical ratios","category":"regex","severity":"error","pattern":"\\d+\\s*:\\s*\\d+","message":"Express ratios with a colon and no spaces after it."},
+    {"id":"APS-GPC-Colons-R-005","title":"Time references","category":"regex","severity":"warn","pattern":"\\b\\d{1,2}\\.\\d{2}\\b","message":"Use a colon, not a full stop, to separate hours and minutes in times."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Commas",
+  "rules": [
+    {"id":"APS-GPC-Commas-R-001","title":"Comma after introductory elements","category":"regex","severity":"warn","pattern":"^(During|Although|Unless|If|Until|After|Before|While)\\b.*","message":"Place a comma after introductory words, phrases, or clauses."},
+    {"id":"APS-GPC-Commas-H-001","title":"Avoid comma after very short intro","category":"heuristic","severity":"info","message":"Do not use a comma after short introductory words in very short sentences."},
+    {"id":"APS-GPC-Commas-R-002","title":"Comma after numeral–numeral intro","category":"regex","severity":"warn","pattern":"^On\\s+\\d{1,2}\\s+[A-Z][a-z]+\\s+\\d{4},\\s*\\d","message":"Use a comma after an introductory phrase ending with a numeral followed by another numeral."},
+    {"id":"APS-GPC-Commas-H-002","title":"Non-essential info comma pair","category":"heuristic","severity":"error","message":"Use paired commas to isolate non-essential information within a sentence."},
+    {"id":"APS-GPC-Commas-H-003","title":"Non-essential clause commas","category":"heuristic","severity":"warn","message":"Place commas around non-essential clauses; omit if essential to meaning."},
+    {"id":"APS-GPC-Commas-R-003","title":"Appositive comma pair","category":"regex","severity":"error","pattern":".+,\\s+[A-Z][a-z]+\\s+[A-Z][a-z]+,\\s+.*","message":"Place commas around nouns that define the same thing they follow."},
+    {"id":"APS-GPC-Commas-R-004","title":"Tag questions comma","category":"regex","severity":"error","pattern":".+,\\s+(are|isn’t|won’t|didn’t|can’t|shall)\\b.*\\?$","message":"Use a comma before a question tag."},
+    {"id":"APS-GPC-Commas-H-004","title":"‘for example’ commas","category":"heuristic","severity":"warn","message":"Use commas before and after ‘for example’ in a sentence, or after it when at the start."},
+    {"id":"APS-GPC-Commas-R-005","title":"No comma after e.g./i.e.","category":"regex","severity":"error","pattern":"\\b(e\\.g\\.|i\\.e\\.),","message":"Do not place a comma after Latin short forms such as e.g. and i.e."},
+    {"id":"APS-GPC-Commas-H-005","title":"Clauses joined by conjunction comma use","category":"heuristic","severity":"warn","message":"Use a comma before a coordinating conjunction only if clauses have different subjects."},
+    {"id":"APS-GPC-Commas-R-006","title":"Avoid comma splice","category":"regex","severity":"error","pattern":".+?,\\s+[A-Z].+","message":"Do not join two independent sentences with a comma unless also using a coordinating conjunction."},
+    {"id":"APS-GPC-Commas-H-006","title":"List commas, no Oxford","category":"heuristic","severity":"warn","message":"Use commas to separate list items; omit the Oxford comma unless clarity requires it."},
+    {"id":"APS-GPC-Commas-H-007","title":"Oxford comma for clarity","category":"heuristic","severity":"info","message":"Use the Oxford comma only when it prevents ambiguity."},
+    {"id":"APS-GPC-Commas-H-008","title":"Adjective commas (same type)","category":"heuristic","severity":"warn","message":"Use commas between adjectives of the same type, not different types."},
+    {"id":"APS-GPC-Commas-R-007","title":"Number grouping comma","category":"regex","severity":"error","pattern":"\\b\\d{1,3}(?:\\s\\d{3})+\\b","message":"Insert commas in numbers with 4 or more digits instead of spaces."},
+    {"id":"APS-GPC-Commas-H-009","title":"Direct speech commas","category":"heuristic","severity":"warn","message":"Introduce direct speech or quoted material with a comma."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Dashes",
+  "rules": [
+    {"id":"APS-GPC-Dashes-R-001","title":"En dash vs minus symbol","category":"regex","severity":"error","pattern":"−","message":"Use the mathematical minus sign (U+2212) instead of an en dash for subtraction."},
+    {"id":"APS-GPC-Dashes-H-001","title":"Use phrases for spans in general content","category":"heuristic","severity":"warn","message":"Prefer ‘from…to’ or ‘between…and’ instead of en dashes for spans in body text and headings."},
+    {"id":"APS-GPC-Dashes-R-002","title":"Don’t mix words and en dash in spans","category":"regex","severity":"error","pattern":"\\b(from|between)\\b[^\\n]*–","message":"Never combine ‘from’ or ‘between’ with an en dash."},
+    {"id":"APS-GPC-Dashes-R-003","title":"En dash for financial years","category":"regex","severity":"warn","pattern":"\\b\\d{4}–\\d{2}\\b","message":"Use an unspaced en dash for financial years (4+2 digits, or 4+4 if crossing centuries)."},
+    {"id":"APS-GPC-Dashes-R-004","title":"En dash for calendar years","category":"regex","severity":"warn","pattern":"\\b\\d{4}–(?:\\d{2}|\\d{4})\\b","message":"Use an unspaced en dash for calendar year spans."},
+    {"id":"APS-GPC-Dashes-R-005","title":"En dash for titles with date spans","category":"regex","severity":"info","pattern":"\\b\\d{4}–\\d{2,4}\\b","message":"Use an en dash in publication/program titles with correct digit formatting."},
+    {"id":"APS-GPC-Dashes-R-006","title":"En dash for terms of office","category":"regex","severity":"error","pattern":"\\(\\d{4}–\\d{2}\\)","message":"Use full 4-digit years on both sides of a term of office span."},
+    {"id":"APS-GPC-Dashes-R-007","title":"En dash for lifespans","category":"regex","severity":"error","pattern":"\\(\\d{4}–\\d{2}\\)","message":"Use full 4-digit years on both sides of a lifespan span."},
+    {"id":"APS-GPC-Dashes-H-002","title":"En dash in technical spans","category":"heuristic","severity":"info","message":"En dashes are acceptable for spans in technical contexts; do not pair with ‘from’ or ‘to’."},
+    {"id":"APS-GPC-Dashes-H-003","title":"En dash only when space limited (time/date)","category":"heuristic","severity":"warn","message":"Only use en dashes for time or date spans in headings, tables, or constrained spaces."},
+    {"id":"APS-GPC-Dashes-R-008","title":"Time span spacing with en dashes","category":"regex","severity":"warn","pattern":"\\b\\d{1,2}(?::\\d{2})?\\s?(am|pm)?\\s?–\\s?\\d{1,2}(?::\\d{2})?\\s?(am|pm)?\\b","message":"Follow spacing rules for en dashes in time spans."},
+    {"id":"APS-GPC-Dashes-R-009","title":"Join nouns with en dash","category":"regex","severity":"info","pattern":"[A-Za-z]+–[A-Za-z]+","message":"Use an en dash to join coordinate nouns showing equal relationship."},
+    {"id":"APS-GPC-Dashes-H-004","title":"Avoid prefix + en dash","category":"heuristic","severity":"warn","message":"Rewrite to avoid joining a prefix to another word with an en dash."},
+    {"id":"APS-GPC-Dashes-R-010","title":"Spaced en dashes for non-essential material","category":"regex","severity":"warn","pattern":"\\s–\\s","message":"Use spaced en dashes to set off non-essential information in sentences."},
+    {"id":"APS-GPC-Dashes-R-011","title":"Two em dashes for interruption/omission","category":"regex","severity":"info","pattern":"——","message":"Use two em dashes for interrupted speech or deliberate omission."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Ellipses",
+  "rules": [
+    {"id":"APS-GPC-Ellipses-R-001","title":"Use ellipsis (3 dots)","category":"regex","severity":"error","pattern":"\\.\\.\\.{4,}","message":"Use exactly three dots for ellipses, not multiple full stops."},
+    {"id":"APS-GPC-Ellipses-H-001","title":"Insert [ellipsis in original]","category":"heuristic","severity":"warn","message":"If the quoted source contains an ellipsis, add '[ellipsis in original]'."},
+    {"id":"APS-GPC-Ellipses-R-002","title":"No punctuation after ellipsis","category":"regex","severity":"error","pattern":"…[\\.,;]","message":"Do not place a full stop, comma, or semicolon directly after an ellipsis."},
+    {"id":"APS-GPC-Ellipses-R-003","title":"Allow ? or ! after ellipsis","category":"regex","severity":"info","pattern":"…[\\?!]","message":"A question or exclamation mark may follow an ellipsis with no space."},
+    {"id":"APS-GPC-Ellipses-H-002","title":"Ellipsis on own line for omission","category":"heuristic","severity":"info","message":"Place ellipsis on a separate line when an entire paragraph is omitted."},
+    {"id":"APS-GPC-Ellipses-R-004","title":"Spaces around ellipses","category":"regex","severity":"error","pattern":"\\S…\\S","message":"Add spaces before and after ellipses in running text."},
+    {"id":"APS-GPC-Ellipses-R-005","title":"Exception for ? and !","category":"regex","severity":"info","pattern":"…[\\?!]","message":"Do not insert a space before ? or ! when following an ellipsis."},
+    {"id":"APS-GPC-Ellipses-H-003","title":"Don’t change meaning with ellipsis","category":"heuristic","severity":"error","message":"Do not omit words with ellipses in a way that alters original meaning."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Exclamation marks",
+  "rules": [
+    {"id":"APS-GPC-Exclamationmarks-R-001","title":"No multiple exclamation marks","category":"regex","severity":"error","pattern":"!{2,}","message":"Replace runs of 2+ exclamation marks with a single full stop or one exclamation (only in informal content)."},
+    {"id":"APS-GPC-Exclamationmarks-H-001","title":"Avoid exclamation marks in government voice","category":"heuristic","severity":"error","message":"Do not use exclamation marks in formal APS content such as reports, briefings, or serious notices."},
+    {"id":"APS-GPC-Exclamationmarks-H-002","title":"Use sparingly in informal content","category":"heuristic","severity":"warn","message":"If exclamation marks are used in promotional or social content, keep usage minimal to avoid alarm or overemphasis."},
+    {"id":"APS-GPC-Exclamationmarks-R-002","title":"One exclamation per sentence","category":"regex","severity":"warn","pattern":"(?:^|\\S)!{2,}(?=\\s|$)","message":"At most one exclamation mark at the end of a sentence; never stack them."},
+    {"id":"APS-GPC-Exclamationmarks-R-003","title":"Flag sentence-ending exclamation","category":"regex","severity":"warn","pattern":"\\S!(?:\\s|$)","message":"Review any sentence ending with an exclamation mark; prefer a full stop unless the tone is intentionally informal."},
+    {"id":"APS-GPC-Exclamationmarks-H-003","title":"Allow literal “!” in character lists","category":"heuristic","severity":"info","message":"Do not flag exclamation marks when they appear as literal symbols (e.g., lists of allowed password characters)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Forward slashes",
+  "rules": [
+    {"id":"APS-GPC-Forwardslashes-H-001","title":"Allow only specific uses","category":"heuristic","severity":"warn","message":"Use forward slashes only in maths, shortened forms, URLs, dates, units, poetry, and some place names."},
+    {"id":"APS-GPC-Forwardslashes-R-001","title":"No spaces around slashes","category":"regex","severity":"warn","pattern":".*\\s/\\s.*","message":"Do not add spaces around a slash, except in dual place names or poetry."},
+    {"id":"APS-GPC-Forwardslashes-R-002","title":"Units abbreviation only","category":"regex","severity":"error","pattern":"\\bkilometres/","message":"Don’t use slashes when spelling out units of measurement."},
+    {"id":"APS-GPC-Forwardslashes-R-003","title":"Use en dash for financial years","category":"regex","severity":"error","pattern":"\\b\\d{4}/\\d{2}\\b","message":"Write financial years with an en dash (2019–20), not a slash (2019/20)."},
+    {"id":"APS-GPC-Forwardslashes-H-002","title":"Replace slash with ‘or’ for options","category":"heuristic","severity":"warn","message":"Avoid using slashes for alternatives (e.g. yes/no); write out ‘or’ instead."},
+    {"id":"APS-GPC-Forwardslashes-H-003","title":"Don’t join words with slashes","category":"heuristic","severity":"error","message":"Do not use forward slashes to link words like Sydney/Brisbane; use an en dash or reword."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Full stops",
+  "rules": [
+    {"id":"APS-GPC-Fullstops-R-001","title":"Sentence ends with full stop","category":"regex","severity":"error","pattern":"^[^!?]+$","message":"End sentences with a full stop unless they are questions or exclamations."},
+    {"id":"APS-GPC-Fullstops-H-001","title":"List final item ends with full stop","category":"heuristic","severity":"warn","message":"Use a full stop at the end of lists that are sentence fragments."},
+    {"id":"APS-GPC-Fullstops-R-002","title":"Decimal point use","category":"regex","severity":"error","pattern":"\\d+,\\d+","message":"Use full stops, not commas, as decimal points."},
+    {"id":"APS-GPC-Fullstops-R-003","title":"Subsection numbering","category":"regex","severity":"info","pattern":"Section\\s+\\d+\\.\\d+","message":"Use full stops in section numbering."},
+    {"id":"APS-GPC-Fullstops-H-002","title":"Latin shortened forms","category":"heuristic","severity":"info","message":"Use full stops in certain Latin shortened forms (e.g., etc., i.e.)."},
+    {"id":"APS-GPC-Fullstops-R-004","title":"Avoid full stop after web/email address","category":"regex","severity":"error","pattern":"(https?:\\/\\/|\\b\\w+@\\w+\\.\\w+)\\.$","message":"Do not end a bare web or email address with a full stop."},
+    {"id":"APS-GPC-Fullstops-R-005","title":"Exclude full stop from link text","category":"regex","severity":"warn","pattern":"\\]\\.+","message":"Place the full stop outside the hyperlink."},
+    {"id":"APS-GPC-Fullstops-H-003","title":"No full stops in headings or captions","category":"heuristic","severity":"warn","message":"Don’t use full stops in headings, stand-alone lists, captions, or page headers/footers."},
+    {"id":"APS-GPC-Fullstops-R-006","title":"No stop after units/symbols","category":"regex","severity":"warn","pattern":"\\b(?:cm|kg|km|mL|%|°)\\.","message":"Don’t use a full stop after measurement units unless it ends the sentence."},
+    {"id":"APS-GPC-Fullstops-R-007","title":"No stop after hashtags/handles/emojis/URLs","category":"regex","severity":"warn","pattern":"(#\\w+|@[A-Za-z0-9_]+|https?:\\/\\/\\S+|\\p{Emoji_Presentation})\\.","message":"Do not add a full stop if a post ends with a hashtag, handle, emoji, or URL."},
+    {"id":"APS-GPC-Fullstops-H-004","title":"SMS sentence punctuation","category":"heuristic","severity":"warn","message":"In government text messages, end sentences with full stops; omit if ending with a fragment or sign off."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Hyphens",
+  "rules": [
+    {"id":"APS-GPC-Hyphens-H-001","title":"Hyphenate for clarity","category":"heuristic","severity":"warn","message":"Use hyphens to avoid ambiguity in meaning."},
+    {"id":"APS-GPC-Hyphens-H-002","title":"Dictionary consistency","category":"heuristic","severity":"info","message":"Follow organisation’s preferred dictionary for hyphenation."},
+    {"id":"APS-GPC-Hyphens-H-003","title":"No short word line breaks","category":"heuristic","severity":"warn","message":"Do not break words of <6 letters, 1-syllable, or 2-syllable across lines."},
+    {"id":"APS-GPC-Hyphens-R-001","title":"Hyphen with doubled vowels in prefixes","category":"regex","severity":"error","pattern":"\\b(?:re|de|pre|co|pro|semi|anti)-?(?=a\\w|e\\w|i\\w|o\\w|u\\w)","message":"Insert hyphen when prefix ends with vowel and base starts with same vowel."},
+    {"id":"APS-GPC-Hyphens-H-004","title":"No hyphen with co-, cooperate exceptions","category":"heuristic","severity":"info","message":"Drop hyphen from common 'co' words (cooperate, coordinate)."},
+    {"id":"APS-GPC-Hyphens-H-005","title":"Hyphen to avoid double letters","category":"heuristic","severity":"warn","message":"Use hyphen if prefix causes double letter ambiguity."},
+    {"id":"APS-GPC-Hyphens-R-002","title":"Prefix + capital word","category":"regex","severity":"warn","pattern":"\\b(?:[a-z]+)-[A-Z][a-z]+","message":"Hyphenate when prefix precedes a capitalised word."},
+    {"id":"APS-GPC-Hyphens-R-003","title":"Prefix + number/italics","category":"regex","severity":"warn","pattern":"\\b(?:[a-z]+)-\\d","message":"Hyphenate when prefix precedes numeral or italicised term."},
+    {"id":"APS-GPC-Hyphens-H-006","title":"Suffixes normally closed","category":"heuristic","severity":"info","message":"Attach most suffixes directly to base word without hyphen."},
+    {"id":"APS-GPC-Hyphens-R-004","title":"Numeral + fold","category":"regex","severity":"warn","pattern":"\\b\\d+-fold\\b","message":"Use hyphen with '-fold' after numeral."},
+    {"id":"APS-GPC-Hyphens-R-005","title":"Always hyphenate “-odd”","category":"regex","severity":"error","pattern":"\\b\\d+-odd\\b","message":"Hyphenate '-odd' forms."},
+    {"id":"APS-GPC-Hyphens-H-007","title":"Compound adj before noun","category":"heuristic","severity":"warn","message":"Hyphenate compounds used before a noun; not when after."},
+    {"id":"APS-GPC-Hyphens-R-006","title":"Adverb + adj ending -ly not hyphenated","category":"regex","severity":"error","pattern":"\\b\\w+ly-\\w+\\b","message":"Do not hyphenate '-ly' adverb + adjective."},
+    {"id":"APS-GPC-Hyphens-H-008","title":"Clarify ambiguous compounds","category":"heuristic","severity":"warn","message":"Hyphenate to resolve ambiguity where needed."},
+    {"id":"APS-GPC-Hyphens-H-009","title":"Replace hanging hyphens","category":"heuristic","severity":"warn","message":"Repeat whole words; don’t use hanging hyphens."},
+    {"id":"APS-GPC-Hyphens-R-007","title":"Hyphenate spelled-out 21–99","category":"regex","severity":"error","pattern":"\\b(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)(?:\\s+\\w+)\\b","message":"Spell-out 21–99 with hyphens."},
+    {"id":"APS-GPC-Hyphens-R-008","title":"Hyphenate fractions","category":"regex","severity":"error","pattern":"\\b(?:one|two|three|four|five|six|seven|eight|nine|ten)\\s+(?:half|third|quarter|fifth|sixth|seventh|eighth|ninth|tenth)\\b","message":"Use hyphens in spelled-out fractions."},
+    {"id":"APS-GPC-Hyphens-R-009","title":"Don’t hyphenate “-ing/-ed” verbs","category":"regex","severity":"error","pattern":"\\b\\w+(?:ing|ed)-\\w+\\b","message":"Don’t hyphenate participles unless exceptions apply."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Punctuation and capitalisation",
+  "rules": [
+    {"id":"APS-GPC-Punctuationandcapitalisation-R-001","title":"No full stops in headings, headers, captions","category":"regex","severity":"warn","pattern":"^.{1,}$","message":"Do not end headings, page headers, footers, or captions with a full stop."},
+    {"id":"APS-GPC-Punctuationandcapitalisation-R-002","title":"No semicolons at list ends","category":"regex","severity":"warn","pattern":"^\\s*[-•*]\\s+.*;\\s*$","message":"Do not place a semicolon at the end of bullet list items."},
+    {"id":"APS-GPC-Punctuationandcapitalisation-H-001","title":"No full stops in list items (unless sentence or last item)","category":"heuristic","severity":"warn","message":"Avoid full stops at the end of bullet list items unless each is a full sentence or the last item."},
+    {"id":"APS-GPC-Punctuationandcapitalisation-R-003","title":"No full stops in acronyms/initialisms","category":"regex","severity":"error","pattern":"\\b(?:[A-Z]\\.){2,}[A-Z]?\\b","message":"Write acronyms/initialisms without full stops between letters."},
+    {"id":"APS-GPC-Punctuationandcapitalisation-R-004","title":"No full stop at abbreviation end","category":"regex","severity":"warn","pattern":"\\b[a-zA-Z]{2,}\\.","message":"Most abbreviations should not take a final full stop."},
+    {"id":"APS-GPC-Punctuationandcapitalisation-R-005","title":"Single space after sentence punctuation","category":"regex","severity":"error","pattern":"[\\.\\?\\!] {2,}","message":"Use only one space after a sentence-ending punctuation mark."},
+    {"id":"APS-GPC-Punctuationandcapitalisation-R-006","title":"Capitalise first word in sentence/heading","category":"regex","severity":"error","pattern":"(^|[\\.!?]\\s+)[a-z]","message":"The first word in sentences and headings must start with a capital letter."},
+    {"id":"APS-GPC-Punctuationandcapitalisation-R-007","title":"No all-caps headings","category":"regex","severity":"error","pattern":"^#{1,6}\\s+(?!.*[a-z]).+","message":"Do not use all capitals for headings (unless WCAG-justified design)."},
+    {"id":"APS-GPC-Punctuationandcapitalisation-H-002","title":"Sentence case for titles of works","category":"heuristic","severity":"info","message":"Use sentence case + italics when citing titles of works."},
+    {"id":"APS-GPC-Punctuationandcapitalisation-H-003","title":"Capitals for proper nouns only","category":"heuristic","severity":"warn","message":"Use initial capitals for proper nouns, not for common nouns/adjectives."},
+    {"id":"APS-GPC-Punctuationandcapitalisation-H-004","title":"Shortened form capitalisation","category":"heuristic","severity":"info","message":"Acronyms keep capitals; full terms follow normal noun rules."},
+    {"id":"APS-GPC-Punctuationandcapitalisation-R-008","title":"Capitals for official titles before names","category":"regex","severity":"warn","pattern":"\\b([A-Z][a-z]+\\s){1,}(?=[A-Z][a-z]+)","message":"Use capitals only when an official title precedes a name."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Question marks",
+  "rules": [
+    {"id":"APS-GPC-Questionmarks-R-001","title":"Place ? after final word","category":"regex","severity":"error","pattern":".+\\s\\?$","message":"Place question mark immediately after the final word, without space."},
+    {"id":"APS-GPC-Questionmarks-H-001","title":"Question mark placement with quotes","category":"heuristic","severity":"warn","message":"Put question mark inside quotes/brackets if part of quoted/bracketed text; outside if not."},
+    {"id":"APS-GPC-Questionmarks-H-002","title":"Use ? for uncertainty","category":"heuristic","severity":"info","message":"Insert question mark to show uncertainty in dates or details."},
+    {"id":"APS-GPC-Questionmarks-R-002","title":"Direct questions end with ?","category":"regex","severity":"error","pattern":"^[A-Z].*\\?$","message":"Direct questions must end with a question mark."},
+    {"id":"APS-GPC-Questionmarks-H-003","title":"Requests framed as questions","category":"heuristic","severity":"warn","message":"Requests in question form should end with a question mark."},
+    {"id":"APS-GPC-Questionmarks-H-004","title":"Indirect questions don’t end with ?","category":"heuristic","severity":"warn","message":"Indirect questions must not end with a question mark."},
+    {"id":"APS-GPC-Questionmarks-H-005","title":"Commands don’t end with ?","category":"heuristic","severity":"warn","message":"Instructions and commands should not end with a question mark."},
+    {"id":"APS-GPC-Questionmarks-H-006","title":"Rhetorical questions may end with !","category":"heuristic","severity":"info","message":"Rhetorical questions may end with a question mark or an exclamation mark."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Quotation marks",
+  "rules": [
+    {"id":"APS-GPC-Quotationmarks-R-001","title":"Use single quotes for direct speech","category":"regex","severity":"error","pattern":"['‘’].+['‘’]","message":"Enclose direct speech in single quotation marks; use double quotes only for quotations within quotations."},
+    {"id":"APS-GPC-Quotationmarks-R-002","title":"Quotes within quotes use doubles","category":"regex","severity":"error","pattern":"‘[^’]*“[^”]+”[^’]*’","message":"Nest double quotation marks inside single ones."},
+    {"id":"APS-GPC-Quotationmarks-H-001","title":"Long quotes as block quotations","category":"heuristic","severity":"warn","message":"Quotations longer than about 30 words should be formatted as block text without quotation marks."},
+    {"id":"APS-GPC-Quotationmarks-H-002","title":"No quotation marks in transcripts","category":"heuristic","severity":"warn","message":"Do not use quotation marks for plays, transcripts, or Q&A when the speaker is identified."},
+    {"id":"APS-GPC-Quotationmarks-H-003","title":"Titles requiring quotation marks","category":"heuristic","severity":"warn","message":"Use quotation marks for RuleSets, articles, essays, lectures, poems, and songs."},
+    {"id":"APS-GPC-Quotationmarks-H-004","title":"Use quotes to highlight words","category":"heuristic","severity":"info","message":"Quotation marks may be used to draw attention to words or terms in special usage."},
+    {"id":"APS-GPC-Quotationmarks-H-005","title":"Preserve quoted punctuation","category":"heuristic","severity":"error","message":"Keep punctuation inside the quotation if it belongs to the quoted text; otherwise place outside."},
+    {"id":"APS-GPC-Quotationmarks-H-006","title":"Avoid misleading omissions","category":"heuristic","severity":"error","message":"Ellipses in quotations must not alter meaning; add context with square brackets if needed."},
+    {"id":"APS-GPC-Quotationmarks-R-003","title":"Mark errors with [sic]","category":"regex","severity":"info","pattern":"\\[sic\\]","message":"Insert [sic] in square brackets after errors in quoted text to indicate original error."},
+    {"id":"APS-GPC-Quotationmarks-H-007","title":"Retain non-AU spelling in quotes","category":"heuristic","severity":"info","message":"Maintain original spelling and capitalisation when quoting non-Australian English sources."},
+    {"id":"APS-GPC-Quotationmarks-R-004","title":"Avoid double punctuation","category":"regex","severity":"warn","pattern":"[.!?]['’]\\.","message":"Avoid using two end punctuation marks together inside/outside quotation marks."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Punctuation",
+  "RuleSet": "Semicolons",
+  "rules": [
+    {"id":"APS-GPC-Semicolons-H-001","title":"Avoid semicolon to link sentences","category":"heuristic","severity":"warn","message":"Prefer full stop or comma + conjunction instead of semicolon."},
+    {"id":"APS-GPC-Semicolons-H-002","title":"Full sentences both sides of semicolon","category":"heuristic","severity":"error","message":"If a semicolon is used, both sides must be complete sentences."},
+    {"id":"APS-GPC-Semicolons-R-001","title":"No semicolons at list item ends","category":"regex","severity":"error","pattern":"^\\s*[-\\d]+.*;\\s*$","message":"Do not end bullet or numbered list items with semicolons."},
+    {"id":"APS-GPC-Semicolons-R-002","title":"Separate in-text references with semicolons","category":"regex","severity":"info","pattern":"\\([^)]*;[^)]*\\)","message":"Use semicolons between multiple in-text references inside parentheses."},
+    {"id":"APS-GPC-Semicolons-H-003","title":"Use semicolons only in complex inline lists","category":"heuristic","severity":"info","message":"In inline lists, use semicolons only if items already contain commas."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Abbreviations",
+  "RuleSet": "Shortened words and phrases",
+  "rules": [
+    {"id":"APS-GPC-Shortenedwordsandphrases-H-001","title":"Limit use of abbreviations","category":"heuristic","severity":"warn","message":"Avoid abbreviations in general/public content; use only when necessary."},
+    {"id":"APS-GPC-Shortenedwordsandphrases-R-001","title":"No full stop after abbreviations","category":"regex","severity":"warn","pattern":"\\b[A-Za-z]+\\.(?=\\s|$)","message":"Don’t end abbreviations with a full stop, except in listed exceptions."},
+    {"id":"APS-GPC-Shortenedwordsandphrases-R-002","title":"Preserve capitalisation","category":"regex","severity":"error","pattern":"\\b[a-z]{2,}\\b(?= for [A-Z])","message":"Use the same capitalisation as the spelt-out form."},
+    {"id":"APS-GPC-Shortenedwordsandphrases-R-003","title":"Don’t abbreviate sentence-initial word","category":"regex","severity":"error","pattern":"^[A-Z][a-z]{0,3}\\b","message":"Do not abbreviate the first word in a sentence."},
+    {"id":"APS-GPC-Shortenedwordsandphrases-R-004","title":"Plural abbreviations take ‘s’","category":"regex","severity":"warn","pattern":"\\b[A-Za-z]+['’]s\\b","message":"Form plurals by adding s, not apostrophe-s (except ‘pp’ for pages)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Abbreviations",
+  "RuleSet": "Acronyms and initialisms",
+  "rules": [
+    {"id":"APS-GPC-Acronymsandinitialisms-H-001","title":"Use recognised acronyms","category":"heuristic","severity":"warn","message":"Only use acronyms and initialisms that are widely recognised by users."},
+    {"id":"APS-GPC-Acronymsandinitialisms-H-002","title":"Define on first use","category":"heuristic","severity":"error","message":"Spell out the full term followed by acronym/initialism in parentheses on first mention unless universally known."},
+    {"id":"APS-GPC-Acronymsandinitialisms-H-003","title":"Reverse well-known forms","category":"heuristic","severity":"info","message":"For universally known acronyms, present the acronym first followed by the full term in parentheses."},
+    {"id":"APS-GPC-Acronymsandinitialisms-H-004","title":"Repeat full term if needed","category":"heuristic","severity":"info","message":"Repeat the full form in long content so users don’t miss the definition."},
+    {"id":"APS-GPC-Acronymsandinitialisms-H-005","title":"Government organisation forms","category":"heuristic","severity":"warn","message":"Spell out government agency names first; then use generic descriptors instead of acronyms."},
+    {"id":"APS-GPC-Acronymsandinitialisms-H-006","title":"Provide glossary when many acronyms","category":"heuristic","severity":"info","message":"Include a glossary when content uses many specialised acronyms and initialisms."},
+    {"id":"APS-GPC-Acronymsandinitialisms-R-001","title":"No full stop endings","category":"regex","severity":"error","pattern":"\\b[A-Z]{2,}\\.(?!\\w)","message":"Do not end acronyms and initialisms with a full stop unless at sentence end."},
+    {"id":"APS-GPC-Acronymsandinitialisms-H-007","title":"Correct capitalisation","category":"heuristic","severity":"warn","message":"Use capitals for most acronyms; use lowercase or initial caps only where established by convention."},
+    {"id":"APS-GPC-Acronymsandinitialisms-H-008","title":"Lowercase full forms","category":"heuristic","severity":"info","message":"Use lowercase for common noun full forms of acronyms/initialisms."},
+    {"id":"APS-GPC-Acronymsandinitialisms-H-009","title":"Proper nouns capitalised","category":"heuristic","severity":"info","message":"Capitalise full forms when they are proper nouns."},
+    {"id":"APS-GPC-Acronymsandinitialisms-H-010","title":"No plural or possessive on first use","category":"heuristic","severity":"warn","message":"Avoid plural or possessive when introducing acronyms or initialisms."},
+    {"id":"APS-GPC-Acronymsandinitialisms-H-011","title":"Quote as spoken","category":"heuristic","severity":"info","message":"When quoting, reproduce acronyms/initialisms exactly; add full form in square brackets if needed."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Abbreviations",
+  "RuleSet": "Contractions",
+  "rules": [
+    {"id":"APS-GPC-Contractions-R-001","title":"No full stop after single‑word contractions mid‑sentence","category":"regex","severity":"error","pattern":"\\b(?:Dr|Ltd|Cth)\\.(?=\\s+\\w)","message":"Do not use a full stop after single-word contractions unless it ends the sentence."},
+    {"id":"APS-GPC-Contractions-R-002","title":"No apostrophe in single‑word contractions","category":"regex","severity":"error","pattern":"\\b(?:Dr|Ltd|Cth)[\\u2019']\\b","message":"Do not use an apostrophe in single-word contractions (e.g., Dr, Ltd, Cth)."},
+    {"id":"APS-GPC-Contractions-R-003","title":"Only one apostrophe in grammatical contractions","category":"regex","severity":"error","pattern":"\\b\\w*[\\u2019']\\w*[\\u2019']\\w*\\b","message":"Grammatical contractions must not contain more than one apostrophe."},
+    {"id":"APS-GPC-Contractions-R-004","title":"No full stop after grammatical contraction mid‑sentence","category":"regex","severity":"warn","pattern":"\\b\\w+[\\u2019']\\w+\\.(?=\\s+\\w)","message":"Do not add a full stop after a grammatical contraction mid‑sentence."},
+    {"id":"APS-GPC-Contractions-R-005","title":"Don’t start sentences with single‑word contractions","category":"regex","severity":"warn","pattern":"(?:^|[.!?]\\s+)(?:Cth|Dr|Ltd)\\b","message":"Write out single-word contractions at the start of a sentence (grammatical contractions are allowed)."},
+    {"id":"APS-GPC-Contractions-R-006","title":"Use ‘no’/‘nos’ only before numerals","category":"regex","severity":"warn","pattern":"\\bno(?:s)?\\b(?!\\s*\\d)","message":"Use the contraction ‘no’/‘nos’ only when immediately followed by a numeral; otherwise write ‘number’/‘numbers’."},
+    {"id":"APS-GPC-Contractions-R-007","title":"No full stop in ‘no’/‘nos’ before numerals","category":"regex","severity":"error","pattern":"\\bno(?:s)?\\.(?=\\s*\\d)","message":"Do not punctuate ‘no’/‘nos’ with a full stop before numerals."},
+    {"id":"APS-GPC-Contractions-R-008","title":"Prefer ‘Cth’ to ‘Cwlth’","category":"regex","severity":"warn","pattern":"\\bCwlth\\b","message":"Use ‘Cth’ as the contraction for ‘Commonwealth’."},
+    {"id":"APS-GPC-Contractions-R-009","title":"Avoid Latin shortened forms","category":"regex","severity":"warn","pattern":"\\b(?:i\\.e\\.|e\\.g\\.|etc\\.)\\b","message":"Avoid Latin shortened forms; spell out in plain English."},
+    {"id":"APS-GPC-Contractions-R-010","title":"No full stops in acronyms/initialisms","category":"regex","severity":"warn","pattern":"\\b(?:[A-Z]\\.){2,}","message":"Do not use full stops in acronyms or initialisms (write ‘ANC’, not ‘A.N.C.’)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Abbreviations",
+  "RuleSet": "Latin shortened forms",
+  "rules": [
+    {"id":"APS-GPC-Latinshortenedforms-H-001","title":"Prefer English over Latin forms","category":"heuristic","severity":"error","message":"Use English words instead of Latin shortened forms (e.g., use 'for example' not 'e.g.')."},
+    {"id":"APS-GPC-Latinshortenedforms-H-002","title":"Limited contexts for Latin forms","category":"heuristic","severity":"warn","message":"Only use Latin shortened forms in tables or specialist publications."},
+    {"id":"APS-GPC-Latinshortenedforms-R-001","title":"Full stops for i.e. and e.g.","category":"regex","severity":"error","pattern":"\\b(?:i|e)g\\b","message":"Ensure 'i.e.' and 'e.g.' include full stops after each letter."},
+    {"id":"APS-GPC-Latinshortenedforms-R-002","title":"No comma after e.g. or i.e.","category":"regex","severity":"warn","pattern":"\\b(?:i\\.e\\.|e\\.g\\.),","message":"Do not follow 'e.g.' or 'i.e.' with a comma."},
+    {"id":"APS-GPC-Latinshortenedforms-H-003","title":"Ban etc. in lists","category":"heuristic","severity":"error","message":"Do not use 'etc.' in lists introduced by 'for example', 'such as', or 'including'."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Spelling",
+  "RuleSet": "Common misspellings and word confusion",
+  "rules": [
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-R-001","title":"Use AU past tense “dived” (not “dove”)","category":"regex","severity":"warn","pattern":"\\b[Dd]ove\\b","message":"Use AU English past tense “dived”, not “dove” (unless referring to the bird)."},
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-R-002","title":"“For all intents and purposes” (not “intensive”)","category":"regex","severity":"error","pattern":"\\bfor all\\s+intensive\\s+purposes\\b","message":"Use the fixed phrase “for all intents and purposes”."},
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-R-003","title":"Court “judgment”; general “judgement”","category":"regex","severity":"warn","pattern":"\\b[Jj]udgment\\b(?!\\s+of\\s+(?:the\\s+)?(?:[A-Z][a-z]+\\s+)?Court|\\s*(?:order|decision|reasons|appeal))","message":"Use “judgement” in general contexts; reserve “judgment” for court decisions."},
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-R-004","title":"Prefer “judgment” with court collocations","category":"regex","severity":"warn","pattern":"\\b[Jj]udgement\\s+of\\s+(?:the\\s+)?(?:High|Federal|Supreme|District|Magistrates?)\\s+Court\\b","message":"Use “judgment” (not “judgement”) for court decisions."},
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-R-005","title":"“Dependent on” (adj) vs “dependant” (noun)","category":"regex","severity":"error","pattern":"\\b[Dd]ependant\\s+on\\b","message":"Use “dependent on” for conditions; “dependant” is a person."},
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-R-006","title":"“Legal counsel” (not “legal council”)","category":"regex","severity":"error","pattern":"\\blegal\\s+council\\b","message":"Use “legal counsel” for a lawyer/adviser; “council” is an assembly."},
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-R-007","title":"“Conscious of” (not “conscience of”)","category":"regex","severity":"error","pattern":"\\b[Cc]onscience\\s+of\\b","message":"Use “conscious of” to mean ‘aware of’; “conscience” is moral sense."},
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-R-008","title":"“Complementary colours” (not “complimentary”)","category":"regex","severity":"warn","pattern":"\\b[Cc]omplimentary\\s+colou?rs\\b","message":"Use “complementary colours” for matching/contrasting hues."},
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-R-009","title":"“Allusion to” (not “illusion to”)","category":"regex","severity":"error","pattern":"\\b[Ii]llusion\\s+to\\b","message":"Use “allusion to” for references; “illusion” is a false impression."},
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-R-010","title":"“Elicit responses” (not “illicit responses”)","category":"regex","severity":"error","pattern":"\\b[Ii]llicit\\s+(?:response|responses|feedback|answers)\\b","message":"Use “elicit” (draw out) with responses/feedback; “illicit” means unlawful."},
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-R-011","title":"“Imminent” for things about to happen","category":"regex","severity":"error","pattern":"\\b[Ii]mmanent\\s+(?:evacuation|threat|danger|closure|attack|strike|arrival)\\b","message":"Use “imminent” (about to happen); “immanent” is ‘inherent’."},
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-R-012","title":"“Have/has/had drunk” (not “have/has/had drank”)","category":"regex","severity":"error","pattern":"\\b(?:have|has|had)\\s+drank\\b","message":"Use the participle “drunk” after auxiliaries."},
+    {"id":"APS-GPC-Commonmisspellingsandwordconfusion-H-001","title":"Flag likely “foreword/forward” confusion","category":"heuristic","severity":"warn","message":"If referring to introductory book/report text, prefer “foreword”; avoid phrases like “write the forward” in that context."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Spelling",
+  "RuleSet": "Spelling",
+  "rules": [
+    {"id":"APS-GPC-Spelling-H-001","title":"Declare one AU dictionary","category":"heuristic","severity":"warn","message":"Choose either ACOD or Macquarie as the single reference and apply it consistently."},
+    {"id":"APS-GPC-Spelling-H-002","title":"Use current edition","category":"heuristic","severity":"info","message":"Use an up‑to‑date edition of the chosen dictionary."},
+    {"id":"APS-GPC-Spelling-H-003","title":"Prefer first-listed variant","category":"heuristic","severity":"warn","message":"Use the dictionary’s first-listed spelling for variant entries by default."},
+    {"id":"APS-GPC-Spelling-H-004","title":"Record justified alternatives","category":"heuristic","severity":"info","message":"Only use an alternative spelling to meet a user need and record the decision in the style sheet."},
+    {"id":"APS-GPC-Spelling-H-005","title":"Australian English required","category":"heuristic","severity":"error","message":"Use Australian English spellings for government content."},
+    {"id":"APS-GPC-Spelling-H-006","title":"British‑aligned by default","category":"heuristic","severity":"info","message":"Australian spellings generally follow British conventions unless APS guidance specifies otherwise."},
+    {"id":"APS-GPC-Spelling-H-007","title":"Follow manual for set terms","category":"heuristic","severity":"warn","message":"Where the Style Manual specifies spellings for terms/phrases, follow those over dictionary variants."},
+    {"id":"APS-GPC-Spelling-H-008","title":"Use specialist dictionaries as needed","category":"heuristic","severity":"info","message":"Use specialist dictionaries for scientific/technical terms and capture choices in the style sheet."},
+    {"id":"APS-GPC-Spelling-H-009","title":"Dictionary governs inflections & hyphenation","category":"heuristic","severity":"info","message":"Apply the dictionary’s guidance on inflections, derivations, hyphenation, capitals, and foreign words."},
+    {"id":"APS-GPC-Spelling-R-001","title":"General use: -ement forms","category":"regex","severity":"warn","pattern":"\\b(?:acknowledgment|lodgment)\\b","message":"Prefer ‘acknowledgement’ and ‘lodgement’; avoid US forms unless justified."},
+    {"id":"APS-GPC-Spelling-H-010","title":"Judgement vs judgment","category":"heuristic","severity":"warn","message":"Use ‘judgement’ in general writing; use ‘judgment’ only in legal material."},
+    {"id":"APS-GPC-Spelling-H-011","title":"Dictionaries are descriptive","category":"heuristic","severity":"info","message":"Choose spellings that match intended meaning and audience; avoid rigid prescriptivism."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Titles, honours, forms of address",
+  "RuleSet": "Academics and professionals",
+  "rules": [
+    {"id":"APS-GPC-Academicsandprofessionals-R-001","title":"Capitalise titles before a name","category":"regex","severity":"error","pattern":"\\b(?:professor|associate professor|adjunct professor|vice-?chancellor|dean|chancellor|doctor)\\s+[A-Z]","message":"Use initial capitals for titles immediately before a name (e.g., Professor, Vice‑Chancellor, Dr). :contentReference[oaicite:15]{index=15}"},
+    {"id":"APS-GPC-Academicsandprofessionals-H-001","title":"Allow generic titles in lower case","category":"heuristic","severity":"warn","message":"Use lower case when titles are generic (descriptive, plural, common nouns). :contentReference[oaicite:16]{index=16}"},
+    {"id":"APS-GPC-Academicsandprofessionals-H-002","title":"Use full titles in display contexts","category":"heuristic","severity":"info","message":"In displays (speaker intros, address/signature blocks, official lists), include title/honorific, name, post‑nominals, position, organisation. :contentReference[oaicite:17]{index=17}"},
+    {"id":"APS-GPC-Academicsandprofessionals-H-003","title":"Avoid shortened titles in body text","category":"heuristic","severity":"warn","message":"Don’t shorten titles in body text (e.g., ‘Prof’); ‘Dr’ is acceptable. :contentReference[oaicite:18]{index=18}"},
+    {"id":"APS-GPC-Academicsandprofessionals-R-002","title":"‘Dr’ has no full stop","category":"regex","severity":"error","pattern":"\\bDr\\.\\s+[A-Z]","message":"Write ‘Dr’ (no period) before names. :contentReference[oaicite:19]{index=19}"},
+    {"id":"APS-GPC-Academicsandprofessionals-H-004","title":"Titles replacing a name: caps vs generic","category":"heuristic","severity":"info","message":"Use initial capitals when an official title replaces a name; lower case for generic/abbreviated references. :contentReference[oaicite:20]{index=20}"},
+    {"id":"APS-GPC-Academicsandprofessionals-H-005","title":"Titles after a name are lower case (body)","category":"heuristic","severity":"warn","message":"In body text, titles after a name are lower case unless part of a full display title. :contentReference[oaicite:21]{index=21}"},
+    {"id":"APS-GPC-Academicsandprofessionals-H-006","title":"Full title capitalisation (display)","category":"heuristic","severity":"info","message":"In full/display titles (e.g., signatures), capitalise role components appropriately. :contentReference[oaicite:22]{index=22}"},
+    {"id":"APS-GPC-Academicsandprofessionals-H-007","title":"First mention format","category":"heuristic","severity":"warn","message":"First mention: title + given name + family name + post‑nominals; later: title + family name. :contentReference[oaicite:23]{index=23}"},
+    {"id":"APS-GPC-Academicsandprofessionals-R-003","title":"Post‑nominals: no commas","category":"regex","severity":"error","pattern":",\\s*(?:AO|OAM|AC|AM|KC|QC|FAAL|FAcSS|FRS|FAA|FRANZCP|FRACS|FAOrthA|MBBS|MD|PhD|BDS|BVSc|DVM|CPA|BCom|BEngTech|TMIEAust|CFP)\\b","message":"Don’t use commas before or between post‑nominals. :contentReference[oaicite:24]{index=24}"},
+    {"id":"APS-GPC-Academicsandprofessionals-H-008","title":"Post‑nominals at first mention only","category":"heuristic","severity":"info","message":"Use post‑nominals on first mention only unless listing attendees/qualifications. :contentReference[oaicite:25]{index=25}"},
+    {"id":"APS-GPC-Academicsandprofessionals-R-004","title":"Place ‘Sir/Dame’ after academic title","category":"regex","severity":"warn","pattern":"\\b(?:Sir|Dame)\\s+(?:Professor|Associate Professor|Chancellor)\\b","message":"Place ‘Sir/Dame’ after the academic title (e.g., ‘Chancellor Dame …’). :contentReference[oaicite:26]{index=26}"},
+    {"id":"APS-GPC-Academicsandprofessionals-R-005","title":"Salutations for doctors","category":"regex","severity":"warn","pattern":"^\\s*Dear\\s+Dr\\s*$","message":"When no name is used, write ‘Dear Doctor’; with a name, use ‘Dear Dr Surname’. :contentReference[oaicite:27]{index=27}"},
+    {"id":"APS-GPC-Academicsandprofessionals-H-009","title":"Medical titles usage","category":"heuristic","severity":"info","message":"Use ‘Doctor’/‘Dr’ for medical, dental and veterinary practitioners; surgeons may use ‘Mr/Ms’—respect preferred honorific. :contentReference[oaicite:28]{index=28}"}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Titles, honours, forms of address",
+  "RuleSet": "Australian Defence Force",
+  "rules": [
+    {"id":"APS-GPC-AustralianDefenceForce-R-001","title":"Capitalise ADF proper nouns","category":"regex","severity":"error","pattern":"\\b(?:australian defence force|department of defence|royal australian navy|royal australian air force|australian army)\\b","message":"Use capitals for formal ADF/Defence entity names."},
+    {"id":"APS-GPC-AustralianDefenceForce-R-002","title":"Capitalise short service names","category":"regex","severity":"error","pattern":"\\b(?:navy|army|air force)\\b","message":"Write service names with initial capitals: Navy, Army, Air Force."},
+    {"id":"APS-GPC-AustralianDefenceForce-H-001","title":"Full name order for members","category":"heuristic","severity":"warn","message":"First mention: rank + given/initials + family + post-nominals (+ RAN for Navy commissioned). Later: rank + family name."},
+    {"id":"APS-GPC-AustralianDefenceForce-R-003","title":"No commas in post-nominals","category":"regex","severity":"error","pattern":"\\b([A-Z]{2,})\\s*,\\s*([A-Z]{2,})\\b","message":"Do not use commas before or between post-nominals."},
+    {"id":"APS-GPC-AustralianDefenceForce-H-002","title":"Post-nominals precede RAN","category":"heuristic","severity":"warn","message":"For Navy commissioned officers, list post-nominals before “RAN”."},
+    {"id":"APS-GPC-AustralianDefenceForce-R-004","title":"Only Air Vice‑Marshal hyphenated","category":"regex","severity":"warn","pattern":"\\b(?!Air Vice\\-Marshal)(?:[A-Z][a-z]+(?:\\s+[A-Z][a-z]+)*)\\-[A-Z][a-z]+\\b","message":"Do not hyphenate multi-word ranks (exception: Air Vice‑Marshal)."},
+    {"id":"APS-GPC-AustralianDefenceForce-R-005","title":"Retired officers format","category":"regex","severity":"error","pattern":"\\bRet\\.?d?\\b(?!\\))|\\((?:Ret|Ret\\.|Retd)\\)(?!$)","message":"Use “(Retd)” after post-nominals for retired commissioned officers."},
+    {"id":"APS-GPC-AustralianDefenceForce-R-006","title":"Avoid shortened rank forms","category":"regex","severity":"warn","pattern":"\\b(?:LT|Lt|CAPT|Capt|LCDR|LCPL|LCpl|CPL|Cpl|SGT|Sgt|PO|CPO|WO(?:1|2)?|FLTLT|FltLt|SQNLDR|Sqn\\s*Ldr)\\b","message":"Write full rank names (e.g., Lieutenant, Captain, Warrant Officer)."},
+    {"id":"APS-GPC-AustralianDefenceForce-H-003","title":"Rank before Sir/Dame","category":"heuristic","severity":"warn","message":"Place the military rank before ‘Sir’ or ‘Dame’ in names."},
+    {"id":"APS-GPC-AustralianDefenceForce-R-007","title":"No comma in salutation","category":"regex","severity":"error","pattern":"^Dear\\s+.+,\\s*$","message":"Do not end salutations with a comma."},
+    {"id":"APS-GPC-AustralianDefenceForce-R-008","title":"No post‑nominals in salutation","category":"regex","severity":"error","pattern":"^Dear\\s+.*\\b([A-Z]{2,})(?:\\b|\\.)\\s*$","message":"Do not include post‑nominals in salutations."},
+    {"id":"APS-GPC-AustralianDefenceForce-H-004","title":"Chaplains/MSWOs by title","category":"heuristic","severity":"warn","message":"Address chaplains/MSWOs as “Dear [Title]”, not by rank or honorific."},
+    {"id":"APS-GPC-AustralianDefenceForce-H-005","title":"Service precedence order","category":"heuristic","severity":"info","message":"List services in this order: Navy, Army, Air Force."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Titles, honours, forms of address",
+  "RuleSet": "Awards and honours",
+  "rules": [
+    {"id":"APS-GPC-Awardsandhonours-R-001","title":"No commas before/between post‑nominals","category":"regex","severity":"error","pattern":"\\b[A-Za-z’'-]+\\s+[A-Za-z’'-]+,\\s+[A-Z]{2,}\\b|\\b[A-Z]{2,}\\s*,\\s*[A-Z]{2,}\\b","message":"Remove commas before or between post‑nominals."},
+    {"id":"APS-GPC-Awardsandhonours-R-002","title":"No full stops in post‑nominals","category":"regex","severity":"warn","pattern":"\\b(?:[A-Za-z’'-]+\\s+){1,5}(?:[A-Z]\\.){2,}\\b","message":"Remove full stops from post‑nominals (e.g. use FAHMS, not F.A.H.M.S.)."},
+    {"id":"APS-GPC-Awardsandhonours-R-003","title":"No spaces inside post‑nominals","category":"regex","severity":"warn","pattern":"\\b(?:[A-Za-z’'-]+\\s+){1,5}(?:[A-Z]\\s){1,5}[A-Z]\\b","message":"Remove spaces within a single post‑nominal (e.g. use AM, not A M)."},
+    {"id":"APS-GPC-Awardsandhonours-H-001","title":"Order post‑nominals by precedence","category":"heuristic","severity":"warn","message":"Order post‑nominals: honours/awards; KC/SC/JP; degrees/diplomas; professional memberships; MP (highest honour first)."},
+    {"id":"APS-GPC-Awardsandhonours-H-002","title":"Order titles before the name","category":"heuristic","severity":"warn","message":"Place vice‑regal/ecclesiastical titles and ADF ranks first; then other titles (Dame, Sir, Dr) immediately before the name."},
+    {"id":"APS-GPC-Awardsandhonours-R-004","title":"Prefer KC over QC","category":"regex","severity":"info","pattern":"\\b(?:Queen['’]s\\s+Counsel|QC)\\b","message":"Use King’s Counsel (KC), not Queen’s Counsel (QC)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Titles, honours, forms of address",
+  "RuleSet": "Diplomats",
+  "rules": [
+    {"id":"APS-GPC-Diplomats-H-001","title":"Use ‘High Commissioner’ for Commonwealth states","category":"heuristic","severity":"warn","message":"When the diplomat represents a Commonwealth country, use the title High Commissioner."},
+    {"id":"APS-GPC-Diplomats-H-002","title":"Use ‘Ambassador’ for non‑Commonwealth states","category":"heuristic","severity":"warn","message":"When the diplomat represents a non‑Commonwealth country, use the title Ambassador."},
+    {"id":"APS-GPC-Diplomats-H-003","title":"Use ‘(Apostolic) Nuncio’ for the Holy See","category":"heuristic","severity":"warn","message":"When the diplomat represents the Holy See, use Nuncio/Apostolic Nuncio."},
+    {"id":"APS-GPC-Diplomats-R-001","title":"Capitalise Excellency pronouns","category":"regex","severity":"error","pattern":"\\b(?:his excellency|her excellency)\\b","message":"Capitalise ‘His/Her Excellency’ in diplomatic forms of address."},
+    {"id":"APS-GPC-Diplomats-R-002","title":"Capitalise diplomatic titles in formal address lines","category":"regex","severity":"warn","pattern":"\\b(?:high commissioner|ambassador|apostolic nuncio)\\s+(?:for|to|of)\\b","message":"Capitalise the titles High Commissioner, Ambassador and Apostolic Nuncio when used as formal titles."},
+    {"id":"APS-GPC-Diplomats-H-004","title":"Use ‘His/Her Excellency’ to address heads of mission","category":"heuristic","severity":"warn","message":"Address ambassadors, high commissioners and nuncios with His/Her Excellency."},
+    {"id":"APS-GPC-Diplomats-H-005","title":"Formal correspondence opening","category":"heuristic","severity":"warn","message":"Open formal letters/emails to ambassadors, high commissioners and nuncios with “Your Excellency”."},
+    {"id":"APS-GPC-Diplomats-H-006","title":"Formal correspondence closing","category":"heuristic","severity":"info","message":"Close formal correspondence with “Yours faithfully”."},
+    {"id":"APS-GPC-Diplomats-H-007","title":"Informal correspondence opening","category":"heuristic","severity":"info","message":"Open informal notes with “Dear High Commissioner” or “Dear Ambassador”."},
+    {"id":"APS-GPC-Diplomats-H-008","title":"Informal correspondence closing","category":"heuristic","severity":"info","message":"Close informal notes with “Yours sincerely”."},
+    {"id":"APS-GPC-Diplomats-H-009","title":"Address other diplomatic/consular staff by name + appointment","category":"heuristic","severity":"warn","message":"For chargés d’affaires, counsellors and consular appointees, use the person’s name and official position (not Excellency)."},
+    {"id":"APS-GPC-Diplomats-R-003","title":"Capitalise ‘Your Excellency’","category":"regex","severity":"error","pattern":"\\byour excellency\\b","message":"Capitalise the salutation “Your Excellency” in formal openings."},
+    {"id":"APS-GPC-Diplomats-R-004","title":"Capitalise closings ‘Yours faithfully/sincerely’","category":"regex","severity":"warn","pattern":"\\byours (faithfully|sincerely)\\b","message":"Capitalise “Yours faithfully” and “Yours sincerely” in closings."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Titles, honours, forms of address",
+  "RuleSet": "Diplomats",
+  "rules": [
+    {"id":"APS-GPC-Diplomats-H-001","title":"Use ‘High Commissioner’ for Commonwealth states","category":"heuristic","severity":"warn","message":"When the diplomat represents a Commonwealth country, use the title High Commissioner."},
+    {"id":"APS-GPC-Diplomats-H-002","title":"Use ‘Ambassador’ for non‑Commonwealth states","category":"heuristic","severity":"warn","message":"When the diplomat represents a non‑Commonwealth country, use the title Ambassador."},
+    {"id":"APS-GPC-Diplomats-H-003","title":"Use ‘(Apostolic) Nuncio’ for the Holy See","category":"heuristic","severity":"warn","message":"When the diplomat represents the Holy See, use Nuncio/Apostolic Nuncio."},
+    {"id":"APS-GPC-Diplomats-R-001","title":"Capitalise Excellency pronouns","category":"regex","severity":"error","pattern":"\\b(?:his excellency|her excellency)\\b","message":"Capitalise ‘His/Her Excellency’ in diplomatic forms of address."},
+    {"id":"APS-GPC-Diplomats-R-002","title":"Capitalise diplomatic titles in formal address lines","category":"regex","severity":"warn","pattern":"\\b(?:high commissioner|ambassador|apostolic nuncio)\\s+(?:for|to|of)\\b","message":"Capitalise the titles High Commissioner, Ambassador and Apostolic Nuncio when used as formal titles."},
+    {"id":"APS-GPC-Diplomats-H-004","title":"Use ‘His/Her Excellency’ to address heads of mission","category":"heuristic","severity":"warn","message":"Address ambassadors, high commissioners and nuncios with His/Her Excellency."},
+    {"id":"APS-GPC-Diplomats-H-005","title":"Formal correspondence opening","category":"heuristic","severity":"warn","message":"Open formal letters/emails to ambassadors, high commissioners and nuncios with “Your Excellency”."},
+    {"id":"APS-GPC-Diplomats-H-006","title":"Formal correspondence closing","category":"heuristic","severity":"info","message":"Close formal correspondence with “Yours faithfully”."},
+    {"id":"APS-GPC-Diplomats-H-007","title":"Informal correspondence opening","category":"heuristic","severity":"info","message":"Open informal notes with “Dear High Commissioner” or “Dear Ambassador”."},
+    {"id":"APS-GPC-Diplomats-H-008","title":"Informal correspondence closing","category":"heuristic","severity":"info","message":"Close informal notes with “Yours sincerely”."},
+    {"id":"APS-GPC-Diplomats-H-009","title":"Address other diplomatic/consular staff by name + appointment","category":"heuristic","severity":"warn","message":"For chargés d’affaires, counsellors and consular appointees, use the person’s name and official position (not Excellency)."},
+    {"id":"APS-GPC-Diplomats-R-003","title":"Capitalise ‘Your Excellency’","category":"regex","severity":"error","pattern":"\\byour excellency\\b","message":"Capitalise the salutation “Your Excellency” in formal openings."},
+    {"id":"APS-GPC-Diplomats-R-004","title":"Capitalise closings ‘Yours faithfully/sincerely’","category":"regex","severity":"warn","pattern":"\\byours (faithfully|sincerely)\\b","message":"Capitalise “Yours faithfully” and “Yours sincerely” in closings."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Titles, honours, forms of address",
+  "RuleSet": "Parliaments and councils",
+  "rules": [
+    {"id":"APS-GPC-Parliamentsandcouncils-H-001","title":"Capitalise current PM/Treasurer titles","category":"heuristic","severity":"warn","message":"Use ‘Prime Minister’/‘Treasurer’ (caps) for current holders; lower case for generic/former references."},
+    {"id":"APS-GPC-Parliamentsandcouncils-R-001","title":"No full stops in ‘Hon’/‘Rt Hon’","category":"regex","severity":"error","pattern":"\\b(?:Rt\\.?\\s*Hon\\.|Hon\\.)\\b","message":"Write ‘Hon’ and ‘Rt Hon’ without full stops."},
+    {"id":"APS-GPC-Parliamentsandcouncils-R-002","title":"Order is ‘Senator the Hon’","category":"regex","severity":"warn","pattern":"\\bthe\\s+Hon\\s+Senator\\b","message":"Use ‘Senator the Hon …’, not ‘the Hon Senator …’."},
+    {"id":"APS-GPC-Parliamentsandcouncils-R-003","title":"Don’t append ‘MP’ to Senators","category":"regex","severity":"error","pattern":"\\bSenator\\s+[A-Z][A-Za-z’'-]+(?:\\s+[A-Z][A-Za-z’'-]+)+\\s+MP\\b","message":"Senators must not take ‘MP’ as a post‑nominal."},
+    {"id":"APS-GPC-Parliamentsandcouncils-R-004","title":"MP post‑nominal has no commas","category":"regex","severity":"warn","pattern":"\\b,\\s*MP\\b|\\bMP\\s*,","message":"Do not place commas before/after ‘MP’ or between post‑nominals and ‘MP’."},
+    {"id":"APS-GPC-Parliamentsandcouncils-R-005","title":"Use AU spelling ‘Honourable’","category":"regex","severity":"warn","pattern":"\\bHonorable\\b","message":"Use ‘Honourable’ (AU spelling), not ‘Honorable’."},
+    {"id":"APS-GPC-Parliamentsandcouncils-H-002","title":"Capitalise Senator/MP forms","category":"heuristic","severity":"info","message":"Use ‘Senator’ before given name; ‘MP’ after the name (after any other post‑nominals), without commas."},
+    {"id":"APS-GPC-Parliamentsandcouncils-H-003","title":"Presiding officers take ‘Honourable’","category":"heuristic","severity":"info","message":"President of the Senate and Speaker of the House use ‘Honourable’."},
+    {"id":"APS-GPC-Parliamentsandcouncils-H-004","title":"Ministers/parl. secretaries may use ‘Hon’ for life","category":"heuristic","severity":"info","message":"Federal ministers and parliamentary secretaries may retain ‘Hon’ for life."},
+    {"id":"APS-GPC-Parliamentsandcouncils-R-006","title":"Darwin style is ‘Right Worshipful’","category":"regex","severity":"error","pattern":"\\bRight Honourable\\b.*\\bLord Mayor of Darwin\\b","message":"Use ‘The Right Worshipful the Lord Mayor of Darwin’, not ‘Right Honourable’."},
+    {"id":"APS-GPC-Parliamentsandcouncils-H-005","title":"Capital city lord mayors form","category":"heuristic","severity":"warn","message":"Use ‘The Right Honourable the Lord Mayor of [City]’ for Adelaide, Brisbane, Hobart, Melbourne, Perth, Sydney (with correct name styling)."},
+    {"id":"APS-GPC-Parliamentsandcouncils-H-006","title":"Geelong/Newcastle/Wollongong form","category":"heuristic","severity":"warn","message":"Use ‘The Right Worshipful the [Lord] Mayor of [City]’."},
+    {"id":"APS-GPC-Parliamentsandcouncils-H-007","title":"Other cities ‘His/Her Worship’","category":"heuristic","severity":"info","message":"Use ‘His/Her Worship the Mayor of [City]’."},
+    {"id":"APS-GPC-Parliamentsandcouncils-R-007","title":"Don’t abbreviate ‘President’ (shire)","category":"regex","severity":"warn","pattern":"\\bPres\\.\\s+[A-Z][a-z]+\\b","message":"Write ‘President [Family name]’, not ‘Pres.’."},
+    {"id":"APS-GPC-Parliamentsandcouncils-R-008","title":"No full stops in ‘Ald’/‘Cr’","category":"regex","severity":"warn","pattern":"\\b(?:Ald|Cr)\\.\\b","message":"Write ‘Ald’ and ‘Cr’ without a full stop."},
+    {"id":"APS-GPC-Parliamentsandcouncils-H-008","title":"Formal salutations to ministers","category":"heuristic","severity":"info","message":"Formal: ‘Dear Minister’ / ‘Yours faithfully’. Less formal: ‘My dear Minister’ / ‘Yours sincerely’."},
+    {"id":"APS-GPC-Parliamentsandcouncils-H-009","title":"State/territory salutations","category":"heuristic","severity":"info","message":"Formal: ‘Dear [Title/Name]’ / ‘Yours faithfully’. Less formal: ‘Dear [Title/Name]’ / ‘Yours sincerely’."},
+    {"id":"APS-GPC-Parliamentsandcouncils-H-010","title":"Premier/Chief Minister formats","category":"heuristic","severity":"warn","message":"Premiers: ‘The Hon [Name] MLA/MP, Premier of [State]’; NT: ‘The Hon [Name] MLA, Chief Minister of the Northern Territory’; ACT: ‘[Title] [Name] MLA, Chief Minister of the ACT’."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Titles, honours, forms of address",
+  "RuleSet": "Royalty, vice-royalty and nobility",
+  "rules": [
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-H-001","title":"Capitalise titles of current royals","category":"heuristic","severity":"warn","message":"Use capitals for titles of the reigning monarch and immediate royal family when used as titles (e.g. “His Majesty The King”, “The Queen”)."},
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-R-001","title":"Capitalise “The” in formal royal styles (Wales)","category":"regex","severity":"warn","pattern":"\\bthe (?:Prince|Princess) of Wales\\b","message":"In formal titles, capitalise the initial “The” (e.g. “The Prince/Princess of Wales”)."},
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-R-002","title":"Capitalise “The” in formal royal styles (Princess Royal)","category":"regex","severity":"warn","pattern":"\\bthe Princess Royal\\b","message":"Use “The” (capital T) in “The Princess Royal.”"},
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-R-003","title":"Regnal numbers: no digits/ordinals","category":"regex","severity":"error","pattern":"\\b[A-Z][a-z]+\\s+(?:the\\s+)?\\d+(?:st|nd|rd|th)?\\b","message":"Do not use Arabic numerals or ordinals after monarch/religious leader names; use roman numerals."},
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-R-004","title":"Regnal numerals must be uppercase","category":"regex","severity":"warn","pattern":"\\b[A-Z][a-z]+\\s+[ivxlcdm]+\\b","message":"Write regnal roman numerals in uppercase (e.g. “III”, not “iii”)."},
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-R-005","title":"Non‑breaking space before regnal number","category":"regex","severity":"warn","pattern":"\\b[A-Z][a-z]+\\s[IVXLCDM]{1,4}\\b","message":"Insert a non‑breaking space (U+00A0 or &nbsp;) between the name and regnal numeral."},
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-H-002","title":"Print: narrow no‑break space before regnal number","category":"heuristic","severity":"info","message":"In print, use a narrow no‑break space (U+202F) between name and regnal numeral."},
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-R-006","title":"Capitalise “Governor‑General” in formal title","category":"regex","severity":"error","pattern":"\\bgovernor-general of the commonwealth of australia\\b","message":"Capitalise the formal office: “Governor‑General of the Commonwealth of Australia.”"},
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-R-007","title":"Use hyphen in governor‑general","category":"regex","severity":"error","pattern":"\\b[Gg]overnor\\s+general\\b","message":"Spell the office with a hyphen: “governor‑general.”"},
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-R-008","title":"Correct plural: governors‑general","category":"regex","severity":"error","pattern":"\\bgovernor-generals\\b","message":"Use the correct plural “governors‑general,” not “governor‑generals.”"},
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-H-003","title":"Lowercase generic “governor‑general”","category":"heuristic","severity":"warn","message":"Use lower case for the generic term “governor‑general”; plural “governors‑general.”"},
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-H-004","title":"Vice‑royalty correspondence openings/closings","category":"heuristic","severity":"info","message":"Formal: open “Your Excellency”; close “Yours faithfully”. Less formal: open “Dear Governor‑General”; close “Yours sincerely”."},
+    {"id":"APS-GPC-Royalty,vice-royaltyandnobility-H-005","title":"Address via Official Secretary","category":"heuristic","severity":"info","message":"Address correspondence for the Governor‑General to the Official Secretary at Government House, Canberra."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Types of words",
+  "RuleSet": "Adjectives",
+  "rules": [
+    {"id":"APS-GPC-Adjectives-H-001","title":"Use adjectives only when essential","category":"heuristic","severity":"warn","message":"Use adjectives sparingly; remove any that don’t add meaning."},
+    {"id":"APS-GPC-Adjectives-H-002","title":"Hyphenate compound modifiers before a noun","category":"heuristic","severity":"warn","message":"Hyphenate multi-word modifiers when they precede the noun (compound adjectives)."},
+    {"id":"APS-GPC-Adjectives-R-001","title":"No hyphen after ‘-ly’ adverbs","category":"regex","severity":"error","pattern":"\\b(?!(?:family|friendly|only|early|lively|lonely|silly|holy|ghastly))\\w+ly-(?:\\w+(?:ed|ing))\\b","message":"Do not hyphenate compounds formed with -ly adverbs (e.g. ‘poorly written’, not ‘poorly-written’)."},
+    {"id":"APS-GPC-Adjectives-R-002","title":"Don’t grade “unique”","category":"regex","severity":"warn","pattern":"\\b(?:[Mm]ore|[Mm]ost|[Ll]ess|[Ll]east|[Vv]ery)\\s+unique\\b","message":"Avoid comparative/superlative or intensifiers with ‘unique’."},
+    {"id":"APS-GPC-Adjectives-H-003","title":"Don’t hyphenate predicate compounds","category":"heuristic","severity":"info","message":"When the compound comes after the noun (predicate position), do not hyphenate."},
+    {"id":"APS-GPC-Adjectives-H-004","title":"Order strings of adjectives","category":"heuristic","severity":"info","message":"Order adjectives: evaluative → descriptive → definitive (intrinsic)."},
+    {"id":"APS-GPC-Adjectives-H-005","title":"Punctuate coordinate adjectives","category":"heuristic","severity":"info","message":"Use commas or ‘and’ between adjectives of the same type; do not use commas before definitive adjectives."},
+    {"id":"APS-GPC-Adjectives-R-003","title":"Avoid redundant adjective–noun pairs","category":"regex","severity":"error","pattern":"\\b(?:(?:[Aa]bsolute\\s+[Pp]erfection)|(?:[Aa]dded\\s+[Bb]onus)|(?:[Ee]mergency\\s+[Ss]ituation)|(?:[Ff]uture\\s+[Pp]rospect)s?)\\b","message":"Remove redundant adjective–noun pairs (e.g. ‘added bonus’, ‘emergency situation’)."},
+    {"id":"APS-GPC-Adjectives-H-006","title":"Use degree forms correctly","category":"heuristic","severity":"info","message":"Use -er/-est or more/most as appropriate; handle irregulars correctly (e.g. good/better/best)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Types of words",
+  "RuleSet": "Adverbs",
+  "rules": [
+    {"id":"APS-GPC-Adverbs-H-001","title":"Use adverbs sparingly","category":"heuristic","severity":"warn","message":"Prefer plain verbs; remove adverbs that do not add essential meaning."},
+    {"id":"APS-GPC-Adverbs-R-001","title":"Flag common intensifiers","category":"regex","severity":"info","pattern":"\\b(?:very|really|quite|extremely|highly|absolutely|totally|actually)\\b","message":"Consider removing or replacing overused intensifiers to improve clarity."},
+    {"id":"APS-GPC-Adverbs-R-002","title":"No -er/-est on -ly adverbs","category":"regex","severity":"error","pattern":"\\b\\w+ly(?:er|est)\\b","message":"Form comparisons of -ly adverbs with ‘more/most’, not -er/-est."},
+    {"id":"APS-GPC-Adverbs-H-002","title":"Use adverb when modifying a verb","category":"heuristic","severity":"warn","message":"When modifying a verb, use an adverb (often with more/most) rather than an adjective form (e.g., prefer ‘most quickly’ to ‘quickest’ after a verb)."},
+    {"id":"APS-GPC-Adverbs-R-003","title":"Prefer better/best over more/most well","category":"regex","severity":"warn","pattern":"\\b(?:more|most)\\s+well\\b","message":"Use irregular forms ‘better/best’ instead of ‘more/most well’."},
+    {"id":"APS-GPC-Adverbs-R-004","title":"Prefer earlier/earliest over more/most early","category":"regex","severity":"warn","pattern":"\\b(?:more|most)\\s+early\\b","message":"Use ‘earlier/earliest’ rather than ‘more/most early’."},
+    {"id":"APS-GPC-Adverbs-H-003","title":"Adverbs modify verbs/adjectives/adverbs","category":"heuristic","severity":"info","message":"Ensure adverbs modify the correct part of speech; many end in -ly but not all."},
+    {"id":"APS-GPC-Adverbs-R-005","title":"Curb sentence‑opening discourse adverbs","category":"regex","severity":"info","pattern":"(?:(?<=^)|(?<=[.!?]\\s))(?:Actually|Basically|Obviously|Clearly|Literally|Seriously),\\s","message":"Avoid weak sentence openers that can reduce clarity; prefer direct statements."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Types of words",
+  "RuleSet": "Conjunctions",
+  "rules": [
+    {"id":"APS-GPC-Conjunctions-R-001","title":"Don’t use “with …,” to bolt on a clause (sentence start)","category":"regex","severity":"error","pattern":"^[Ww]ith\\b[^,]*,","message":"Avoid starting a sentence with “With …,” as a pseudo‑conjunction; rewrite or split the sentence."},
+    {"id":"APS-GPC-Conjunctions-R-002","title":"Don’t use “, with …” to tack on a clause (sentence end)","category":"regex","severity":"error","pattern":",\\s*with\\b[^.?!]*[.?!]","message":"Don’t append “, with …” to add a clause at the end; rewrite or split."},
+    {"id":"APS-GPC-Conjunctions-H-001","title":"Use matched correlative pairs","category":"heuristic","severity":"warn","message":"Use paired conjunctions correctly (either/or, neither/nor, whether/or, both/and) and keep the elements parallel."},
+    {"id":"APS-GPC-Conjunctions-R-003","title":"Flag mismatched pairs: “either…nor” or “neither…or”","category":"regex","severity":"error","pattern":"\\beither\\b[^.?!]*\\bnor\\b|\\bneither\\b[^.?!]*\\bor\\b","message":"Correct mismatched correlative pairs to either/or or neither/nor."},
+    {"id":"APS-GPC-Conjunctions-R-004","title":"Conjunctive adverbs: use sparingly","category":"regex","severity":"info","pattern":"\\b(however|therefore|moreover|furthermore|besides|nevertheless|consequently|meanwhile|accordingly|nonetheless)\\b","message":"Conjunctive adverbs link clauses but are weaker than conjunctions; prefer simpler sentences where possible."},
+    {"id":"APS-GPC-Conjunctions-H-002","title":"Coordinators join like elements","category":"heuristic","severity":"info","message":"Use and/but/or to join items of equal grammatical status (nouns, phrases, clauses)."},
+    {"id":"APS-GPC-Conjunctions-H-003","title":"Subordinators need a main clause","category":"heuristic","severity":"error","message":"When using when/if/unless/until/because/since, ensure there is a main clause; dependent clauses cannot stand alone."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Types of words",
+  "RuleSet": "Determiners",
+  "rules": [
+    {"id":"APS-GPC-Determiners-R-001","title":"Use ‘an’ before vowel-starting words","category":"regex","severity":"warn","pattern":"\\b[Aa]\\s+(?=[AaEeIiOoUu]\\w+)","message":"Use ‘an’ before a vowel-starting word (unless it’s pronounced with a leading ‘y’ sound)."},
+    {"id":"APS-GPC-Determiners-R-002","title":"Use ‘a’ before consonant-starting words","category":"regex","severity":"error","pattern":"\\b[Aa]n\\s+(?=[BbCcDdFfGgHhJjKkLlMmNnPpQqRrSsTtVvWwXxYyZz])","message":"Use ‘a’ before a consonant-starting word."},
+    {"id":"APS-GPC-Determiners-R-003","title":"Y‑glide u‑words take ‘a’","category":"regex","severity":"warn","pattern":"\\b[Aa]n\\s+u(?:niversity|niversal|nique)\\b","message":"Use ‘a’ (not ‘an’) before words like ‘university’, ‘universal’, ‘unique’."},
+    {"id":"APS-GPC-Determiners-R-004","title":"Silent‑h words take ‘an’","category":"regex","severity":"warn","pattern":"\\b[Aa]\\s+(?:honour|hour)\\b","message":"Use ‘an’ (not ‘a’) before silent‑h words like ‘honour’ and ‘hour’."},
+    {"id":"APS-GPC-Determiners-R-005","title":"Sounded‑h words take ‘a’","category":"regex","severity":"info","pattern":"\\b[Aa]n\\s+(?:historian|hotel)\\b","message":"Use ‘a’ (not ‘an’) before sounded‑h words like ‘historian’ and ‘hotel’."},
+    {"id":"APS-GPC-Determiners-R-006","title":"Initialisms with vowel sounds take ‘an’","category":"regex","severity":"warn","pattern":"\\b[Aa]\\s+(?=[FfHhLlMmNnRrSsXx](?:\\.|[A-Z]))[A-Z\\.]+\\b","message":"Use ‘an’ before initialisms that begin with letters pronounced with an initial vowel sound (F, H, L, M, N, R, S, X)."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Types of words",
+  "RuleSet": "Nouns",
+  "rules": [
+    {"id":"APS-GPC-Nouns-R-001","title":"No apostrophes for simple plurals (paired)","category":"regex","severity":"error","pattern":"\\b\\w+'s\\b\\s+(?:and|or)\\s+\\w+'s\\b","message":"Do not use apostrophes to make simple plurals (e.g., \"desk’s and chair’s\")."},
+    {"id":"APS-GPC-Nouns-R-002","title":"“Aircraft” has no plural “-s”","category":"regex","severity":"error","pattern":"\\b[Aa]ircrafts\\b","message":"Use \"aircraft\" for both singular and plural."},
+    {"id":"APS-GPC-Nouns-R-003","title":"Plural of Attorney‑General","category":"regex","severity":"error","pattern":"\\b[Aa]ttorney\\-generals\\b","message":"Use \"attorneys‑general\" as the plural."},
+    {"id":"APS-GPC-Nouns-R-004","title":"Collective noun → default singular verb","category":"regex","severity":"warn","pattern":"\\b(?:[Gg]overnment|[Cc]ommittee|[Cc]rowd|[Bb]ranch)\\s+are\\b","message":"Use a singular verb with collective nouns unless emphasising individuals (e.g., \"The committee is\")."},
+    {"id":"APS-GPC-Nouns-R-005","title":"Noun‑train detector (≥3 nominalisations)","category":"regex","severity":"warn","pattern":"\\b(?:[A-Za-z]+(?:tion|ment|ness|ship|ity|ance|ence|ing|age|ism|ality|hood|ure|al|ery|or|er))(?:\\s+(?:[A-Za-z]+(?:tion|ment|ness|ship|ity|ance|ence|ing|age|ism|ality|hood|ure|al|ery|or|er))){2,}\\b","message":"Rewrite strings of 3+ abstract/derived nouns for clarity."},
+    {"id":"APS-GPC-Nouns-R-006","title":"Capitalise month names","category":"regex","severity":"warn","pattern":"\\b(?:january|february|march|april|may|june|july|august|september|october|november|december)\\b","message":"Capitalise month names (e.g., \"June\")."},
+    {"id":"APS-GPC-Nouns-H-001","title":"Countable singulars need a determiner","category":"heuristic","severity":"warn","message":"Flag likely countable singular nouns used without a determiner at clause start (e.g., \"Report is ...\")."},
+    {"id":"APS-GPC-Nouns-H-002","title":"Proper nouns take capitals (general)","category":"heuristic","severity":"info","message":"Names of specific people/places/things should be capitalised; don’t over‑capitalise common nouns."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Types of words",
+  "RuleSet": "Prepositions",
+  "rules": [
+    {"id":"APS-GPC-Prepositions-R-001","title":"Use “different from/to”, not “different than”","category":"regex","severity":"error","pattern":"\\b[Dd]ifferent\\s+than\\b","message":"Use 'different from' or 'different to'—not 'different than'."},
+    {"id":"APS-GPC-Prepositions-R-002","title":"Use “discussion about”, not “discussion around” (for topic)","category":"regex","severity":"error","pattern":"\\b[Dd]iscussions?\\s+around\\b","message":"For topic marking, write 'discussion about …', not 'discussion around …'."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Types of words",
+  "RuleSet": "Pronouns",
+  "rules": [
+    {"id":"APS-GPC-Pronouns-H-001","title":"Use singular ‘they’","category":"heuristic","severity":"info","message":"Prefer gender‑neutral singular pronouns (they/them/their)."},
+    {"id":"APS-GPC-Pronouns-R-001","title":"Replace paired gendered forms","category":"regex","severity":"warn","pattern":"\\b(?:he or she|his or her|him or her|s\\/he)\\b","message":"Replace with singular ‘they/their/them’."},
+    {"id":"APS-GPC-Pronouns-H-002","title":"Subject vs object case","category":"heuristic","severity":"warn","message":"Use subjective case for subjects and objective case for objects."},
+    {"id":"APS-GPC-Pronouns-R-002","title":"Coordinated subject uses ‘I’","category":"regex","severity":"warn","pattern":"^(?i).*\\b(?:and\\s+me)\\s+(?:[a-z]+)\\b","message":"In subject position, use ‘and I’, not ‘and me’."},
+    {"id":"APS-GPC-Pronouns-H-003","title":"Coordinated object uses ‘me’","category":"heuristic","severity":"warn","message":"When the pronoun is an object, use me/us/them (not I/we/they)."},
+    {"id":"APS-GPC-Pronouns-H-004","title":"Reflexives only when subject = object","category":"heuristic","severity":"warn","message":"Use a reflexive pronoun only if it refers to the subject."},
+    {"id":"APS-GPC-Pronouns-R-003","title":"Don’t use reflexives as subjects","category":"regex","severity":"error","pattern":"^(?i)(?:myself|yourself|herself|himself|themselves|themself|ourselves|itself)\\b","message":"Use a standard subject pronoun (I/you/he/… ), not a reflexive."},
+    {"id":"APS-GPC-Pronouns-R-004","title":"Singular ‘they’ takes plural verb","category":"regex","severity":"warn","pattern":"\\b[Tt]hey\\s+(?:is|was|has)\\b","message":"Use are/were/have with singular ‘they’."},
+    {"id":"APS-GPC-Pronouns-H-005","title":"That vs which (essential vs non‑essential)","category":"heuristic","severity":"info","message":"Use ‘that’ for essential information; use ‘which’ with commas for non‑essential information."},
+    {"id":"APS-GPC-Pronouns-R-005","title":"Avoid “, that” for non‑essential clauses","category":"regex","severity":"warn","pattern":",\\s+that\\b","message":"Use ‘which’ (with commas) for non‑essential clauses."},
+    {"id":"APS-GPC-Pronouns-R-006","title":"Comma after ‘which’ in asides","category":"regex","severity":"info","pattern":"\\bwhich\\b(?!\\s*,)","message":"When ‘which’ starts a non‑essential clause, follow it with a comma."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Types of words",
+  "RuleSet": "Types of words",
+  "rules": [
+    {"id":"APS-GPC-Typesofwords-H-001","title":"Keep modifiers adjacent to what they modify","category":"heuristic","severity":"warn","message":"Place adjectives/adverbs and modifying phrases next to the element they modify to avoid ambiguity."},
+    {"id":"APS-GPC-Typesofwords-H-002","title":"Place “only” next to its target","category":"heuristic","severity":"warn","message":"Ensure “only” directly precedes the word or phrase it logically modifies."},
+    {"id":"APS-GPC-Typesofwords-R-001","title":"Avoid ambiguous fronted clauses with “it”","category":"regex","severity":"warn","pattern":"^(?:Even though|Although)\\s+it['’]s\\b.*?,\\s+","message":"Don’t begin with a concessive clause using “it” when the referent could be ambiguous; rewrite to make the pronoun’s referent clear."},
+    {"id":"APS-GPC-Typesofwords-H-003","title":"Rewrite to fix misplaced modifiers","category":"heuristic","severity":"info","message":"When a modifier is misplaced, rewrite the sentence to make the relationship explicit rather than relying on punctuation alone."},
+    {"id":"APS-GPC-Typesofwords-H-004","title":"Determine word type by function in context","category":"heuristic","severity":"info","message":"Classify a word’s type by its role in the sentence; do not assume a fixed class across contexts."},
+    {"id":"APS-GPC-Typesofwords-H-005","title":"Keep sentence structure aligned to meaning","category":"heuristic","severity":"info","message":"Be aware that moving modifiers can change meaning; structure sentences so intended meaning is preserved."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Types of words",
+  "RuleSet": "Verbs",
+  "rules": [
+    {"id":"APS-GPC-Verbs-H-001","title":"Include a verb in every sentence","category":"heuristic","severity":"warn","message":"Ensure each sentence contains a grammatical subject and a verb."},
+    {"id":"APS-GPC-Verbs-R-001","title":"I/you/we/they not with “is”","category":"regex","severity":"error","pattern":"\\b(?:I|You|We|They)\\s+is\\b","message":"Use are/am with I/you/we/they, not is."},
+    {"id":"APS-GPC-Verbs-R-002","title":"He/she/it not with “are”","category":"regex","severity":"error","pattern":"\\b(?:He|She|It)\\s+are\\b","message":"Use is with he/she/it, not are."},
+    {"id":"APS-GPC-Verbs-R-003","title":"I/you/we/they not with “has”","category":"regex","severity":"error","pattern":"\\b(?:I|You|We|They)\\s+has\\b","message":"Use have (not has) with I/you/we/they."},
+    {"id":"APS-GPC-Verbs-R-004","title":"He/she/it not with “have”","category":"regex","severity":"error","pattern":"\\b(?:He|She|It)\\s+have\\b","message":"Use has (not have) with he/she/it."},
+    {"id":"APS-GPC-Verbs-R-005","title":"“Each/Every … are/have”","category":"regex","severity":"warn","pattern":"\\b(?:[Ee]ach|[Ee]very)\\b[^.?!\\n]*\\b(?:are|have)\\b","message":"Treat each/every as singular; use is/has."},
+    {"id":"APS-GPC-Verbs-R-006","title":"“There is” + plural idea","category":"regex","severity":"warn","pattern":"\\b[Tt]here\\s+is\\s+(?:\\d+|many|several|a number of|multiple)\\b","message":"Use there are for plural or multiple quantities."},
+    {"id":"APS-GPC-Verbs-R-007","title":"Modal + base verb (no “to”)","category":"regex","severity":"error","pattern":"\\b(?:can|could|may|might|will|would|shall|should|must)\\s+to\\b","message":"After a modal, use the base verb (no 'to')."},
+    {"id":"APS-GPC-Verbs-R-008","title":"“Ought” takes “to”","category":"regex","severity":"warn","pattern":"\\bought(?!\\s+to)\\b","message":"Use 'ought to', not bare 'ought'."},
+    {"id":"APS-GPC-Verbs-R-009","title":"Avoid “to going”","category":"regex","severity":"error","pattern":"\\bto\\s+going\\b","message":"Use 'to go' or 'to be going', not 'to going'."},
+    {"id":"APS-GPC-Verbs-R-010","title":"Intransitive event verbs take no object","category":"regex","severity":"error","pattern":"\\b(?:happened|occurred)\\s+the\\b","message":"Do not attach a direct object to 'happen/occur'."},
+    {"id":"APS-GPC-Verbs-R-011","title":"Use “result in”, not “result to”","category":"regex","severity":"error","pattern":"\\bresult(?:ed)?\\s+to\\b","message":"Use 'result in' to show consequence."},
+    {"id":"APS-GPC-Verbs-H-002","title":"Choose tense for time & completion","category":"heuristic","severity":"info","message":"Select tense/aspect to show when an action happens and whether it is ongoing or finished."},
+    {"id":"APS-GPC-Verbs-H-003","title":"Imperative for instructions (tone aware)","category":"heuristic","severity":"info","message":"Use imperative mood for steps/commands; add politeness where needed."},
+    {"id":"APS-GPC-Verbs-H-004","title":"Complements after linking verbs","category":"heuristic","severity":"info","message":"With linking verbs (be, seem, become), complete meaning with a complement rather than a direct object."},
+    {"id":"APS-GPC-Verbs-H-005","title":"Phrasal verbs: keep required particles","category":"heuristic","severity":"info","message":"Include the required preposition/adverb; object may split verb and particle when transitive."}
+  ]
+}
+
+{
+  "Book": "Grammar, Punctuation and conventions",
+  "Chapter": "Italics",
+  "RuleSet": "Italics",
+  "rules": [
+    {"id":"APS-GPC-Italics-R-001","title":"Avoid long italic spans","category":"regex","severity":"warn","pattern":"(\\*[^*]{80,}\\*|_[^_]{80,}_)","message":"Avoid large blocks of italics; keep italicised runs short for readability."},
+    {"id":"APS-GPC-Italics-H-001","title":"Italicise stand‑alone works","category":"heuristic","severity":"warn","message":"Italicise titles of books, plays, films, podcasts, TV/radio programs, artworks; use roman for shortened/common titles."},
+    {"id":"APS-GPC-Italics-R-002","title":"Do not italicise sacred texts","category":"regex","severity":"warn","pattern":"(?:\\*|_)(?:[Bb]ible|[Kk]oran|[Qq]ur'?an)(?:\\*|_)","message":"Sacred texts (e.g. Bible, Koran/Qur’an) should be in roman type, not italics."},
+    {"id":"APS-GPC-Italics-R-003","title":"Don’t italicise Bills","category":"regex","severity":"warn","pattern":"(\\*[^*]*\\b[Bb]ill\\b[^*]*\\*|_[^_]*\\b[Bb]ill\\b[^_]*_)","message":"Bills are not italicised; Acts (once enacted) are."},
+    {"id":"APS-GPC-Italics-H-002","title":"Italicise Acts and case names","category":"heuristic","severity":"warn","message":"Italicise full titles of Acts and legal cases; do not italicise delegated legislation."},
+    {"id":"APS-GPC-Italics-H-003","title":"Set off most foreign words","category":"heuristic","severity":"info","message":"Generally italicise foreign words/phrases not absorbed into Australian English."},
+    {"id":"APS-GPC-Italics-R-004","title":"Don’t italicise Latin shortened forms","category":"regex","severity":"warn","pattern":"(?:\\*|_)(?:[Ee]tc\\.|[Ii]\\.[Ee]\\.|[Ee]\\.[Gg]\\.|[Cc]f\\.|[Vv]s\\.|[Vv]iz\\.|[Nn][Bb]\\.|[Nn]\\.[Bb]\\.|[Ii]bid\\.|[Ii]d\\.|[Oo]p\\.[Cc]it\\.|[Ll]oc\\.[Cc]it\\.)(?:\\*|_)","message":"Keep Latin abbreviations (etc., i.e., e.g., cf., vs., etc.) in roman, not italics."},
+    {"id":"APS-GPC-Italics-H-004","title":"Full Latin words in italics (optional)","category":"heuristic","severity":"info","message":"If you spell out the Latin source word (e.g. confer), italicise it; keep the abbreviation roman."},
+    {"id":"APS-GPC-Italics-H-005","title":"Don’t italicise first‑use definitions","category":"heuristic","severity":"info","message":"For first‑use definitions of technical terms, prefer single quotation marks rather than italics."},
+    {"id":"APS-GPC-Italics-H-006","title":"Use italics for scientific names","category":"heuristic","severity":"warn","message":"Italicise genus, species and subspecies names; keep common names in roman."},
+    {"id":"APS-GPC-Italics-H-007","title":"Italicise official vehicle names","category":"heuristic","severity":"info","message":"Italicise proper names of ships/trains/aircraft; keep the definite article and the model/brand in roman."},
+    {"id":"APS-GPC-Italics-H-008","title":"Reverse italics inside italic titles","category":"heuristic","severity":"info","message":"Switch normally‑italic elements to roman when inside an italicised title (reverse italics)."},
+    {"id":"APS-GPC-Italics-H-009","title":"Avoid italicising First Nations words","category":"heuristic","severity":"warn","message":"Do not italicise names or words from Aboriginal and Torres Strait Islander languages."},
+    {"id":"APS-GPC-Italics-H-010","title":"Bracket note for added emphasis","category":"heuristic","severity":"info","message":"When adding italics within quotations, include “[emphasis added]”; use “[emphasis from original]” if present in source."}
+  ]
+}
