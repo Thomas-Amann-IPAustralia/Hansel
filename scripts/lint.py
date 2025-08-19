@@ -8,11 +8,8 @@ import spacy
 # --- Configuration ---
 MARKDOWN_DIR = 'markdown'
 REPORT_FILE = 'report.json'
-# The rulebook file is now the source of truth for all linting rules.
 RULEBOOK_FILE = 'Codebook.json' 
 
-# Load the small English model for spaCy.
-# This model is efficient and sufficient for dependency parsing to detect passive voice.
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
@@ -25,8 +22,6 @@ except OSError:
 def check_passive_voice(text):
     """
     Heuristic check for passive voice using spaCy's dependency parser.
-    A sentence is likely passive if it contains a passive nominal subject ('nsubjpass')
-    or a passive auxiliary ('auxpass').
     """
     doc = nlp(text)
     for token in doc:
@@ -34,42 +29,42 @@ def check_passive_voice(text):
             return True
     return False
 
-# This dictionary maps the ID of a heuristic rule from the rulebook
-# to the Python function that implements its logic.
 HEURISTIC_CHECKS = {
     "APS-GPC-Partsofsentences-H-009": check_passive_voice,
-    # Add other heuristic check functions here as they are implemented.
-    # "APS-GPC-Someother-H-001": check_something_else,
 }
 
 
 def load_rules_from_rulebook(file_path):
     """
-    Loads, parses, and transforms linting rules from the external rulebook file.
+    Loads and parses linting rules from the rulebook file, which contains a
+    stream of multiple JSON objects. This function is designed to be robust
+    against extra whitespace or newlines between the JSON objects.
     """
     if not os.path.exists(file_path):
         print(f"Error: Rulebook file '{file_path}' not found.")
         return []
 
-    with open(file_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-    
-    # The rulebook file is a stream of JSON objects, not a valid JSON array.
-    # We can make it a valid array by wrapping it in brackets and adding commas between objects.
-    json_array_str = '[' + content.replace('}\n{', '},{') + ']'
-    
-    try:
-        rule_sets = json.loads(json_array_str)
-    except json.JSONDecodeError as e:
-        print(f"Error decoding JSON from rulebook: {e}")
-        return []
-
     all_rules = []
-    for rule_set in rule_sets:
-        if 'rules' in rule_set:
-            all_rules.extend(rule_set['rules'])
+    with open(file_path, 'r', encoding='utf-8') as f:
+        # Use a decoder to handle multiple JSON objects in a single file
+        decoder = json.JSONDecoder()
+        content = f.read().strip()
+        pos = 0
+        while pos < len(content):
+            try:
+                # Decode one JSON object at a time
+                obj, end_pos = decoder.raw_decode(content, pos)
+                if 'rules' in obj:
+                    all_rules.extend(obj['rules'])
+                # Move position to the start of the next object
+                pos = end_pos
+                # Skip any whitespace/newlines between objects
+                while pos < len(content) and content[pos].isspace():
+                    pos += 1
+            except json.JSONDecodeError:
+                print(f"Error decoding JSON object near position {pos}. Skipping rest of file.")
+                break # Stop if we hit an unrecoverable error
 
-    # Transform the loaded rules into the format the linter expects.
     transformed_rules = []
     for rule in all_rules:
         rule_type = rule.get("category")
@@ -82,39 +77,25 @@ def load_rules_from_rulebook(file_path):
             "type": rule_type
         }
 
-        if rule_type == "regex":
+        if rule_type == "regex" and "pattern" in rule:
             new_rule["pattern"] = rule.get("pattern")
-            if not new_rule["pattern"]:
-                print(f"Warning: Regex rule {rule_id} has no pattern. Skipping.")
-                continue
-        elif rule_type == "heuristic":
-            check_function = HEURISTIC_CHECKS.get(rule_id)
-            if check_function:
-                new_rule["check"] = check_function
-            else:
-                # Skip heuristic rules that don't have a check function implemented in this script.
-                # This allows the rulebook to contain rules that are not yet implemented.
-                continue
-        else:
-            print(f"Warning: Unknown rule type '{rule_type}' for rule {rule_id}. Skipping.")
-            continue
-        
-        transformed_rules.append(new_rule)
-
+            transformed_rules.append(new_rule)
+        elif rule_type == "heuristic" and rule_id in HEURISTIC_CHECKS:
+            new_rule["check"] = HEURISTIC_CHECKS[rule_id]
+            transformed_rules.append(new_rule)
+            
     return transformed_rules
 
 
 def build_github_url(file_name, line_number):
     """
     Constructs a permalink to a specific line in a file on GitHub.
-    It reads repository information from environment variables set by the GitHub Action.
     """
     server_url = os.getenv("GITHUB_SERVER_URL")
     repository = os.getenv("GITHUB_REPOSITORY")
     sha = os.getenv("GITHUB_SHA")
 
     if not all([server_url, repository, sha]):
-        # Return a placeholder if environment variables are not set (e.g., local run)
         return f"local://{file_name}#L{line_number}"
 
     return f"{server_url}/{repository}/blob/{sha}/{MARKDOWN_DIR}/{file_name}#L{line_number}"
@@ -130,11 +111,9 @@ def lint_file(file_path, file_name, linting_rules):
             for line_num, line in enumerate(f, 1):
                 for rule in linting_rules:
                     issue_found = False
-                    # Handle regex-based rules
                     if rule['type'] == 'regex':
                         if re.search(rule['pattern'], line, re.IGNORECASE):
                             issue_found = True
-                    # Handle heuristic-based rules (e.g., spaCy)
                     elif rule['type'] == 'heuristic':
                         if rule['check'](line):
                             issue_found = True
@@ -160,27 +139,24 @@ def main():
     """
     Main function to orchestrate the linting process and generate the report.
     """
-    # Load rules dynamically from the rulebook instead of using a hardcoded list.
-    linting_rules = load_rules_from_rulebook(RULEBOOK_FILE)
-    if not linting_rules:
-        print("No linting rules were loaded. Exiting.")
-        return
-
-    print(f"Successfully loaded {len(linting_rules)} rules from {RULEBOOK_FILE}.")
-
     all_findings = []
-    if not os.path.exists(MARKDOWN_DIR):
-        print(f"Markdown directory '{MARKDOWN_DIR}' not found. Run scrape.py first.")
-        return
+    linting_rules = load_rules_from_rulebook(RULEBOOK_FILE)
+    
+    if not linting_rules:
+        print("No linting rules were loaded. An empty report will be created.")
+    else:
+        print(f"Successfully loaded {len(linting_rules)} rules from {RULEBOOK_FILE}.")
 
-    for file_name in os.listdir(MARKDOWN_DIR):
-        if file_name.endswith('.md'):
-            file_path = os.path.join(MARKDOWN_DIR, file_name)
-            print(f"Linting {file_path}...")
-            findings = lint_file(file_path, file_name, linting_rules)
-            all_findings.extend(findings)
+    if os.path.exists(MARKDOWN_DIR):
+        for file_name in os.listdir(MARKDOWN_DIR):
+            if file_name.endswith('.md'):
+                file_path = os.path.join(MARKDOWN_DIR, file_name)
+                print(f"Linting {file_path}...")
+                findings = lint_file(file_path, file_name, linting_rules)
+                all_findings.extend(findings)
+    else:
+        print(f"Markdown directory '{MARKDOWN_DIR}' not found. No files to lint.")
 
-    # Write the findings to the JSON report file
     with open(REPORT_FILE, 'w', encoding='utf-8') as f:
         json.dump(all_findings, f, indent=2)
 
