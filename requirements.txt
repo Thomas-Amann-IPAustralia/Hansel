@@ -1,4 +1,6 @@
-playwright
 markdownify
 spacy
 beautifulsoup4
+selenium
+selenium-stealth
+webdriver-manager-chrome
