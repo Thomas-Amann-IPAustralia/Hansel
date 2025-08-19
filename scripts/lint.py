@@ -4,16 +4,30 @@ import os
 import re
 import json
 import spacy
+import logging
 
 # --- Configuration ---
 MARKDOWN_DIR = 'markdown'
 REPORT_FILE = 'report.json'
-RULEBOOK_FILE = 'Codebook.json' 
+LOG_DIR = 'logs'
+# The new, improved rulebook file.
+RULEBOOK_FILE = 'Trinity.json' 
+
+# --- Setup Structured Logging ---
+os.makedirs(LOG_DIR, exist_ok=True)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] - %(message)s',
+    handlers=[
+        logging.FileHandler(os.path.join(LOG_DIR, 'linter.log')),
+        logging.StreamHandler()
+    ]
+)
 
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    print("spaCy model 'en_core_web_sm' not found. Please run 'python -m spacy download en_core_web_sm'")
+    logging.error("spaCy model 'en_core_web_sm' not found. Please run 'python -m spacy download en_core_web_sm'")
     exit()
 
 
@@ -36,28 +50,24 @@ HEURISTIC_CHECKS = {
 
 def load_rules_from_rulebook(file_path):
     """
-    Loads and parses linting rules from the rulebook file.
+    Loads and parses linting rules from the Trinity.json file.
+    This version is simpler because Trinity.json is a valid JSON array.
     """
     if not os.path.exists(file_path):
-        print(f"Error: Rulebook file '{file_path}' not found.")
+        logging.error(f"Rulebook file '{file_path}' not found.")
+        return []
+
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            rule_sets = json.load(f)
+    except json.JSONDecodeError as e:
+        logging.error(f"Error decoding JSON from rulebook: {e}")
         return []
 
     all_rules = []
-    with open(file_path, 'r', encoding='utf-8') as f:
-        decoder = json.JSONDecoder()
-        content = f.read().strip()
-        pos = 0
-        while pos < len(content):
-            try:
-                obj, end_pos = decoder.raw_decode(content, pos)
-                if 'rules' in obj:
-                    all_rules.extend(obj['rules'])
-                pos = end_pos
-                while pos < len(content) and content[pos].isspace():
-                    pos += 1
-            except json.JSONDecodeError:
-                print(f"Error decoding JSON object near position {pos}. Skipping rest of file.")
-                break
+    for rule_set in rule_sets:
+        if 'rules' in rule_set:
+            all_rules.extend(rule_set['rules'])
 
     transformed_rules = []
     for rule in all_rules:
@@ -106,33 +116,30 @@ def lint_file(file_path, file_name, linting_rules):
                 for rule in linting_rules:
                     issue_found = False
                     try:
-                        if rule['type'] == 'regex':
+                        if rule.get('type') == 'regex':
                             if re.search(rule['pattern'], line, re.IGNORECASE):
                                 issue_found = True
-                        elif rule['type'] == 'heuristic':
+                        elif rule.get('type') == 'heuristic':
                             if rule['check'](line):
                                 issue_found = True
-                    # --- ROBUSTNESS IMPROVEMENT ---
-                    # Catch invalid regex patterns from the rulebook and skip them.
                     except re.error as e:
-                        print(f"WARNING: Skipping invalid regex for rule '{rule['id']}': {e}")
-                        # To prevent this warning on every line, we can disable the rule.
-                        rule['type'] = 'invalid' 
-                        continue # Move to the next rule
+                        logging.warning(f"Skipping invalid regex for rule '{rule.get('id', 'N/A')}': {e}")
+                        rule['type'] = 'invalid' # Mark as invalid to avoid re-checking
+                        continue
 
                     if issue_found:
                         finding = {
                             "fileName": file_name,
                             "lineNumber": line_num,
-                            "ruleId": rule['id'],
-                            "ruleDescription": rule['description'],
-                            "severity": rule['severity'],
+                            "ruleId": rule.get('id'),
+                            "ruleDescription": rule.get('description'),
+                            "severity": rule.get('severity'),
                             "offendingText": line.strip(),
                             "githubUrl": build_github_url(file_name, line_num)
                         }
                         findings.append(finding)
     except FileNotFoundError:
-        print(f"Error: Could not find file {file_path}")
+        logging.error(f"Could not find file {file_path}")
 
     return findings
 
@@ -145,25 +152,25 @@ def main():
     linting_rules = load_rules_from_rulebook(RULEBOOK_FILE)
     
     if not linting_rules:
-        print("No linting rules were loaded. An empty report will be created.")
+        logging.warning("No linting rules were loaded. An empty report will be created.")
     else:
-        print(f"Successfully loaded {len(linting_rules)} rules from {RULEBOOK_FILE}.")
+        logging.info(f"Successfully loaded {len(linting_rules)} rules from {RULEBOOK_FILE}.")
 
     if os.path.exists(MARKDOWN_DIR):
         for file_name in os.listdir(MARKDOWN_DIR):
             if file_name.endswith('.md'):
                 file_path = os.path.join(MARKDOWN_DIR, file_name)
-                print(f"Linting {file_path}...")
+                logging.info(f"Linting {file_path}...")
                 findings = lint_file(file_path, file_name, linting_rules)
                 all_findings.extend(findings)
     else:
-        print(f"Markdown directory '{MARKDOWN_DIR}' not found. No files to lint.")
+        logging.warning(f"Markdown directory '{MARKDOWN_DIR}' not found. No files to lint.")
 
     with open(REPORT_FILE, 'w', encoding='utf-8') as f:
         json.dump(all_findings, f, indent=2)
 
-    print(f"Linting complete. Report generated at {REPORT_FILE}")
-    print(f"Found {len(all_findings)} issues.")
+    logging.info(f"Linting complete. Report generated at {REPORT_FILE}")
+    logging.info(f"Found {len(all_findings)} issues.")
 
 
 if __name__ == "__main__":
