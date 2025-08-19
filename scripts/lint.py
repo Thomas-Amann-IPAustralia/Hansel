@@ -36,9 +36,7 @@ HEURISTIC_CHECKS = {
 
 def load_rules_from_rulebook(file_path):
     """
-    Loads and parses linting rules from the rulebook file, which contains a
-    stream of multiple JSON objects. This function is designed to be robust
-    against extra whitespace or newlines between the JSON objects.
+    Loads and parses linting rules from the rulebook file.
     """
     if not os.path.exists(file_path):
         print(f"Error: Rulebook file '{file_path}' not found.")
@@ -46,24 +44,20 @@ def load_rules_from_rulebook(file_path):
 
     all_rules = []
     with open(file_path, 'r', encoding='utf-8') as f:
-        # Use a decoder to handle multiple JSON objects in a single file
         decoder = json.JSONDecoder()
         content = f.read().strip()
         pos = 0
         while pos < len(content):
             try:
-                # Decode one JSON object at a time
                 obj, end_pos = decoder.raw_decode(content, pos)
                 if 'rules' in obj:
                     all_rules.extend(obj['rules'])
-                # Move position to the start of the next object
                 pos = end_pos
-                # Skip any whitespace/newlines between objects
                 while pos < len(content) and content[pos].isspace():
                     pos += 1
             except json.JSONDecodeError:
                 print(f"Error decoding JSON object near position {pos}. Skipping rest of file.")
-                break # Stop if we hit an unrecoverable error
+                break
 
     transformed_rules = []
     for rule in all_rules:
@@ -111,12 +105,20 @@ def lint_file(file_path, file_name, linting_rules):
             for line_num, line in enumerate(f, 1):
                 for rule in linting_rules:
                     issue_found = False
-                    if rule['type'] == 'regex':
-                        if re.search(rule['pattern'], line, re.IGNORECASE):
-                            issue_found = True
-                    elif rule['type'] == 'heuristic':
-                        if rule['check'](line):
-                            issue_found = True
+                    try:
+                        if rule['type'] == 'regex':
+                            if re.search(rule['pattern'], line, re.IGNORECASE):
+                                issue_found = True
+                        elif rule['type'] == 'heuristic':
+                            if rule['check'](line):
+                                issue_found = True
+                    # --- ROBUSTNESS IMPROVEMENT ---
+                    # Catch invalid regex patterns from the rulebook and skip them.
+                    except re.error as e:
+                        print(f"WARNING: Skipping invalid regex for rule '{rule['id']}': {e}")
+                        # To prevent this warning on every line, we can disable the rule.
+                        rule['type'] = 'invalid' 
+                        continue # Move to the next rule
 
                     if issue_found:
                         finding = {
