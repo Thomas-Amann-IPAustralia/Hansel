@@ -3,10 +3,7 @@
 name: Scrape and Audit Content
 
 on:
-  # Allows for manual triggering of the workflow from the GitHub Actions tab
   workflow_dispatch:
-
-  # Triggers the workflow on pushes to the main branch, but only if config.json was changed
   push:
     branches:
       - main
@@ -21,9 +18,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      # The setup-python action with caching is now more effective because the spaCy
-      # model is listed as a dependency in requirements.txt. This addresses the
-      # supervisor's note on caching NLP models.
       - name: Set up Python 3.9 with dependency caching
         uses: actions/setup-python@v4
         with:
@@ -35,21 +29,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # The 'Download spaCy model' step is no longer needed because the model
-      # is now installed directly via pip and cached in the previous step.
-      # - name: Download spaCy English model
-      #   run: python -m spacy download en_core_web_sm
-
       - name: Run scraping script
         run: python scripts/scrape.py
 
       - name: Run linting script
         env:
-          # Pass GitHub context variables to the linting script to build permalinks
           GITHUB_SERVER_URL: ${{ github.server_url }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_SHA: ${{ github.sha }}
         run: python scripts/lint.py
+
+      - name: Upload scraped markdown as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraped-markdown-files
+          path: scraped/
 
       - name: Upload audit report as artifact
         uses: actions/upload-artifact@v4
@@ -57,8 +51,9 @@ jobs:
           name: audit-report
           path: report.json
       
-      - name: Commit report.json
+      - name: Commit report and scraped files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: Update content audit report"
-          file_pattern: report.json
+          commit_message: "chore: Update audit report and scraped markdown"
+          # This pattern tells the action to commit the report and the entire scraped/ directory
+          file_pattern: "report.json scraped/"
