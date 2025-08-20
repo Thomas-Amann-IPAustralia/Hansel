@@ -1,10 +1,90 @@
 [
   {
-    "url": "https://ipfirstresponse.ipaustralia.gov.au/options/develop-strategy-manage-your-ip",
-    "output": "Develop-a-strategy-to-manage-your-IP.md"
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/",
+    "output": "IPFirstResponseHomepage.md"
   },
   {
-    "url": "https://www.tomamann.com/about",
-    "output": "TomAmannBiography.md"
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/navigator-tool-suspected-infringement",
+    "output": "NavigatorToolSuspectedInfringement.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/infringement-101",
+    "output": "Infringement101.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/options/what-ip-infringement",
+    "output": "WhatIsIPInfringement.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/options/trade-mark-infringement",
+    "output": "TradeMarkInfringement.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/options/patent-infringement",
+    "output": "PatentInfringement.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/options/design-infringement",
+    "output": "DesignInfringement.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/options/pbr-infringement",
+    "output": "PBRInfringement.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/options/copyright-infringement",
+    "output": "CopyrightInfringement.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/options/unregistered-trade-marks",
+    "output": "UnregisteredTradeMarks.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/options/what-do-if-someone-infringes-your-ip",
+    "output": "WhatToDoIfSomeoneInfringesYourIP.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/options/how-avoid-infringing-others-intellectual-property",
+    "output": "HowToAvoidInfringingOthersIntellectualProperty.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/options/addressing-overseas-infringement",
+    "output": "AddressingOverseasInfringement.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/tips-and-tricks-searching-existing-right",
+    "output": "TipsAndTricksSearchingExistingRights.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/all-enforcement-options?page=0",
+    "output": "AllEnforcementOptionsPage0.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/all-enforcement-options?page=1",
+    "output": "AllEnforcementOptionsPage1.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/all-enforcement-options?page=2",
+    "output": "AllEnforcementOptionsPage2.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/all-enforcement-options?page=3",
+    "output": "AllEnforcementOptionsPage3.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/all-enforcement-options?page=4",
+    "output": "AllEnforcementOptionsPage4.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/all-enforcement-options?page=5",
+    "output": "AllEnforcementOptionsPage5.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/all-enforcement-options?page=7",
+    "output": "AllEnforcementOptionsPage7.md"
+  },
+  {
+    "url": "https://ipfirstresponse.ipaustralia.gov.au/all-enforcement-options?page=6",
+    "output": "AllEnforcementOptionsPage6.md"
   }
 ]
