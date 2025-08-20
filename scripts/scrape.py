@@ -21,7 +21,7 @@ from markdownify import markdownify as md
 
 # --- Configuration ---
 CONFIG_FILE: str = 'config.json'
-OUTPUT_DIR: str = 'markdown'
+OUTPUT_DIR: str = 'scraped'  # Updated output directory
 LOG_DIR: str = 'logs'
 MAX_RETRIES: int = 2
 
