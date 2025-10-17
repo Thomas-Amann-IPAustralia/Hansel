@@ -9,6 +9,7 @@ import bisect
 from typing import List, Dict, Callable, Any, Optional, Pattern
 from spacy.tokens import Doc, Span, Token
 from spacy.matcher import Matcher
+from spacy.symbols import ORTH
 
 # --- Configuration ---
 MARKDOWN_DIR: str = 'scraped'  # Updated to read from the new directory
@@ -30,10 +31,22 @@ logging.basicConfig(
 # --- spaCy Model Loading ---
 try:
     nlp = spacy.load("en_core_web_sm")
+
+# --- Add special case tokens for semantic placeholders ---
+    placeholder_texts = [
+        "__SEMANTIC_ITALIC_START__", "__SEMANTIC_ITALIC_END__",
+        "__SEMANTIC_BOLD_START__", "__SEMANTIC_BOLD_END__",
+        "__SEMANTIC_CAPTION_START__", "__SEMANTIC_CAPTION_END__"
+    ]
+    for i in range(1, 7):
+        placeholder_texts.append(f"__SEMANTIC_H{i}_START__")
+        placeholder_texts.append(f"__SEMANTIC_H{i}_END__")
+
+    for text in placeholder_texts:
+        nlp.tokenizer.add_special_case(text, [{ORTH: text}])
 except OSError:
     logging.error("spaCy model 'en_core_web_sm' not found. Please ensure it's in your requirements.txt or run 'python -m spacy download en_core_web_sm'")
     exit()
-
 # --- Global Constants ---
 MONTHS = {
     "January", "February", "March", "April", "May", "June", 
@@ -1259,6 +1272,131 @@ def check_missing_italics_for_works(doc: Doc, line_offsets: List[int]) -> List[D
             _add_finding(findings, get_line_number_from_offset(ent.start_char, line_offsets), ent.text)
     return findings
 
+def check_punctuation_in_structural_tags(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """
+    Checks for full stops inside headings or captions.
+    (Rules: APS-GPC-Punctuationandcapitalisation-H-001)
+    """
+    findings = []
+    in_tag_type = None
+    tag_start_token = None
+
+    for token in doc:
+        if token.text.startswith('__SEMANTIC_H') and token.text.endswith('_START__'):
+            in_tag_type = 'heading'
+            tag_start_token = token
+        elif token.text.startswith('__SEMANTIC_CAPTION') and token.text.endswith('_START__'):
+            in_tag_type = 'caption'
+            tag_start_token = token
+        elif (token.text.startswith('__SEMANTIC_H') and token.text.endswith('_END__')) or \
+             (token.text.startswith('__SEMANTIC_CAPTION') and token.text.endswith('_END__')):
+            in_tag_type = None
+            tag_start_token = None
+        
+        if in_tag_type and token.text == '.':
+            # Find the full text of the heading/caption from the start token
+            sent_span = token.sent
+            offending_text = ""
+            in_span = False
+            for t in sent_span:
+                if t == tag_start_token:
+                    in_span = True
+                if in_span:
+                    offending_text += t.text_with_ws
+                if (in_tag_type == 'heading' and t.text.startswith('__SEMANTIC_H') and t.text.endswith('_END__')) or \
+                   (in_tag_type == 'caption' and t.text.startswith('__SEMANTIC_CAPTION') and t.text.endswith('_END__')):
+                    break
+            
+            _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), offending_text)
+    return findings
+
+def check_italic_case(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """
+    Checks for potential incorrect casing or content within italic tags.
+    - Flags Title Case in italics (should be sentence case for titles) (H-002)
+    - Flags definitions in italics (should use quotes) (H-005)
+    """
+    findings = []
+    in_italics = False
+    italic_span_tokens = []
+
+    for token in doc:
+        if token.text == '__SEMANTIC_ITALIC_START__':
+            in_italics = True
+            italic_span_tokens = [token]
+            continue
+        elif token.text == '__SEMANTIC_ITALIC_END__':
+            in_italics = False
+            italic_span_tokens.append(token)
+            
+            # --- Process the completed italic span ---
+            if len(italic_span_tokens) > 2:
+                # Get the text content, excluding the placeholders
+                text_tokens = italic_span_tokens[1:-1]
+                italic_text = "".join(t.text_with_ws for t in text_tokens).strip()
+
+                if not italic_text:
+                    continue
+
+                # Rule APS-GPC-Punctuationandcapitalisation-H-002
+                # Check for Title Case (more than 2 words, most are capitalized)
+                words = [t for t in text_tokens if t.is_alpha and not t.is_stop]
+                if len(words) > 2:
+                    title_cased_words = sum(1 for w in words if w.text.istitle())
+                    # If more than half the significant words are title-cased, flag it.
+                    if title_cased_words / len(words) > 0.5:
+                        _add_finding(findings, get_line_number_from_offset(italic_span_tokens[0].idx, line_offsets), f"[Title Case]: {italic_text}")
+
+                # Rule APS-GPC-Italics-H-005
+                # Check for definition-like phrases
+                if " is defined as " in italic_text.lower() or " means " in italic_text.lower():
+                    _add_finding(findings, get_line_number_from_offset(italic_span_tokens[0].idx, line_offsets), f"[Definition]: {italic_text}")
+            
+            italic_span_tokens = []
+            continue
+        
+        if in_italics:
+            italic_span_tokens.append(token)
+            
+    return findings
+
+def check_unitalicised_acts(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """
+    Checks for unitalicised legal Acts (Rule: APS-GPC-Italics-H-002).
+    Finds patterns like "Name Act [Year]" that are not inside italic placeholders.
+    """
+    findings = []
+    
+    # Store (start_char, end_char) of all italic blocks
+    italic_spans = []
+    in_italics = False
+    start_char = -1
+    for token in doc:
+        if token.text == '__SEMANTIC_ITALIC_START__':
+            in_italics = True
+            start_char = token.idx
+        elif token.text == '__SEMANTIC_ITALIC_END__':
+            if in_italics:
+                italic_spans.append((start_char, token.idx + len(token.text)))
+            in_italics = False
+            start_char = -1
+
+    # Now, find all Act names in the doc's plain text
+    act_regex = re.compile(r'\b([A-Z][A-Za-z\s]+)\s+Act\s+\d{4}\b')
+    
+    for match in act_regex.finditer(doc.text):
+        is_italicised = False
+        for (start, end) in italic_spans:
+            # Check if the match is *inside* an italic span
+            if match.start() >= start and match.end() <= end:
+                is_italicised = True
+                break
+        
+        if not is_italicised:
+            _add_finding(findings, get_line_number_from_offset(match.start(), line_offsets), match.group(0))
+            
+    return findings
+
 # --- Master Dictionary of Heuristic Checks ---
 HEURISTIC_CHECKS: Dict[str, Callable[[Doc, List[int]], List[Dict[str, Any]]]] = {
     "APS-GPC-Partsofsentences-H-009": check_passive_voice,
@@ -1330,6 +1468,11 @@ HEURISTIC_CHECKS: Dict[str, Callable[[Doc, List[int]], List[Dict[str, Any]]]] = 
     "APS-GPC-Adjectives-H-005": check_adjective_strings,
     "APS-GPC-Adverbs-H-002": check_adjective_as_adverb,
     "APS-GPC-Italics-H-001": check_missing_italics_for_works,
+    #---Heuristics which rely on semantic placeholder tags---
+    "APS-GPC-Punctuationandcapitalisation-H-001": check_punctuation_in_structural_tags,
+    "APS-GPC-Punctuationandcapitalisation-H-002": check_italic_case,
+    "APS-GPC-Italics-H-002": check_unitalicised_acts,
+    "APS-GPC-Italics-H-005": check_italic_case,
 }
 
 def load_rules_from_rulebook(file_path: str) -> List[Dict[str, Any]]:
