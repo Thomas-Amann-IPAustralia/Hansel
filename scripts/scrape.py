@@ -85,6 +85,32 @@ def clean_html_content(html: str) -> str:
     soup = BeautifulSoup(html, 'html.parser')
     page_body = soup.body
     if page_body:
+        # --- Start new section 17/10/2025 ---
+        # Handle italics (em, i)
+        for tag in page_body.find_all(['em', 'i']):
+            tag.insert_before(' __SEMANTIC_ITALIC_START__ ')
+            tag.insert_after(' __SEMANTIC_ITALIC_END__ ')
+            tag.unwrap()
+
+        # Handle bold (strong, b)
+        for tag in page_body.find_all(['strong', 'b']):
+            tag.insert_before(' __SEMANTIC_BOLD_START__ ')
+            tag.insert_after(' __SEMANTIC_BOLD_END__ ')
+            tag.unwrap()
+
+        # Handle headings (h1-h6)
+        for i in range(1, 7):
+            for tag in page_body.find_all(f'h{i}'):
+                tag.insert_before(f' __SEMANTIC_H{i}_START__ ')
+                tag.insert_after(f' __SEMANTIC_H{i}_END__ ')
+                tag.unwrap()
+        
+        # Handle captions
+        for tag in page_body.find_all('caption'):
+            tag.insert_before(' __SEMANTIC_CAPTION_START__ ')
+            tag.insert_after(' __SEMANTIC_CAPTION_END__ ')
+            tag.unwrap()
+        # --- End new section ---
         for tag_selector in TAGS_TO_EXCLUDE:
             for tag in page_body.select(tag_selector):
                 tag.decompose()
