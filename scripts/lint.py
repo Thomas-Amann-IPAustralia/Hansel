@@ -287,27 +287,57 @@ def check_generic_official_titles(doc: Doc, line_offsets: List[int]) -> List[Dic
 
 def check_generic_parliamentary_terms(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
     """
-    Flags incorrect capitalization of specific parliamentary terms.
+    Flags incorrect capitalization of specific parliamentary terms using spaCy's Matcher.
     Covers Rules:
-    - APS-GPC-Governmentterms-H-014
-    - APS-GPC-Governmentterms-H-015
+    - APS-GPC-Governmentterms-H-014 (Formal names must be capitalized)
+    - APS-GPC-Governmentterms-H-015 (Generic terms must be lowercase)
     """
     findings = []
-    # Formal names that must be capitalized
-    formal_names = {"Parliament House", "Parliamentary Library", "the Senate", "the House of Representatives"}
-    # Generic terms that must be lowercase
-    generic_terms_incorrectly_capitalized = {"Parliamentary Procedures", "Member of Parliament", "Houses of Parliament"}
+    matcher = Matcher(nlp.vocab)
 
-    doc_text = doc.text
-    # Check if formal names appear in lowercase
-    for term in formal_names:
-        if term.lower() in doc_text.lower() and term not in doc_text:
-             _add_finding(findings, get_line_number_from_offset(doc_text.lower().find(term.lower()), line_offsets), term)
+    # Rule H-014: Formal names that MUST be capitalized.
+    # We will match on case-insensitive versions and then check if the casing is correct.
+    formal_names = {
+        "FORMAL_PH": ("Parliament House", [{"LOWER": "parliament"}, {"LOWER": "house"}]),
+        "FORMAL_PL": ("Parliamentary Library", [{"LOWER": "parliamentary"}, {"LOWER": "library"}]),
+        "FORMAL_S": ("the Senate", [{"LOWER": "the"}, {"LOWER": "senate"}]),
+        "FORMAL_HR": ("the House of Representatives", [{"LOWER": "the"}, {"LOWER": "house"}, {"LOWER": "of"}, {"LOWER": "representatives"}]),
+    }
 
-    # Check if generic terms appear incorrectly capitalized
-    for term in generic_terms_incorrectly_capitalized:
-        if term in doc_text:
-            _add_finding(findings, get_line_number_from_offset(doc_text.find(term), line_offsets), term)
+    # Rule H-015: Generic terms that are INCORRECTLY capitalized.
+    # We will match on the exact, incorrect case-sensitive versions.
+    generic_terms = {
+        "GENERIC_PP": ("Parliamentary Procedures", [{"TEXT": "Parliamentary"}, {"TEXT": "Procedures"}]),
+        "GENERIC_MP": ("Member of Parliament", [{"TEXT": "Member"}, {"TEXT": "of"}, {"TEXT": "Parliament"}]),
+        "GENERIC_HP": ("Houses of Parliament", [{"TEXT": "Houses"}, {"TEXT": "of"}, {"TEXT": "Parliament"}]),
+    }
+
+    # Add all patterns to the matcher
+    for key, (text, pattern) in formal_names.items():
+        matcher.add(key, [pattern])
+    for key, (text, pattern) in generic_terms.items():
+        matcher.add(key, [pattern])
+
+    matches = matcher(doc)
+    for match_id, start, end in matches:
+        span = doc[start:end]
+        rule_name = nlp.vocab.strings[match_id]
+
+        if rule_name.startswith("FORMAL_"):
+            # This is a potential violation of Rule H-014.
+            # Check if the matched text is NOT correctly capitalized.
+            correct_text = formal_names[rule_name][0]
+            if span.text != correct_text:
+                offending_text = f"{span.text} (should be '{correct_text}')"
+                _add_finding(findings, get_line_number_from_offset(span.start_char, line_offsets), offending_text)
+        
+        elif rule_name.startswith("GENERIC_"):
+            # This is a direct violation of Rule H-015.
+            # The term should be lowercase unless at the start of a sentence.
+            if not span.is_sent_start:
+                offending_text = f"{span.text} (should be lowercase)"
+                _add_finding(findings, get_line_number_from_offset(span.start_char, line_offsets), offending_text)
+    
     return findings
     
 def check_capitalized_common_noun_definitions(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
