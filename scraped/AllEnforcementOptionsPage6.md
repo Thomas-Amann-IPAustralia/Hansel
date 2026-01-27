@@ -1,101 +1,95 @@
 [Skip to main content](#main-content "Skip to main content")
 
-# All enforcement options
+[Use our Navigator Tool to explore your options](/navigator-tool-suspected-infringement)
 
-*This IP First Response website has been designed to help IP rights holders navigate IP infringement and enforcement by making it visible, accessible, and to provide information about the factors involved in pursuing different options.*
+\_\_SEMANTIC\_H1\_START\_\_ See unfiltered list of IP First Response information \_\_SEMANTIC\_H1\_END\_\_
 
-*This does not provide legal or professional advice, and none of the content should be regarded as recommending a specific course of action.*
+\_\_SEMANTIC\_ITALIC\_START\_\_ This IP First Response website has been designed to help IP rights holders navigate IP infringement and enforcement by making it visible, accessible, and to provide information about the factors involved in pursuing different options.  \_\_SEMANTIC\_ITALIC\_END\_\_
 
-Displaying 55 - 63 of 72
+\_\_SEMANTIC\_ITALIC\_START\_\_ This does not provide legal or professional advice, and none of the content should be regarded as recommending a specific course of action. \_\_SEMANTIC\_ITALIC\_END\_\_
 
-[Opposition process
+Displaying 55 - 63 of 102
 
-## Challenge the registration of a new trade mark
+[Infringement 101
 
-Initiate a trade mark opposition process against a new trade mark with IP Australia.  
-**Estimated cost:**  
-  $650+, plus legal fees (often significant)  
-**Estimated effort:**  
-Months to years  
-**Rate of resolution:**   
-  1-3% of trade marks are opposed](/options/challenge-registration-new-trade-mark-0)
+\_\_SEMANTIC\_H2\_START\_\_ Addressing overseas infringement \_\_SEMANTIC\_H2\_END\_\_
 
-[Gauge the situation
+Helpful information about addressing overseas intellectual property infringement.](/options/addressing-overseas-infringement)
 
-## Choose not to act immediately
+[Infringement 101
 
-Strategically enforce your IP only when worthwhile.  
-**Estimated cost:**  
-$0, plus any professional services  
-**Estimated effort:**  
-Variable but low  
-**Rate of resolution:** N/A](/options/choose-not-act-immediately)
+\_\_SEMANTIC\_H2\_START\_\_ What is IP infringement? \_\_SEMANTIC\_H2\_END\_\_
 
-[Rebrand your business
-
-## Choose to rebrand to avoid potential IP conflicts
-
-Strategically rebrand your business to avoid disputes.  
-**Estimated cost:**  
-Variable (based on brand value)  
-**Estimated effort:**  
-Days to weeks  
-**Rate of resolution:**  
-High](/options/choose-rebrand-avoid-potential-ip-conflicts)
-
-[International disputes
-
-## Considerations before enforcing your IP overseas
-
-Find the right assistance to enforce your IP right in the case of infringement happening outside of Australia.](/options/considerations-enforcing-your-ip-overseas)
-
-[Sorry, this information is not available yet
-
-## Copyright
-
-We cannot provide information on this right just yet.](/options/copyright)
-
-[Letter of demand
-
-## Demand the other party stops infringing in writing
-
-Send a letter to the infringing party notifying them of potential infringement.  
-**Estimated cost:**  
-$1,500-$10,000 (with representation)  
-**Estimated effort:**  
-Days to weeks  
-**Rate of resolution:**  
-40% of patent holders find it effective to stop copying](/options/demand-other-party-stops-infringing-writing)
+Helpful information about IP infringement.](/options/what-ip-infringement)
 
 [eCommerce platform
 
-## Notify online marketplaces of infringement on their platform
+\_\_SEMANTIC\_H2\_START\_\_ Oppose an IP infringement notice from an online marketplace \_\_SEMANTIC\_H2\_END\_\_
 
-Request infringing material is removed from online marketplaces and platforms.  
-**Estimated cost:**  
-$0  
-**Estimated effort:**  
-Hours to days  
-**Rate of resolution:**  
-Highly variable](/options/notify-online-marketplaces-infringement-their-platform)
+Dispute an action that an eCommerce platform has taken against you.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Free  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Hours to days  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Variable](/options/oppose-ip-infringement-notice-online-marketplace)
 
-[IP attorney or lawyer
+[International disputes
 
-## Obtain legal advice on enforcement options
+\_\_SEMANTIC\_H2\_START\_\_ Considerations when responding to international accusations \_\_SEMANTIC\_H2\_END\_\_
 
-Seek a qualified & experienced professional to provide specific, tailored advice.
+Find the right assistance for responding to accusations of IP infringement happening outside of Australia.](/options/considerations-when-responding-international-accusations)
 
-**Estimated cost:**  
-Highly variable  
-**Estimated effort:**  
-Highly variable  
-**Rate of resolution:**  
-Highly variable](/options/obtain-legal-advice-enforcement-options)
+[Design certification
 
-[Sorry, this information is not available yet
+\_\_SEMANTIC\_H2\_START\_\_ Request IP Australia confirms a registered design is valid \_\_SEMANTIC\_H2\_END\_\_
 
-## Other IP types
+Request IP Australia examines and certifies a registered design to secure full protection.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ $500    
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Hours (to request)  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Approximately 20% of designs are certified](/options/request-ip-australia-confirms-registered-design-valid)
 
-We cannot provide information on this right just yet.](/options/other-ip-types)
+[Trade mark non-use action
 
-[Return focus to the top of the page](#top)
+\_\_SEMANTIC\_H2\_START\_\_ Request IP Australia remove an unused trade mark to defend your right \_\_SEMANTIC\_H2\_END\_\_
+
+Request IP Australia removes an unused trade mark from the register.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ $350  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Days (to file)  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Approx. 1,200 applications made to IP Australia per year](/options/request-ip-australia-remove-unused-trade-mark-defend-your-right)
+
+[Opposition process
+
+\_\_SEMANTIC\_H2\_START\_\_ Challenge the registration of a new trade mark to defend your right \_\_SEMANTIC\_H2\_END\_\_
+
+Oppose a trade mark you’re accused of infringing before it becomes registered.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ $650+, plus legal fees  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Months to years  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ 1-3% of trade marks are opposed](/options/challenge-registration-new-trade-mark-to-defend)
+
+[Negotiation
+
+\_\_SEMANTIC\_H2\_START\_\_ Reach an agreement with the accusing party \_\_SEMANTIC\_H2\_END\_\_
+
+Negotiate a mutually acceptable commercial or financial resolution.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Variable legal fees  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Days to weeks  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Over 90% of commercial disputes settle outside court or arbitration](/options/reach-agreement-accusing-party)
+
+[Enforcing to defend
+
+\_\_SEMANTIC\_H2\_START\_\_ Assert your rights, as a response to an accusation \_\_SEMANTIC\_H2\_END\_\_
+
+If you believe that you are genuinely in the right to retain your IP, gather evidence and defend your right to use it.](/options/assert-your-rights-response-accusation)

@@ -1,71 +1,65 @@
 [Skip to main content](#main-content "Skip to main content")
 
-# All enforcement options
+[Use our Navigator Tool to explore your options](/navigator-tool-suspected-infringement)
 
-*This IP First Response website has been designed to help IP rights holders navigate IP infringement and enforcement by making it visible, accessible, and to provide information about the factors involved in pursuing different options.*
+\_\_SEMANTIC\_H1\_START\_\_ See unfiltered list of IP First Response information \_\_SEMANTIC\_H1\_END\_\_
 
-*This does not provide legal or professional advice, and none of the content should be regarded as recommending a specific course of action.*
+\_\_SEMANTIC\_ITALIC\_START\_\_ This IP First Response website has been designed to help IP rights holders navigate IP infringement and enforcement by making it visible, accessible, and to provide information about the factors involved in pursuing different options.  \_\_SEMANTIC\_ITALIC\_END\_\_
 
-Displaying 19 - 27 of 72
+\_\_SEMANTIC\_ITALIC\_START\_\_ This does not provide legal or professional advice, and none of the content should be regarded as recommending a specific course of action. \_\_SEMANTIC\_ITALIC\_END\_\_
 
-[Infringement 101
+Displaying 19 - 27 of 102
 
-## Patent infringement
+[Selling or licensing
 
-Understand what is, and is not, considered patent infringement.](/options/patent-infringement)
+\_\_SEMANTIC\_H2\_START\_\_ Can I buy, sell or license IP? \_\_SEMANTIC\_H2\_END\_\_
 
-[Infringement 101
+Intellectual property is a type of property, just like a house or a car...](/options/can-i-buy-sell-or-license-ip)
 
-## Plant breeder’s right (PBR) infringement
+[Making money
 
-Helpful information about plant breeders rights infringements.](/options/pbr-infringement)
+\_\_SEMANTIC\_H2\_START\_\_ Does IP help me to make or save money? \_\_SEMANTIC\_H2\_END\_\_
 
-[Infringement 101
+Owning intellectual property (IP) won’t earn you money outright without commercialising...](/options/does-ip-help-me-make-or-save-money)
 
-## Copyright infringement
+[Checking IP rights
 
-Understand what is, and is not, considered copyright infringement.](/options/copyright-infringement)
+\_\_SEMANTIC\_H2\_START\_\_ Check if someone else already owns a word, logo or idea you want \_\_SEMANTIC\_H2\_END\_\_
 
-[Infringement 101
+Before you spend money on your name, logo or idea, it can help to check if...](/options/check-if-someone-else-already-owns-word-logo-or-idea-you-want)
 
-## Unregistered trade marks
+[Using IP in business
 
-Understand unregistered trade marks and what legal protection is available.](/options/unregistered-trade-marks)
+\_\_SEMANTIC\_H2\_START\_\_ Discover where you are in your IP journey \_\_SEMANTIC\_H2\_END\_\_
 
-[Infringement 101
+As a business owner, there’s a lot of information to grapple with...](/options/discover-where-you-are-your-ip-journey)
 
-## What to do if someone infringes your IP
+[Applying for IP
 
-Helpful information about what you can do if someone infringes your IP.](/options/what-do-if-someone-infringes-your-ip)
+\_\_SEMANTIC\_H2\_START\_\_ Is it worth registering my IP? \_\_SEMANTIC\_H2\_END\_\_
 
-[Infringement 101
+Your ideas, brands, inventions and designs can be some of the most...](/options/it-worth-registering-my-ip)
 
-## Trade mark infringement
+[Before applying
 
-Understand what is, and is not, considered trade mark infringement.](/options/trade-mark-infringement)
+\_\_SEMANTIC\_H2\_START\_\_ What to check before getting registered IP \_\_SEMANTIC\_H2\_END\_\_
 
-[Infringement 101
+Start by matching what you have to the right IP type...](/options/what-check-getting-registered-ip)
 
-## Addressing overseas infringement
+[Costs of IP
 
-Helpful information about addressing overseas intellectual property infringement.](/options/addressing-overseas-infringement)
+\_\_SEMANTIC\_H2\_START\_\_ Why is this so expensive? \_\_SEMANTIC\_H2\_END\_\_
 
-[Infringement 101
+Enforcing your intellectual property (IP) is about stopping suspected or alleged infringement and...](/options/why-so-expensive)
 
-## What is IP infringement?
+[Protecting your business
 
-Helpful information about IP infringement.](/options/what-ip-infringement)
+\_\_SEMANTIC\_H2\_START\_\_ What does IP protection mean for my business? \_\_SEMANTIC\_H2\_END\_\_
 
-[eCommerce platform
+IP protection means securing legal rights over the things your business...](/options/what-does-ip-protection-mean-my-business)
 
-## Oppose an IP infringement notice from an online marketplace
+[Business names
 
-Dispute an action that an eCommerce platform has taken against you.  
-**Estimated cost:**  
-Usually free  
-**Estimated effort:**  
-Highlyvariable  
-**Rate of resolution:**  
-Highly variable](/options/oppose-ip-infringement-notice-online-marketplace)
+\_\_SEMANTIC\_H2\_START\_\_ Is my business name my IP? \_\_SEMANTIC\_H2\_END\_\_
 
-[Return focus to the top of the page](#top)
+A business may operate under several ‘names’, but...](/options/my-business-name-my-ip)

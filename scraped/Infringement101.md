@@ -1,6 +1,6 @@
 [Skip to main content](#main-content "Skip to main content")
 
-# Infringement 101
+\_\_SEMANTIC\_H1\_START\_\_ Infringement 101 \_\_SEMANTIC\_H1\_END\_\_
 
 Infringement can be a confusing and sometimes complex concept. The following 'Infringement 101' content has been developed to provide a practical and accessible guide to understanding some of the basics of infringement for each of the different IP rights.
 
@@ -45,7 +45,7 @@ In addition, some information has been collated from across the IP Australia web
   For more information about overseas enforcement, see [Addressing overseas infringement](https://ipfirstresponse.ipaustralia.gov.au/options/addressing-overseas-infringement)
 * What makes a trade mark robust, registrable and easier to enforce?
 
-  #### Unregistered trade marks vs registered trade marks
+  \_\_SEMANTIC\_H4\_START\_\_ Unregistered trade marks vs registered trade marks  \_\_SEMANTIC\_H4\_END\_\_
 
   A trade mark is a type of IP right which distinguishes your unique brand, product or service from other competitors in the market. A trade mark can be used to protect your business name or aspects of your brand.  
 
@@ -59,15 +59,15 @@ In addition, some information has been collated from across the IP Australia web
 
   However, not all trade marks are registrable. There are certain words, phrases and images that can't be registered, or can only be registered under special circumstances or upon provision of evidence. Below are some common reasons as to why a trade mark may not be registrable with IP Australia: 
 
-  + **A trade mark is non-distinctive and is something other traders may legitimately want to use.** This could include common surnames, pictures of the goods, descriptive words or images, ordinary colours and shapes of the goods, sounds and scents commonly associated with the goods, and names of geographical locations where goods or services may originate.
-  + **Earlier, confusingly similar trade marks** for the same or similar goods or services exist.
-  + **A trade mark is inherently confusing**, likely to deceive or confuse the public because of some inherent connotation. For example, a trade mark contains the words ‘vegan friendly’ but the goods claimed are beef products. This has the potential to mislead consumers as to the suitability of the product for vegan consumption.
-  + **A trade mark is scandalous**, likely to cause offence to a significant number of Australians.
-  + **A trade mark is prohibited by legislation.** Other Australian laws may prohibit the use or registration of various words or images as trade marks (e.g. Defence force words or symbols or the word ANZAC). In addition, as a member state to the [Paris Convention for the Protection of Industrial Property(Opens in a new tab/window)](https://www.wipo.int/treaties/en/ip/paris/), Australia may refuse to register trade marks that consist of various words and images of foreign countries and intergovernmental organisations (e.g. UNICEF).
+  + \_\_SEMANTIC\_BOLD\_START\_\_ A trade mark is non-distinctive and is something other traders may legitimately want to use. \_\_SEMANTIC\_BOLD\_END\_\_ This could include common surnames, pictures of the goods, descriptive words or images, ordinary colours and shapes of the goods, sounds and scents commonly associated with the goods, and names of geographical locations where goods or services may originate.
+  + \_\_SEMANTIC\_BOLD\_START\_\_ Earlier, confusingly similar trade marks \_\_SEMANTIC\_BOLD\_END\_\_ for the same or similar goods or services exist. \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_
+  + \_\_SEMANTIC\_BOLD\_START\_\_ A trade mark is inherently confusing \_\_SEMANTIC\_BOLD\_END\_\_ , likely to deceive or confuse the public because of some inherent connotation. For example, a trade mark contains the words ‘vegan friendly’ but the goods claimed are beef products. This has the potential to mislead consumers as to the suitability of the product for vegan consumption.
+  + \_\_SEMANTIC\_BOLD\_START\_\_ A trade mark is scandalous \_\_SEMANTIC\_BOLD\_END\_\_ , likely to cause offence to a significant number of Australians.
+  + \_\_SEMANTIC\_BOLD\_START\_\_ A trade mark is prohibited by legislation. \_\_SEMANTIC\_BOLD\_END\_\_ Other Australian laws may prohibit the use or registration of various words or images as trade marks (e.g. Defence force words or symbols or the word ANZAC). In addition, as a member state to the [Paris Convention for the Protection of Industrial Property(Opens in a new tab/window)](https://www.wipo.int/treaties/en/ip/paris/), Australia may refuse to register trade marks that consist of various words and images of foreign countries and intergovernmental organisations (e.g. UNICEF).
 
-  **Note**: While a trade mark may appear unregistrable on face value, it may still be able to achieve registration for other reasons, including that the owner has demonstrated it has or will become seen as a distinctive brand in the market. 
+  \_\_SEMANTIC\_BOLD\_START\_\_ Note \_\_SEMANTIC\_BOLD\_END\_\_ : While a trade mark may appear unregistrable on face value, it may still be able to achieve registration for other reasons, including that the owner has demonstrated it has or will become seen as a distinctive brand in the market. 
 
-  #### Not all registered trade marks have equal strength
+  \_\_SEMANTIC\_H4\_START\_\_ Not all registered trade marks have equal strength  \_\_SEMANTIC\_H4\_END\_\_
 
   Some trade marks may be more difficult and costly to enforce even if they are registered, due to factors such as their inherent lack of distinctiveness (i.e. being too generic or descriptive), extent of usage in the marketplace, or evolving market conditions. 
 
@@ -75,24 +75,22 @@ In addition, some information has been collated from across the IP Australia web
 
   On the other hand, 'weak' trade marks may contain descriptive matter, or be very similar to trade marks being used by competitors for the same goods or services. Changes in market conditions or consumer behaviour may make a mark weaker over time too. In the case of ‘weak’ trade marks, it may be more difficult to show that other traders are using that trade mark (or something similar) in a way that the law considers an infringement, as opposed to purely descriptive use.  
 
-  #### Tools and resources
+  \_\_SEMANTIC\_H4\_START\_\_ Tools and resources   \_\_SEMANTIC\_H4\_END\_\_
 
   IP Australia provides tools and resources to help you check whether your trade mark would meet requirements for registration. Checking your trade mark’s registrability can also give you some indication on the strength of your trade mark when you wish to enforce it in the future.  
 
-  ##### **TM Checker**
+  \_\_SEMANTIC\_H5\_START\_\_  \_\_SEMANTIC\_BOLD\_START\_\_ TM Checker \_\_SEMANTIC\_BOLD\_END\_\_   \_\_SEMANTIC\_H5\_END\_\_
 
-  [**TM Checker**(Opens in a new tab/window)](https://www.ipaustralia.gov.au/trade-marks/search-existing-trade-marks) is a free tool that helps give an early indication of problems your trade mark might face when it is examined. It uses AI to quickly check your proposed trade mark, based on internally-trained data and examinations previously conducted by IP Australia. You don't need an online account to use TM Checker, only if you decide to apply for a trade mark. 
+  [\_\_SEMANTIC\_BOLD\_START\_\_ TM Checker \_\_SEMANTIC\_BOLD\_END\_\_ (Opens in a new tab/window)](https://www.ipaustralia.gov.au/trade-marks/search-existing-trade-marks) is a free tool that helps give an early indication of problems your trade mark might face when it is examined. It uses AI to quickly check your proposed trade mark, based on internally-trained data and examinations previously conducted by IP Australia. You don't need an online account to use TM Checker, only if you decide to apply for a trade mark. 
 
   This easy-to-use tool gives your business: 
 
   + An early indication of if your proposed trade mark can be registered in the relevant classes of goods and services.
   + An estimate of how much your application could cost.
   + An estimate of how long the trade mark application could take.
-  + A seamless link to the trade mark application process.
+  + A seamless link to the trade mark application process.\_\_SEMANTIC\_H5\_START\_\_  \_\_SEMANTIC\_BOLD\_START\_\_ TM Headstart \_\_SEMANTIC\_BOLD\_END\_\_   \_\_SEMANTIC\_H5\_END\_\_
 
-  ##### **TM Headstart**
-
-  [**TM Headstart**(Opens in a new tab/window)](https://www.ipaustralia.gov.au/trade-marks/how-to-apply-for-a-trade-mark/pre-application-service-tm-headstart) is an application method designed to assist first-time trade mark applicants.   
+  [\_\_SEMANTIC\_BOLD\_START\_\_ TM Headstart \_\_SEMANTIC\_BOLD\_END\_\_ (Opens in a new tab/window)](https://www.ipaustralia.gov.au/trade-marks/how-to-apply-for-a-trade-mark/pre-application-service-tm-headstart) is an application method designed to assist first-time trade mark applicants.   
      
   When you apply with TM Headstart, an examiner will assess your trade mark before you formally apply. You'll get feedback and an opportunity to amend your application, increasing your chances of getting a registered trade mark. 
 
@@ -102,10 +100,9 @@ In addition, some information has been collated from across the IP Australia web
   + After receiving feedback, you have five business days to submit changes (or formalise your application). Most amendments will attract a fee.
   + If your application is successful, your trade mark will be in effect from the date you formalise your application.
 
-  As discussed above, not every registered or registrable trade mark has equal level of strength or enforceability. There are multiple factors that can influence the enforceability of a trade mark when there is a dispute or suspected infringement**. An IP professional such as an IP attorney can help you make this assessment on the overall strength of your trade mark and whether it would be enforceable in specific circumstances**.  
+  As discussed above, not every registered or registrable trade mark has equal level of strength or enforceability. There are multiple factors that can influence the enforceability of a trade mark when there is a dispute or suspected infringement \_\_SEMANTIC\_BOLD\_START\_\_ . An IP professional such as an IP attorney can help you make this assessment on the overall strength of your trade mark and whether it would be enforceable in specific circumstances \_\_SEMANTIC\_BOLD\_END\_\_ .  
 
-  #### See also
-
+  \_\_SEMANTIC\_H4\_START\_\_ See also  \_\_SEMANTIC\_H4\_END\_\_
   + [Brand protection: enforcing your registered trade mark | business.gov.au(Opens in a new tab/window)](https://business.gov.au/news/brand-protection-enforcing-your-registered-trade-mark)
   + [What Are Trade Marks? | IP Australia(Opens in a new tab/window)](https://www.ipaustralia.gov.au/trade-marks/what-are-trade-marks)
   + [What Can't Be A Trade Mark? | IP Australia(Opens in a new tab/window)](https://www.ipaustralia.gov.au/trade-marks/what-are-trade-marks/what-cant-be-a-trade-mark)
@@ -117,7 +114,11 @@ In addition, some information has been collated from across the IP Australia web
   + [Brand protection: enforcing your registered trade mark | business.gov.au(Opens in a new tab/window)](https://business.gov.au/news/brand-protection-enforcing-your-registered-trade-mark)
   + [Find an IP attorney or firm | Trans-Tasman IP Attorneys Board(Opens in a new tab/window)](https://www.ttipattorney.gov.au/for-clients/how-to-engage-an-attorney/find-an-ip-attorney-or-firm?_gl=1*wp2lum*_ga*MTUwOTM4MDc5LjE3MzM3ODMxNTI.*_ga_GMT4KC15KS*MTczNjgxNTEyNS4yNS4xLjE3MzY4MTY5MDEuMC4wLjA.#als_iptags=Trade%20marks&als_e=0)
 
-## Give feedback about IP First Response
+Was this information useful?
+
+Thumbs UpThumbs Down
+
+\_\_SEMANTIC\_H2\_START\_\_ Give feedback about IP First Response \_\_SEMANTIC\_H2\_END\_\_
 
 Send us an [email](Mailto:IPFirstResponse@ipaustralia.gov.au)  
 Fill out a feedback form by following the button
@@ -125,5 +126,3 @@ Fill out a feedback form by following the button
 [Feedback
 
 (Opens in a new tab/window)](https://ipaustralia.au1.qualtrics.com/jfe/form/SV_6LKlgPWZqiheCiy)
-
-[Return focus to the top of the page](#top)

@@ -1,113 +1,120 @@
 [Skip to main content](#main-content "Skip to main content")
 
-# All enforcement options
+[Use our Navigator Tool to explore your options](/navigator-tool-suspected-infringement)
 
-*This IP First Response website has been designed to help IP rights holders navigate IP infringement and enforcement by making it visible, accessible, and to provide information about the factors involved in pursuing different options.*
+\_\_SEMANTIC\_H1\_START\_\_ See unfiltered list of IP First Response information \_\_SEMANTIC\_H1\_END\_\_
 
-*This does not provide legal or professional advice, and none of the content should be regarded as recommending a specific course of action.*
+\_\_SEMANTIC\_ITALIC\_START\_\_ This IP First Response website has been designed to help IP rights holders navigate IP infringement and enforcement by making it visible, accessible, and to provide information about the factors involved in pursuing different options.  \_\_SEMANTIC\_ITALIC\_END\_\_
 
-Displaying 64 - 72 of 72
+\_\_SEMANTIC\_ITALIC\_START\_\_ This does not provide legal or professional advice, and none of the content should be regarded as recommending a specific course of action. \_\_SEMANTIC\_ITALIC\_END\_\_
 
-[Report IP crime or safety concerns
+Displaying 64 - 72 of 102
 
-## Prevent risks to public interest
+[Court
 
-Inform Government about risks to public health, crime, counterfeiting, frauds & scams.  
-**Estimated cost:**  
-$0  
-**Estimated effort:**  
-Hours to days  
-**Rate of resolution:**  
-IP crimes are rarely prosecuted](/options/prevent-risks-public-interest)
+\_\_SEMANTIC\_H2\_START\_\_ Respond to an unjustified threat \_\_SEMANTIC\_H2\_END\_\_
+
+Use court to respond to a legally unjustified demand or threat.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+  $100k+ in legal fees  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Years  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Court decisions are binding although appeal is possible](/options/respond-unjustified-threat)
 
 [Informal contact
 
-## Provide an opportunity for the other party to stop infringing
+\_\_SEMANTIC\_H2\_START\_\_ De-escalate and resolve disputes via conversation \_\_SEMANTIC\_H2\_END\_\_
 
-Alert the alleged infringer of your registered rights to allow them to stop infringing.  
-**Estimated cost:**  
-$0  
-**Estimated effort:**  
-Days to weeks  
-**Rate of resolution:**  
-Highly variable](/options/provide-opportunity-other-party-stop-infringing)
+Engage in an informal conversation to resolve IP disputes.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Free  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Days to weeks  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Variable](/options/de-escalate-and-resolve-disputes-conversation)
 
-[Trade mark non-use action
+[Report criminal activities
 
-## Remove a trade mark from the register
+\_\_SEMANTIC\_H2\_START\_\_ Report a scam, fraud or risk to public interest \_\_SEMANTIC\_H2\_END\_\_
 
-Request IP Australia removes an unused  trade mark from the register.  
-**Estimated cost:**  
-$350, plus legal fees if opposed  
-**Estimated effort:**  
-Weeks to months  
-**Rate of resolution:**  
-Approx 1,200 applications made to IP Australia per year](/options/trade-mark-non-use)
+Notify authorities about scams, counterfeits, or other fraudulent activities that pose a risk to public safety or trust.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Free  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Variable  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ IP crimes are rarely prosecuted](/options/report-scam-fraud-or-risk-public-interest)
 
-[Trade mark registration revocation
+[Patent re-examination
 
-## Remove a trade mark from the register
+\_\_SEMANTIC\_H2\_START\_\_ Challenge a granted patent \_\_SEMANTIC\_H2\_END\_\_
 
-Let IP Australia know a recently registered trade mark should not have been registered.  
-**Estimated cost:**  
-Free at initial stages  
-**Estimated effort:**  
-Days (to request)  
-**Rate of resolution:**  
-Revocation of registration is very rare](/options/trade-mark-revocation)
+Challenge the validity of a patent that you are accused of infringing.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ $800, plus any legal fees  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Days (to request)  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ <1% of patents are subject to re-examination](/options/challenge-granted-patent-0)
 
-[Alternative dispute resolution (ADR)
+[Opposition process
 
-## Resolve conflicts with the help of experienced facilitators
+\_\_SEMANTIC\_H2\_START\_\_ Respond to an opposition filed against your patent \_\_SEMANTIC\_H2\_END\_\_
 
-Understand more about the options in the ADR space.](/options/ADR)
+How to respond when someone has opposed your patent application.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ $1,200+, plus legal fees  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Weeks to months  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ IP Australia’s published 54 decisions in 2024 and 66 decisions in 2023.](/options/respond-opposition-filed-against-your-patent)
 
-[Interim court injunction order
+[Opposition process
 
-## Seek a court order to prevent further damage while preparing for court
+\_\_SEMANTIC\_H2\_START\_\_ Respond to an opposition filed against your trade mark \_\_SEMANTIC\_H2\_END\_\_
 
-Lodge an interim injunction order through court.  
-**Estimated cost:**  
-Significant legal fees $100k+  
-**Estimated effort:**  
-Weeks, although subsequent court proceedings may take years  
-**Rate of resolution:**  
-Matter will be resolved in court at later date.](/options/Interim_Injunction)
+How to respond when someone has opposed your trade mark application.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ $650+, plus legal fees  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Weeks to months  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ 1-3% of trade marks are opposed](/options/respond-opposition-filed-against-your-trade-mark)
 
-[Court - Trade mark
+[Apply for a trade mark
 
-## Seek binding, authoritative decisions
+\_\_SEMANTIC\_H2\_START\_\_ Register your trade mark \_\_SEMANTIC\_H2\_END\_\_
 
-Escalate a wide range of trade mark matters to court.  
-**Estimated cost:**  
-Significant legal fees ($80k+)  
-**Estimated effort:**  
-Years  
-**Rate of resolution:**  
-Court decisions are binding although appeal is possible](/options/court-trade-marks)
+Apply to IP Australia for a registered trade mark to secure exclusive rights to your brand to reinforce your defence.
 
-[Court - Patent
+\_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ $330 per class    
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Hours (to apply)  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Approximately 75% of trade mark applications achieve registration](/options/register-your-trade-mark)
 
-## Seek binding, authoritative decisions
+[IP attorney or lawyer
 
-Escalate a wide range of patent matters to court.  
-**Estimated cost:**  
-Significant legal fees ($100k+)  
-**Estimated effort:**  
-Years  
-**Rate of resolution:**  
-Court decisions are binding although appeal is possible](/options/court-patents)
+\_\_SEMANTIC\_H2\_START\_\_ Obtain legal advice on an accusation of infringement \_\_SEMANTIC\_H2\_END\_\_
 
-[Notice of objection
+Seek expert advice on how to respond to allegations of IP infringement.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+  $500 - $2,000 per hour  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Days to weeks+  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Variable](/options/obtain-legal-advice-accusation-infringement)
 
-## Stop infringing goods entering the country
+[De-escalate
 
-Lodge a notice of objection with the Australian Border Force.  
-**Estimated cost:**  
-  $0 to lodge  
-**Estimated effort:**  
-  Applying - hours  
-**Rate of resolution:**  
-  More than 500 trade mark notices are currently in force](/options/stop-infringing-goods-entering-country)
+\_\_SEMANTIC\_H2\_START\_\_ Pause use of contested IP until resolution \_\_SEMANTIC\_H2\_END\_\_
 
-[Return focus to the top of the page](#top)
+Evaluate the accuser’s demands and consider stopping use of the contested IP to avoid escalation.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Variable  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Days to weeks+  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Variable](/options/pause-use-contested-ip-until-resolution)

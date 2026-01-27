@@ -1,12 +1,21 @@
 [Skip to main content](#main-content "Skip to main content")
 
 Back to suggestions
+[Use our Navigator Tool to explore your options](/navigator-tool-suspected-infringement)
 
-# How to avoid infringing others' intellectual property
+Infringement 101
+
+\_\_SEMANTIC\_H1\_START\_\_ How to avoid infringing others' intellectual property \_\_SEMANTIC\_H1\_END\_\_
 
 Helpful information about how to avoid infringing others' intellectual property.
 
-## How to avoid infringing others’ intellectual property
+Download page
+
+* [Download page](#)
+* [Download markdown file for LLMs](#)
+* [Batch download markdown file for LLMs (with linked pages)](#)
+
+\_\_SEMANTIC\_H2\_START\_\_ How to avoid infringing others’ intellectual property \_\_SEMANTIC\_H2\_END\_\_
 
 Running a business or developing new products or services often means creating intellectual property (IP) or encountering IP rights owned by others. Whether it is a brand name, invention, design, or creative work, using something similar to someone else’s existing intellectual property may be considered infringement.
 
@@ -16,9 +25,9 @@ It is crucial to understand that you can infringe on someone’s IP rights witho
 
 Understanding how to avoid infringing on others’ rights from the beginning can save your business from serious consequences. With awareness and careful planning, you can minimise the risk of infringing on others’ intellectual property rights.
 
-## Avoiding IP infringement
+\_\_SEMANTIC\_H2\_START\_\_ Avoiding IP infringement \_\_SEMANTIC\_H2\_END\_\_
 
-**1. Conduct searches before you invest**
+\_\_SEMANTIC\_BOLD\_START\_\_ 1. Conduct searches before you invest \_\_SEMANTIC\_BOLD\_END\_\_
 
 One of the most effective ways to avoid IP infringement is to check for existing rights before committing to a new venture. For example, before launching a new product, brand, or service, you should search the Australian trade mark register using IP Australia’s [Australian Trade Mark Search](https://search.ipaustralia.gov.au/trademarks/search/quick) , check design registers for similar registered designs through the [Australian Design Search](https://search.ipaustralia.gov.au/designs/search/quick) , check plant varieties on [the Australian PBR Search,](https://ipsearch.ipaustralia.gov.au/pbr/)  and search patents on [the Australian Patent Search](https://ipsearch.ipaustralia.gov.au/patents/)  if you are developing new technology. 
 
@@ -26,31 +35,31 @@ However, not all intellectual property is registered with IP Australia. For inst
 
 By searching first, you can avoid unintentionally infringing on others’ intellectual property rights.
 
-**For example,** a Melbourne café owner wanted to name their business “The Daily Grind”. A quick trade mark search revealed several similar registered marks in the food services class, prompting them to choose a different name before investing in signage and marketing.
+\_\_SEMANTIC\_BOLD\_START\_\_ For example, \_\_SEMANTIC\_BOLD\_END\_\_ a Melbourne café owner wanted to name their business “The Daily Grind”. A quick trade mark search revealed several similar registered marks in the food services class, prompting them to choose a different name before investing in signage and marketing.
 
-**2. Create original work**
+\_\_SEMANTIC\_BOLD\_START\_\_ 2. Create original work \_\_SEMANTIC\_BOLD\_END\_\_
 
 The safest way to avoid infringement is to create original content. This approach applies to brand names and logos, product designs, marketing materials, website content, and product packaging. By creating something original, you not only avoid infringing on others’ rights but also build valuable IP assets.
 
-**For example,**instead of copying a competitor’s product packaging, a small cosmetics company hired a graphic designer to develop distinct packaging that reflected their brand values while avoiding existing designs.
+\_\_SEMANTIC\_BOLD\_START\_\_ For example,  \_\_SEMANTIC\_BOLD\_END\_\_ instead of copying a competitor’s product packaging, a small cosmetics company hired a graphic designer to develop distinct packaging that reflected their brand values while avoiding existing designs.
 
-**3. Understand what you can and cannot use**
+\_\_SEMANTIC\_BOLD\_START\_\_ 3. Understand what you can and cannot use \_\_SEMANTIC\_BOLD\_END\_\_
 
 Not all uses of others’ IP require permission. Australian law permits specific uses without the IP owner’s consent. For instance, under copyright law, ‘fair dealing’ exceptions allow limited use of copyright material for particular purposes, such as research, criticism, or parody.
 
 You can also use IP where the rights have expired. However, be cautious, as some rights may still be eligible for renewal. 
 
-**4. Get permission when needed**
+\_\_SEMANTIC\_BOLD\_START\_\_ 4. Get permission when needed \_\_SEMANTIC\_BOLD\_END\_\_
 
 Obtaining proper permission is essential if you want to use someone else’s IP. This means securing a written agreement (often called a licence) that outlines what you can and cannot do with the IP. A verbal agreement or an email may seem sufficient at the time, but written documentation safeguards both parties and prevents future misunderstandings.
 
 It is a good idea to maintain thorough records of all permissions granted, understand any limitations on the use of the IP, and consider obtaining professional legal advice for complex arrangements.
 
-**5. Be cautious with online content**
+\_\_SEMANTIC\_BOLD\_START\_\_ 5. Be cautious with online content \_\_SEMANTIC\_BOLD\_END\_\_
 
 The internet can create a false sense that content is freely available for use. However, just because something appears online does not mean it is free to use, and do not assume that attribution alone makes copying acceptable. Images, text, and videos are typically protected by copyright from the moment they are created. Company names and logos are often registered trade marks, and product designs may be protected by registered design rights. Always search IP databases and seek licences before using online content.
 
-## Red flags to watch for
+\_\_SEMANTIC\_H2\_START\_\_ Red flags to watch for \_\_SEMANTIC\_H2\_END\_\_
 
 Specific situations should prompt extra caution in your IP practices. For instance, exercise particular care if you find yourself:
 
@@ -61,7 +70,7 @@ Specific situations should prompt extra caution in your IP practices. For instan
 
 These scenarios frequently lead to infringement disputes and should prompt you to seek advice before proceeding.
 
-## When to seek help
+\_\_SEMANTIC\_H2\_START\_\_ When to seek help \_\_SEMANTIC\_H2\_END\_\_
 
 Professional advice is especially valuable in specific situations. Seeking early professional guidance often costs much less than defending against an infringement claim later. Consider speaking with an IP professional when:
 
@@ -69,7 +78,11 @@ Professional advice is especially valuable in specific situations. Seeking early
 * You are developing products for highly competitive markets.
 * You receive a letter of demand or a ‘cease and desist’ letter.
 
-## Want to give us feedback?
+Was this information useful?
+
+Thumbs UpThumbs Down
+
+\_\_SEMANTIC\_H2\_START\_\_ Want to give us feedback? \_\_SEMANTIC\_H2\_END\_\_
 
 Send us an [email](mailto:ipfirstresponse@ipaustralia.gov.au).  
 Fill out our [feedback form(Opens in a new tab/window)](https://ipaustralia.au1.qualtrics.com/jfe/form/SV_6LKlgPWZqiheCiy).
@@ -77,5 +90,3 @@ Fill out our [feedback form(Opens in a new tab/window)](https://ipaustralia.au1.
 [Give feedback
 
 (Opens in a new tab/window)](https://ipaustralia.au1.qualtrics.com/jfe/form/SV_6LKlgPWZqiheCiy)
-
-[Return focus to the top of the page](#top)

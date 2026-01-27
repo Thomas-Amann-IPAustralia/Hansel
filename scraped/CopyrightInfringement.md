@@ -1,14 +1,23 @@
 [Skip to main content](#main-content "Skip to main content")
 
 Back to suggestions
+[Use our Navigator Tool to explore your options](/navigator-tool-suspected-infringement)
 
-# Copyright infringement
+Infringement 101
 
-## What is copyright infringement?
+\_\_SEMANTIC\_H1\_START\_\_ Copyright infringement \_\_SEMANTIC\_H1\_END\_\_
+
+Download page
+
+* [Download page](#)
+* [Download markdown file for LLMs](#)
+* [Batch download markdown file for LLMs (with linked pages)](#)
+
+\_\_SEMANTIC\_H2\_START\_\_ What is copyright infringement?  \_\_SEMANTIC\_H2\_END\_\_
 
 Copyright infringement can occur when someone uses a copyright-protected work without obtaining permission. However, the Copyright Act does provide exceptions that enable some use of copyright material without the permission of the copyright owner in certain circumstances. Importantly, infringement can occur even if only part of a copyright-protected item is used.  
 
-## What is protected by copyright?
+\_\_SEMANTIC\_H2\_START\_\_ What is protected by copyright?  \_\_SEMANTIC\_H2\_END\_\_
 
 Copyright protects original creative works without requiring registration.1 In Australia, copyright protection generally lasts for 70 years after the author’s death. Protection is automatic once the work is created and documented.2 Additionally, there is no need to use the © symbol next to the protected work. 
 
@@ -18,7 +27,7 @@ Copyright protects several types of creative works, including: 
 
 * Literary works (like books, articles, computer programs, software code, song lyrics and poems).5
 * Artistic works (like paintings, drawings, sculptures, photographs, maps, diagrams and works of artistic craftsmanship).6
-* Musical works(musical compositions or the notes and arrangement).7
+* Musical works \_\_SEMANTIC\_BOLD\_START\_\_ \_\_SEMANTIC\_BOLD\_END\_\_ (musical compositions or the notes and arrangement).7
 * Dramatic works (like plays, scripts, dance choreography, mime performances).8
 
 Copyright also protects creations of other technologies, including: 
@@ -32,61 +41,61 @@ The duration of copyright protection can vary depending on the type of copyright
 
 Importantly, copyright material created overseas can be protected in Australia. Suppose the material is made by someone in a country that is a party to a relevant international copyright convention to which Australia is also a party. In that case, it will also be protected in Australia.13 
 
-## What rights do copyright owners have?
+\_\_SEMANTIC\_H2\_START\_\_ What rights do copyright owners have?  \_\_SEMANTIC\_H2\_END\_\_
 
 Copyright law grants the owner the right to control how their work is used. These rights vary depending on the type of work, but generally include: 
 
-* **Reproduction:** Making copies of the work.14
-* **Publication:** Making the work publicly available for the first time.15
-* **Public performance:** Performing the work in public.16
-* **Communication to the public:** Transmitting the work electronically (e.g., online).17
-* **Adaptation:** Creating adaptations, such as translations or screen adaptations.18
+* \_\_SEMANTIC\_BOLD\_START\_\_ Reproduction: \_\_SEMANTIC\_BOLD\_END\_\_ Making copies of the work.14
+* \_\_SEMANTIC\_BOLD\_START\_\_ Publication: \_\_SEMANTIC\_BOLD\_END\_\_ Making the work publicly available for the first time.15
+* \_\_SEMANTIC\_BOLD\_START\_\_ Public performance: \_\_SEMANTIC\_BOLD\_END\_\_ Performing the work in public.16
+* \_\_SEMANTIC\_BOLD\_START\_\_ Communication to the public: \_\_SEMANTIC\_BOLD\_END\_\_ Transmitting the work electronically (e.g., online).17
+* \_\_SEMANTIC\_BOLD\_START\_\_ Adaptation: \_\_SEMANTIC\_BOLD\_END\_\_ Creating adaptations, such as translations or screen adaptations.18
 
 For sound recordings, films, and broadcasts, the rights include making copies, playing them in public, and communicating them to the public.19 
 
-## When does copyright infringement occur?
+\_\_SEMANTIC\_H2\_START\_\_ When does copyright infringement occur?  \_\_SEMANTIC\_H2\_END\_\_
 
 Australian copyright law grants authors and creators exclusive control over their material.20 Generally, copyright is infringed if a person performs one of the exclusive acts reserved to the copyright owner without the copyright owner’s permission, and an exception or limitation does not apply. 21 
 
 Depending on how the copyright material was used, the following requirements need to be proven to establish infringement.  
 
-**1. Someone reproduces the copyright work**
+\_\_SEMANTIC\_BOLD\_START\_\_ 1. Someone reproduces the copyright work \_\_SEMANTIC\_BOLD\_END\_\_  \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_
 
 Reproduction involves some form of copying. To establish infringement, three key elements must be shown: 
 
-1. **The whole or a “substantial” part of the copyright-protected work has been used.** Infringement can occur even if a part of it was copied. “Substantial” refers to quality rather than quantity. Even a small but important or distinctive part may be substantial. Courts will look at the entirety of the original copyright work and consider whether the quality or essential part of the work was copied.22
-2. **There is a connection between the copyright-protected work and the copied work.** Infringement will generally be found if there was access to the copyright work.23 Independent creation is unlikely to be an infringement.24
-3. **There is an objective similarity between the original copyright-protected work and the copied work.** Courts compare the works to determine if there is an objective similarity. Literal copying is straightforward, but courts may struggle if the similarities are not apparent.25
+1. \_\_SEMANTIC\_BOLD\_START\_\_ The whole or a “substantial” part of the copyright-protected work has been used. \_\_SEMANTIC\_BOLD\_END\_\_ Infringement can occur even if a part of it was copied. “Substantial” refers to quality rather than quantity. Even a small but important or distinctive part may be substantial. Courts will look at the entirety of the original copyright work and consider whether the quality or essential part of the work was copied.22
+2. \_\_SEMANTIC\_BOLD\_START\_\_ There is a connection between the copyright-protected work and the copied work. \_\_SEMANTIC\_BOLD\_END\_\_ Infringement will generally be found if there was access to the copyright work.23 Independent creation is unlikely to be an infringement.24
+3. \_\_SEMANTIC\_BOLD\_START\_\_ There is an objective similarity between the original copyright-protected work and the copied work. \_\_SEMANTIC\_BOLD\_END\_\_ Courts compare the works to determine if there is an objective similarity. Literal copying is straightforward, but courts may struggle if the similarities are not apparent.25
 
 Copyright law will automatically consider copying to occur when a literary, dramatic or musical work has been made into a sound recording or film26 or converted into digital form.27 Additionally, an artistic work in two-dimensional form will be infringed if it has been made into three dimensions and vice versa.28 
 
-**2. Someone publishes the work**
+\_\_SEMANTIC\_BOLD\_START\_\_ 2. Someone publishes the work \_\_SEMANTIC\_BOLD\_END\_\_  \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_
 
 Infringement will occur when someone makes something available to the public in Australia that was not previously available.29 
 
-**3. Someone performs the work in public**
+\_\_SEMANTIC\_BOLD\_START\_\_ 3. Someone performs the work in public \_\_SEMANTIC\_BOLD\_END\_\_  \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_
 
 Infringement will happen when someone performs the work for members of the public.  
 
-**4. Someone communicates the work to the public**
+\_\_SEMANTIC\_BOLD\_START\_\_ 4. Someone communicates the work to the public \_\_SEMANTIC\_BOLD\_END\_\_  \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_
 
 Infringement will occur if someone makes the work available to the public by uploading it to the Internet, for example.30 
 
-**5. Someone copies a sound recording, film or broadcast**
+\_\_SEMANTIC\_BOLD\_START\_\_ 5. Someone copies a sound recording, film or broadcast \_\_SEMANTIC\_BOLD\_END\_\_  \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_
 
 Infringement occurs when someone makes a copy of a sound recording or film and plays or shows it in public.31 
 
-## Common misconceptions about copyright infringement
+\_\_SEMANTIC\_H2\_START\_\_ Common misconceptions about copyright infringement  \_\_SEMANTIC\_H2\_END\_\_
 
-**“I changed it by 10%, so it’s not infringement.”** There is no percentage rule. Even small portions can infringe if they are an important or distinctive part of the original work. 
+\_\_SEMANTIC\_BOLD\_START\_\_ “I changed it by 10%, so it’s not infringement.” \_\_SEMANTIC\_BOLD\_END\_\_ There is no percentage rule. Even small portions can infringe if they are an important or distinctive part of the original work. 
 
-**“I gave credit to the creator.”** Attribution does not prevent infringement.  
+\_\_SEMANTIC\_BOLD\_START\_\_ “I gave credit to the creator.” \_\_SEMANTIC\_BOLD\_END\_\_ Attribution does not prevent infringement.  
 
-**“It was only for personal use.”** Personal use is not a general exception to copyright infringement in Australia, though specific exceptions may apply. 
+\_\_SEMANTIC\_BOLD\_START\_\_ “It was only for personal use.” \_\_SEMANTIC\_BOLD\_END\_\_ Personal use is not a general exception to copyright infringement in Australia, though specific exceptions may apply. 
 
-**“I found it online, so it’s free to use.”** Works found online are still protected by copyright law unless it is in the public domain or under an open licence. 
+\_\_SEMANTIC\_BOLD\_START\_\_ “I found it online, so it’s free to use.” \_\_SEMANTIC\_BOLD\_END\_\_ Works found online are still protected by copyright law unless it is in the public domain or under an open licence. 
 
-## When is using copyright material allowed?
+\_\_SEMANTIC\_H2\_START\_\_ When is using copyright material allowed?  \_\_SEMANTIC\_H2\_END\_\_
 
 It is important to understand what does not constitute infringement. Notably, when copyright protection expires, the material enters what is known as the “public domain.” These works can be freely used. 
 
@@ -139,7 +148,11 @@ Determining copyright infringement can be complex and often requires legal exper
 36. Ibid s 41A and 103AA for creative works and audio-visual works respectively.
 37. Ibid s 113E and 113F for creative works and audio-visual works respectively.
 
-## Want to give us feedback?
+Was this information useful?
+
+Thumbs UpThumbs Down
+
+\_\_SEMANTIC\_H2\_START\_\_ Want to give us feedback? \_\_SEMANTIC\_H2\_END\_\_
 
 Send us an [email](mailto:ipfirstresponse@ipaustralia.gov.au).  
 Fill out our [feedback form(Opens in a new tab/window)](https://ipaustralia.au1.qualtrics.com/jfe/form/SV_6LKlgPWZqiheCiy).
@@ -147,5 +160,3 @@ Fill out our [feedback form(Opens in a new tab/window)](https://ipaustralia.au1.
 [Give feedback
 
 (Opens in a new tab/window)](https://ipaustralia.au1.qualtrics.com/jfe/form/SV_6LKlgPWZqiheCiy)
-
-[Return focus to the top of the page](#top)

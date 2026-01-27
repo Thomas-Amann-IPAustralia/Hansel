@@ -1,115 +1,107 @@
 [Skip to main content](#main-content "Skip to main content")
 
-# All enforcement options
+[Use our Navigator Tool to explore your options](/navigator-tool-suspected-infringement)
 
-*This IP First Response website has been designed to help IP rights holders navigate IP infringement and enforcement by making it visible, accessible, and to provide information about the factors involved in pursuing different options.*
+\_\_SEMANTIC\_H1\_START\_\_ See unfiltered list of IP First Response information \_\_SEMANTIC\_H1\_END\_\_
 
-*This does not provide legal or professional advice, and none of the content should be regarded as recommending a specific course of action.*
+\_\_SEMANTIC\_ITALIC\_START\_\_ This IP First Response website has been designed to help IP rights holders navigate IP infringement and enforcement by making it visible, accessible, and to provide information about the factors involved in pursuing different options.  \_\_SEMANTIC\_ITALIC\_END\_\_
 
-Displaying 37 - 45 of 72
+\_\_SEMANTIC\_ITALIC\_START\_\_ This does not provide legal or professional advice, and none of the content should be regarded as recommending a specific course of action. \_\_SEMANTIC\_ITALIC\_END\_\_
 
-[Opposition process
+Displaying 37 - 45 of 102
 
-## Respond to an opposition filed against your patent
+[Create contract clauses
 
-How to respond when someone has opposed your patent application.  
-**Estimated cost:**  
-Highly variable, ($5,000-$50,000+), plus additional legal fees  
-**Estimated effort:**  
-Months to years  
-**Rate of resolution:**  
-Highly variable, although <1% of patents are opposed](/options/respond-opposition-filed-against-your-patent)
+\_\_SEMANTIC\_H2\_START\_\_ Plan how IP disputes will be handled via contracts \_\_SEMANTIC\_H2\_END\_\_
 
-[Opposition process
+Create ready-to-use contract clauses that will proactively refer IP disputes to dispute resolution processes endorsed by the World Intellectual Property Organisation (WIPO).  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Free  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Hours  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+  In 2024, WIPO AMC helped resolve 858 intellectual property (IP) disputes](/options/plan-how-ip-disputes-will-be-handled-contracts)
 
-## Respond to an opposition filed against your trade mark
+[IP licensing
 
-How to respond when someone has opposed your trade mark application.  
-**Estimated cost:**  
-$650+, plus legal fees (often significant)  
-**Estimated effort:**  
-Months to years  
-**Rate of resolution:**  
-1-3% of trade marks are opposed](/options/respond-opposition-filed-against-your-trade-mark)
+\_\_SEMANTIC\_H2\_START\_\_ Explore opportunities by licensing your IP \_\_SEMANTIC\_H2\_END\_\_
 
-[Apply for a trade mark
+Consider licensing your IP to others or obtaining a licence for contested IP to avoid disputes and add value.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+  $1,500-5,000  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Days to weeks  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Variable](/options/explore-opportunities-licensing-your-ip)
 
-## Register your trade mark
+[Educate your customers
 
-Apply to IP Australia for a registered trade mark to secure exclusive rights to your brand to reinforce your defence.
+\_\_SEMANTIC\_H2\_START\_\_ Help customers differentiate between your products and lookalikes \_\_SEMANTIC\_H2\_END\_\_
 
-**Estimated cost:**  
-$330 per class    
-**Estimated effort:**  
-Low   
-**Rate of resolution:**  
-Approximately 75% of trade mark applications achieve registration](/options/register-your-trade-mark-0)
+Build brand loyalty and reduce confusion by clearly explaining what makes your product genuine.](/options/help-customers-differentiate-between-your-products-and-lookalikes)
 
-[IP attorney or lawyer
+[IP audit
 
-## Obtain legal advice on an accusation of infringement
+\_\_SEMANTIC\_H2\_START\_\_ Conduct IP audits to spot gaps, reduce risks and plan next-steps \_\_SEMANTIC\_H2\_END\_\_
 
-Seek expert advice on how to respond to allegations of IP infringement.  
-**Estimated cost:**  
-Highly variable  
-**Estimated effort:**  
-Highly variable  
-**Rate of resolution:**  
-Highly variable](/options/obtain-legal-advice-accusation-infringement)
+Identify IP in your portfolio, who owns it, what it’s worth, it’s legal status, and what to do next.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Free, plus optional professional fees  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Days to weeks  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Not applicable](/options/conduct-ip-audits-spot-gaps-reduce-risks-and-plan-next-steps)
 
-[De-escalate
+[Reinforce your right
 
-## Pause use of contested IP until resolution
+\_\_SEMANTIC\_H2\_START\_\_ Use your trade mark prominently to build recognition and protection \_\_SEMANTIC\_H2\_END\_\_
 
-Evaluate the accuser’s demands and consider stopping use of the contested IP to avoid escalation.  
-**Estimated cost:**  
-Variable  
-**Estimated effort:**  
-Days to weeks  
-**Rate of resolution:**  
-Variable](/options/pause-use-contested-ip-until-resolution)
+Make strong, visible use of your IP to increase consumer recognition and legal standing.](/options/use-your-trade-mark-prominently-build-recognition-and-protection)
 
-[Gauge the situation
+[Monitor supply chain
 
-## Choose not to respond immediately
+\_\_SEMANTIC\_H2\_START\_\_ Detect and discourage potential infringement in your supply chain \_\_SEMANTIC\_H2\_END\_\_
 
-When to delay responding to groundless IP infringement claims and how to gather evidence for future defence.  
-**Estimated cost:**  
-Low  
-**Estimated effort:**  
-Variable  
-**Rate of resolution:**  
-Highly variable](/options/choose-not-respond-immediately)
+Ensure your partners and suppliers are not unintentionally exposing you to IP risk through unlicensed or counterfeit components.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Variable  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimate effort:  \_\_SEMANTIC\_BOLD\_END\_\_   
+  Days to weeks  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Not applicable](/options/detect-and-discourage-potential-infringement-your-supply-chain)
 
-[Letter of demand
+[Monitor competitors' IP
 
-## Receiving a letter of demand
+\_\_SEMANTIC\_H2\_START\_\_ Identify and track patents and activity of your competitors \_\_SEMANTIC\_H2\_END\_\_
 
-Understanding what you can do when you receive a letter of demand / cease and desist.
+Monitor your competitors' trade mark, patent, or design activity to anticipate conflicts or opportunities.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Free, plus optional professional fees  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Hours to weeks  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Not applicable](/options/identify-and-track-patents-and-activity-your-competitors)
 
-**Estimated cost:**  
-Low  
-**Estimated effort:**  
-Variable  
-**Rate of resolution:**  
-Highly variable](/options/receiving-letter-demand)
+[Apply for a design right
 
-[IP insurance
+\_\_SEMANTIC\_H2\_START\_\_ Register your right to use your design exclusively \_\_SEMANTIC\_H2\_END\_\_
 
-## Coverage against potential future costs related to infringement
+Submit an application to IP Australia to secure exclusive design rights that protect the overall appearance that results from visual features applied to a product.   
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+  $200 to apply  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Hours (to apply)  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Approx. 8,000 designs are registered by IP Australia each year](/options/register-your-right-use-your-design-exclusively)
 
-Protect yourself from some costs involved in IP disputes.](/options/coverage-against-potential-future-costs-related-infringement)
+[eCommerce registries
 
-[Apply for a trade mark
+\_\_SEMANTIC\_H2\_START\_\_ Inform online platforms that you have IP rights \_\_SEMANTIC\_H2\_END\_\_
 
-## Register your unregistered trade mark
-
-Strengthen your position as the registered owner of your trade mark in Australia.  
-**Estimated cost:**  
-$330 per class    
-**Estimated effort:**  
-Low   
-**Rate of resolution:**  
-Approximately 75% of trade mark application achieve registration](/options/register-your-unregistered-trade-mark)
-
-[Return focus to the top of the page](#top)
+Register your IP with online platforms to access their enforcement tools.  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated cost: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Free  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Estimated effort: \_\_SEMANTIC\_BOLD\_END\_\_   
+ \_\_SEMANTIC\_BOLD\_START\_\_   \_\_SEMANTIC\_BOLD\_END\_\_ Hours  
+ \_\_SEMANTIC\_BOLD\_START\_\_ Rate of resolution: \_\_SEMANTIC\_BOLD\_END\_\_   
+  Not Applicable](/options/inform-online-platforms-you-have-ip-rights)
