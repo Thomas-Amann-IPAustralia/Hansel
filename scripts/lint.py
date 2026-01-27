@@ -1427,6 +1427,185 @@ def check_unitalicised_acts(doc: Doc, line_offsets: List[int]) -> List[Dict[str,
             
     return findings
 
+# --- New Heuristics for APS Style Guide (January 2026) ---
+
+def check_gene_vs_protein(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags potential protein names in italics (should be roman) or genes in roman (should be italics). (H-007)"""
+    findings = []
+    # Heuristic: Gene/Protein names often have specific alphanumeric patterns (e.g., BRCA1, p53)
+    bio_pattern = re.compile(r'\b[A-Z]{2,}[0-9]*\b|\b[a-z]{2,}[0-9]+\b')
+    
+    in_italics = False
+    for token in doc:
+        if token.text == "__SEMANTIC_ITALIC_START__": in_italics = True
+        elif token.text == "__SEMANTIC_ITALIC_END__": in_italics = False
+        
+        if bio_pattern.match(token.text):
+            # If it's All-Caps (Protein) but inside Italics tags
+            if token.text.isupper() and in_italics:
+                _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), f"Protein '{token.text}' should be roman.")
+            # If it's lowercase/mixed (Gene) but NOT in Italics
+            elif not token.text.isupper() and not in_italics:
+                _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), f"Gene '{token.text}' should be italicised.")
+    return findings
+
+def check_fractions_as_words(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags numeric fractions (1/2) in general text, preferring words (one-half). (H-002)"""
+    findings = []
+    for token in doc:
+        if '/' in token.text and any(char.isdigit() for char in token.text):
+            # Exclude units like km/h
+            if not any(c.isalpha() for c in token.text):
+                _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), token.text)
+    return findings
+
+def check_math_decimal_numerals(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags spelled out numbers used in mathematical contexts or ratios. (H-005)"""
+    findings = []
+    ratio_indicators = {":", "to", "ratio"}
+    for token in doc:
+        if token.pos_ == "NUM" and token.text.isalpha():
+            # Check for ratio context: "a ratio of five to one"
+            if any(child.text in ratio_indicators for child in token.head.children):
+                 _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), token.sent.text)
+    return findings
+
+def check_sentence_starting_percent(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags sentences beginning with a % symbol or a numeral percent. (H-001)"""
+    findings = []
+    for sent in doc.sents:
+        first_token = sent[0]
+        if first_token.text == "%" or (first_token.like_num and sent[1:2].text == "%"):
+            _add_finding(findings, get_line_number_from_offset(first_token.idx, line_offsets), sent.text)
+    return findings
+
+def check_verb_presence(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags sentences that appear to lack a finite verb. (H-001)"""
+    findings = []
+    for sent in doc.sents:
+        if len(sent) < 4: continue # Skip fragments/headers
+        has_verb = any(t.pos_ == "VERB" or t.pos_ == "AUX" for t in sent)
+        if not has_verb:
+            _add_finding(findings, get_line_number_from_offset(sent.start_char, line_offsets), sent.text)
+    return findings
+
+def check_scientific_italics(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags potential binomial nomenclature (scientific names) not in italics. (H-006)"""
+    findings = []
+    # Basic pattern for Genus species
+    latin_pattern = re.compile(r'\b[A-Z][a-z]+ [a-z]+\b')
+    
+    # Track italic spans to avoid false flags
+    italic_text = []
+    in_italics = False
+    for token in doc:
+        if token.text == "__SEMANTIC_ITALIC_START__": in_italics = True
+        elif token.text == "__SEMANTIC_ITALIC_END__": in_italics = False
+        if in_italics: italic_text.append(token.idx)
+
+    for match in latin_pattern.finditer(doc.text):
+        if match.start() not in italic_text:
+            # Cross-reference with spaCy to ensure it looks like a Noun Phrase
+            if doc.char_span(match.start(), match.end()) is not None:
+                _add_finding(findings, get_line_number_from_offset(match.start(), line_offsets), match.group())
+    return findings
+
+def check_foreign_word_italics(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags foreign words (identified by spaCy as X) that aren't italicised. (H-003)"""
+    findings = []
+    for token in doc:
+        if token.tag_ == "FW": # Foreign Word tag
+            # Check if surrounded by placeholder tags
+            prev_t = doc[token.i-1] if token.i > 0 else None
+            next_t = doc[token.i+1] if token.i < len(doc)-1 else None
+            if not (prev_t and prev_t.text == "__SEMANTIC_ITALIC_START__"):
+                _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), token.text)
+    return findings
+
+def check_first_nations_italics(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Ensures First Nations words are NOT italicised. (H-009)"""
+    findings = []
+    # This requires a lookup or NER; using a sample common set for demonstration
+    fn_keywords = {"Dreaming", "Yarn", "Country", "Lore", "Makarrata"}
+    
+    in_italics = False
+    for token in doc:
+        if token.text == "__SEMANTIC_ITALIC_START__": in_italics = True
+        elif token.text == "__SEMANTIC_ITALIC_END__": in_italics = False
+        
+        if in_italics and token.text in fn_keywords:
+            _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), token.text)
+    return findings
+
+def check_telephone_formatting(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags telephone numbers with standard hyphens; prefers spaces/no-break spaces. (H-001)"""
+    findings = []
+    tel_pattern = re.compile(r'\+?\d{2,4}-\d{3,4}-\d{3,4}')
+    for match in tel_pattern.finditer(doc.text):
+        _add_finding(findings, get_line_number_from_offset(match.start(), line_offsets), match.group())
+    return findings
+
+# --- Additional/Refined Heuristics for APS Style Guide (2026) ---
+
+def check_ordinal_pairing(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Checks that 'Firstly' is paired with 'Secondly' (H-002)."""
+    findings = []
+    for sent in doc.sents:
+        text = sent.text.lower()
+        if "firstly" in text and "secondly" not in text:
+            # Check if 'secondly' appears in the subsequent sentence
+            next_sent = doc[sent.end:].sents.__next__() if sent.end < len(doc) else None
+            if next_sent and "secondly" not in next_sent.text.lower():
+                _add_finding(findings, get_line_number_from_offset(sent.start_char, line_offsets), "Pair 'Firstly' with 'Secondly'.")
+    return findings
+
+def check_million_context(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags 'one million' vs '1 million' based on context (H-010)."""
+    findings = []
+    for token in doc:
+        if token.lemma_ == "million":
+            prev = doc[token.i - 1] if token.i > 0 else None
+            if prev:
+                # Rule: Numerals for exact data/stats, words for informal/general
+                if prev.text.lower() == "one" and any(t.pos_ == "SYM" or t.dep_ == "nummod" for t in token.sent):
+                    _add_finding(findings, get_line_number_from_offset(prev.idx, line_offsets), "Use '1 million' for statistical context.")
+                elif prev.text == "1" and not any(t.pos_ == "SYM" for t in token.sent):
+                    _add_finding(findings, get_line_number_from_offset(prev.idx, line_offsets), "Use 'one million' for general text.")
+    return findings
+
+def check_iso_datetime(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags ISO date formats in general text unless specified as required (H-004)."""
+    findings = []
+    iso_pattern = re.compile(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}')
+    for match in iso_pattern.finditer(doc.text):
+        _add_finding(findings, get_line_number_from_offset(match.start(), line_offsets), f"ISO date '{match.group()}' may be too technical for general text.")
+    return findings
+
+def check_mathematical_symbols(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Prefer words 'plus', 'minus', 'equals' to symbols in general content (H-001)."""
+    findings = []
+    symbols = {"+", "=", ">", "<"}
+    for token in doc:
+        if token.text in symbols and token.pos_ == "SYM":
+            # Exclude if inside a specialized 'math' block or table (if identifiable)
+            _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), f"Replace symbol '{token.text}' with words in general prose.")
+    return findings
+
+def check_reverse_italics(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Checks for roman text inside an italicized title (H-008)."""
+    findings = []
+    in_italics = False
+    for token in doc:
+        if token.text == "__SEMANTIC_ITALIC_START__":
+            in_italics = True
+        elif token.text == "__SEMANTIC_ITALIC_END__":
+            in_italics = False
+        
+        # If we see Markdown bold/italic syntax *inside* our semantic tags, it indicates a flip
+        if in_italics and (token.text == "*" or token.text == "_"):
+             _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), "Ensure reverse italics are used correctly within italic titles.")
+    return findings
+
 # --- Master Dictionary of Heuristic Checks ---
 HEURISTIC_CHECKS: Dict[str, Callable[[Doc, List[int]], List[Dict[str, Any]]]] = {
     "APS-GPC-Partsofsentences-H-009": check_passive_voice,
@@ -1498,11 +1677,25 @@ HEURISTIC_CHECKS: Dict[str, Callable[[Doc, List[int]], List[Dict[str, Any]]]] = 
     "APS-GPC-Adjectives-H-005": check_adjective_strings,
     "APS-GPC-Adverbs-H-002": check_adjective_as_adverb,
     "APS-GPC-Italics-H-001": check_missing_italics_for_works,
-    #---Heuristics which rely on semantic placeholder tags---
     "APS-GPC-Punctuationandcapitalisation-H-001": check_punctuation_in_structural_tags,
     "APS-GPC-Punctuationandcapitalisation-H-002": check_italic_case,
     "APS-GPC-Italics-H-002": check_unitalicised_acts,
     "APS-GPC-Italics-H-005": check_italic_case,
+    # --- New Heuristics Mapping (January 2026) ---
+    "APS-GPC-Plantsandanimals-H-007": check_gene_vs_protein,
+    "APS-GPC-Choosingnumeralsorwords-H-002": check_fractions_as_words,
+    "APS-GPC-Choosingnumeralsorwords-H-005": check_math_decimal_numerals,
+    "APS-GPC-Percentages-H-001": check_sentence_starting_percent,
+    "APS-GPC-Verbs-H-001": check_verb_presence,
+    "APS-GPC-Italics-H-003": check_foreign_word_italics,
+    "APS-GPC-Italics-H-006": check_scientific_italics,
+    "APS-GPC-Italics-H-009": check_first_nations_italics,
+    "APS-GPC-Telephonenumbers-H-001": check_telephone_formatting,
+    "APS-GPC-Ordinalnumbers-H-002": check_ordinal_pairing,
+    "APS-GPC-Choosingnumeralsorwords-H-010": check_million_context,
+    "APS-GPC-Datesandtime-H-004": check_iso_datetime,
+    "APS-GPC-Mathematicalrelationships-H-001": check_mathematical_symbols,
+    "APS-GPC-Italics-H-008": check_reverse_italics,
 }
 
 def load_rules_from_rulebook(file_path: str) -> List[Dict[str, Any]]:
