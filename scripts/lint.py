@@ -1605,6 +1605,119 @@ def check_reverse_italics(doc: Doc, line_offsets: List[int]) -> List[Dict[str, A
         if in_italics and (token.text == "*" or token.text == "_"):
              _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), "Ensure reverse italics are used correctly within italic titles.")
     return findings
+# --- Heuristic Rule Implementations (Additions) ---
+
+def check_au_place_name_punctuation(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags hyphens or apostrophes in place names for manual verification (Rule: APS-GPC-Australianplacenames-H-002)."""
+    findings = []
+    for ent in doc.ents:
+        if ent.label_ == "GPE" and any(char in ent.text for char in ("-", "'", "’")):
+            _add_finding(findings, get_line_number_from_offset(ent.start_char, line_offsets), 
+                         f"Check official spelling: {ent.text}")
+    return findings
+
+def check_au_state_short_forms(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags short state names to ensure they meet one of the 4 allowed situations (Rule: APS-GPC-Australianplacenames-H-005)."""
+    findings = []
+    for token in doc:
+        if token.text in AU_STATE_SHORT_FORMS:
+            # Situation 1: Adjectival (e.g. "the NSW Government")
+            is_adjectival = token.dep_ == "compound" or (token.head.pos_ in ["NOUN", "PROPN"] and token.i < token.head.i)
+            if not is_adjectival:
+                _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), 
+                             f"Verify usage of short form '{token.text}'")
+    return findings
+
+def check_generic_plurals_lowercase(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags capitalized plural generic terms after named features (Rule: APS-GPC-Australianplacenames-H-008)."""
+    findings = []
+    for token in doc:
+        # Look for plural nouns that are capitalized but not at the start of a sentence
+        if token.tag_ == "NNS" and token.text[0].isupper() and not token.is_sent_start:
+            # Check if it follows coordinated proper nouns (e.g., "The Murray and Darling Rivers")
+            prev_tokens = [t for t in token.sent if t.i < token.i]
+            if any(t.pos_ == "PROPN" for t in prev_tokens):
+                 _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), 
+                              f"'{token.text}' should likely be lowercase (generic plural)")
+    return findings
+
+def check_australian_government_casing(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Ensures 'Australian Government' is capped only together (Rule: APS-GPC-Governmentterms-H-001)."""
+    findings = []
+    for i in range(len(doc) - 1):
+        # Violation 1: 'Australian government' (lower g)
+        if doc[i].text == "Australian" and doc[i+1].text == "government":
+            _add_finding(findings, get_line_number_from_offset(doc[i].idx, line_offsets), "Australian Government")
+        # Violation 2: Generic 'the Government' (capped G when alone)
+        if doc[i].text == "Government" and (i == 0 or doc[i-1].text != "Australian") and not doc[i].is_sent_start:
+            _add_finding(findings, get_line_number_from_offset(doc[i].idx, line_offsets), 
+                         "Use lowercase 'government' for generic mentions")
+    return findings
+
+def check_budget_casing(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags generic 'Budget' terms that should be lowercase (Rule: APS-GPC-Governmentterms-H-002)."""
+    findings = []
+    for token in doc:
+        if token.text == "Budget" and not token.is_sent_start:
+            # Formal if it follows 'the' or a year (e.g. 'the 2024 Budget')
+            is_formal = token.i > 0 and (doc[token.i-1].text.lower() == "the" or doc[token.i-1].like_num)
+            if not is_formal:
+                _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), 
+                             "Use lowercase 'budget' for generic/adjectival mentions")
+    return findings
+
+def check_federal_casing(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags 'Federal' used generically (Rule: APS-GPC-Governmentterms-H-005)."""
+    findings = []
+    for token in doc:
+        if token.text == "Federal" and not token.is_sent_start:
+            # Check if part of a formal title (compounded with a Proper Noun)
+            is_formal = token.head.pos_ == "PROPN" or any(child.pos_ == "PROPN" for child in token.children)
+            if not is_formal:
+                _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), 
+                             "Use lowercase 'federal' for generic mentions")
+    return findings
+
+def check_commercial_generic_preference(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags specific brands to suggest generic alternatives (Rule: APS-GPC-Commercialterms-H-001)."""
+    findings = []
+    brand_to_generic = {"Band-Aid": "adhesive bandage", "Xerox": "photocopy", "Post-it": "sticky note"}
+    for token in doc:
+        if token.text in brand_to_generic:
+            _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), 
+                         f"Consider generic '{brand_to_generic[token.text]}' instead of '{token.text}'")
+    return findings
+
+def check_brand_stylization(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Ensures stylised brands like 'eBay' or 'iPhone' are not auto-capitalised (Rule: APS-GPC-Commercialterms-H-004/H-005)."""
+    findings = []
+    stylised = {"eBay", "iPhone", "iPad", "macOS"}
+    for token in doc:
+        # Flag if a known stylised brand is written in standard title case (e.g., 'Ebay')
+        if token.text.capitalize() in stylised and token.text not in stylised:
+            _add_finding(findings, get_line_number_from_offset(token.idx, line_offsets), 
+                         f"Preserve brand stylisation: '{token.text}' -> '{[s for s in stylised if s.lower()==token.text.lower()][0]}'")
+    return findings
+
+def check_personal_name_casing(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Flags lowercase personal names (Rule: APS-GPC-Personalnames-H-003)."""
+    findings = []
+    for ent in doc.ents:
+        if ent.label_ == "PERSON":
+            if not all(word[0].isupper() for word in ent.text.split() if len(word) > 2):
+                _add_finding(findings, get_line_number_from_offset(ent.start_char, line_offsets), 
+                             f"Ensure name is capitalised: {ent.text}")
+    return findings
+
+def check_nickname_formatting(doc: Doc, line_offsets: List[int]) -> List[Dict[str, Any]]:
+    """Checks for quoted nicknames on first mention (Rule: APS-GPC-Personalnames-H-004)."""
+    findings = []
+    for i in range(len(doc) - 2):
+        # Look for: Name "Nickname" Surname
+        if doc[i].pos_ == "PROPN" and doc[i+1].text in ('"', "“") and doc[i+2].pos_ == "PROPN":
+             pass # Correctly formatted
+        # Implementation of "first mention" detection requires state tracking across the doc
+    return findings
 
 # --- Master Dictionary of Heuristic Checks ---
 HEURISTIC_CHECKS: Dict[str, Callable[[Doc, List[int]], List[Dict[str, Any]]]] = {
@@ -1696,6 +1809,15 @@ HEURISTIC_CHECKS: Dict[str, Callable[[Doc, List[int]], List[Dict[str, Any]]]] = 
     "APS-GPC-Datesandtime-H-004": check_iso_datetime,
     "APS-GPC-Mathematicalrelationships-H-001": check_mathematical_symbols,
     "APS-GPC-Italics-H-008": check_reverse_italics,
+    "APS-GPC-Australianplacenames-H-002": check_au_place_name_punctuation,
+    "APS-GPC-Australianplacenames-H-005": check_au_state_short_forms,
+    "APS-GPC-Australianplacenames-H-008": check_generic_plurals_lowercase,
+    "APS-GPC-Governmentterms-H-001": check_australian_government_casing,
+    "APS-GPC-Governmentterms-H-002": check_budget_casing,
+    "APS-GPC-Governmentterms-H-005": check_federal_casing,
+    "APS-GPC-Commercialterms-H-001": check_commercial_generic_preference,
+    "APS-GPC-Commercialterms-H-004": check_brand_stylization,
+    "APS-GPC-Personalnames-H-003": check_personal_name_casing,
 }
 
 def load_rules_from_rulebook(file_path: str) -> List[Dict[str, Any]]:
