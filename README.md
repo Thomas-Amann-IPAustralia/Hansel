@@ -1,26 +1,133 @@
-Web Content Scraper & APS Style Linter
-This project is a GitHub Application designed to automate the process of scraping web content, converting it to Markdown, and auditing it against a set of rules based on the Australian Public Service (APS) style guide.
+Here is a detailed, architectural README for the **Hansel** repository. This document focuses on the internal logic, system structure, and the specific mechanisms used to scrape and audit content against Australian Public Service (APS) standards.
 
-How It Works
-The process is orchestrated by a GitHub Action (.github/workflows/audit.yml) and is composed of two main Python scripts:
+---
 
-scripts/scrape.py: This script reads a list of target URLs from config.json. For each URL, it uses Playwright to fetch the page, aggressively clean the HTML of unwanted elements (like ads, social sharing buttons, and scripts), and then convert the cleaned content into a Markdown file.
+# Hansel: Automated APS Style Auditor
 
-scripts/lint.py: This is a unified linting engine that analyzes the generated Markdown files. It applies two types of rules:
+**Hansel** is a specialized compliance engine designed to scrape Australian Government web properties and audit their content against the **Australian Public Service (APS) Style Guide**.
 
-Regex-based rules: Simple, pattern-matching rules for common style issues.
+Unlike standard web scrapers, Hansel includes a semantic transformation layer that preserves the context of HTML formatting (headings, bolding, italics) during the conversion to Markdown, allowing its linting engine to perform context-aware grammatical and stylistic analysis.
 
-Heuristic (NLP) rules: Complex, context-aware rules using the spaCy library to detect grammatical issues, such as the use of passive voice.
+## 📂 Repository Structure
 
-The final output is a report.json file, which is uploaded as a workflow artifact. This report provides a detailed list of all issues found, including the file, line number, and a direct permalink to the offending line in the GitHub repository for easy remediation.
+```text
+Hansel/
+├── config.json           # Registry of target URLs to scrape and their output filenames
+├── Trinity.json          # The core rules engine (Regex patterns & Heuristic definitions)
+├── Codebook.json         # Reference copy/superset of the rules definitions
+├── requirements.txt      # Python dependencies (Selenium, spaCy, BeautifulSoup4)
+├── report.json           # The generated audit report (machine-readable output)
+├── scripts/
+│   ├── scrape.py         # Selenium-based crawler with semantic injection logic
+│   └── lint.py           # Hybrid NLP/Regex auditing engine
+└── scraped/              # Output directory for processed Markdown content
+    ├── Infringement101.md
+    ├── CopyrightInfringement.md
+    └── ...
 
-Configuration
-To add new pages to the audit, simply edit the config.json file in the root of the repository. Add a new object to the array with the following keys:
+```
 
-url: The full URL of the page to scrape.
+## 🏗 System Architecture
 
-selector: The CSS selector for the main content container on the page.
+The system operates in a two-stage pipeline: **Extraction** and **Auditing**.
 
-output: The desired filename for the resulting Markdown file (e.g., page-one.md).
+### Phase 1: The Scraper (`scripts/scrape.py`)
 
-The GitHub Action is configured to run automatically whenever config.json is modified on the main branch. It can also be triggered manually from the Actions tab in GitHub.
+The scraping engine is built on **Selenium** (using Chrome WebDriver) to handle JavaScript-heavy government content (e.g., GovCMS sites). It goes beyond simple text extraction by injecting custom semantic markers that mimic the DOM structure in a flat text format.
+
+#### Key Mechanisms:
+
+1. **Stealth & Anti-Detection:**
+* Utilizes `selenium-stealth` to mask WebDriver properties.
+* Implements randomized waiting periods and scrolling behavior to mimic human interaction and trigger lazy-loading elements.
+
+
+2. **Dynamic Content Expansion:**
+* Contains specific logic to identify and click "Load more" buttons (or elements containing that text) to ensure single-page applications (SPAs) are fully rendered before extraction.
+
+
+3. **Semantic Injection (The "Hansel" Markers):**
+* Before stripping HTML tags, the script iterates through the DOM and injects unique string markers around formatting. This allows the linter to know *how* text was presented, not just *what* it says.
+* **Headings:** `<h1>` becomes `__SEMANTIC_HEADER_1_START__ [text] __SEMANTIC_HEADER_1_END__`.
+* **Emphasis:** `<strong>`/`<b>` becomes `__SEMANTIC_BOLD_START__`, etc.
+* **Lists:** `<li>` elements are prefixed with `__SEMANTIC_LIST_ITEM__`.
+
+
+4. **Sanitization:**
+* Removes non-content noise such as `<nav>`, `<footer>`, `<script>`, `<style>`, and specific classes like `social-media-links` or `breadcrumbs` to ensure the audit focuses solely on body content.
+
+
+
+### Phase 2: The Linter (`scripts/lint.py`)
+
+The linter processes the Markdown files generated by the scraper. It utilizes a hybrid approach, combining high-speed Regex matching with context-aware logic.
+
+#### The Rules Engine (`Trinity.json`)
+
+The behavior of the linter is dictated by `Trinity.json`, a hierarchical dataset categorizing rules by Book, Chapter, and RuleSet.
+
+**Rule Schema:**
+
+* **ID:** Unique identifier (e.g., `APS-GPC-Currency-R-001`).
+* **Category:**
+* `regex`: A strict pattern match (e.g., finding "percent" instead of "per cent").
+* `heuristic`: Triggers complex Python logic defined in `lint.py` (e.g., checking if a passive voice construction is permissible in context).
+
+
+* **Severity:** `error`, `warn`, or `info`.
+* **Pattern:** The raw regex string (for `regex` category).
+
+#### Detection Logic:
+
+1. **Regex Scanning:** Iterates through the content looking for simple pattern violations defined in `Trinity.json`.
+2. **Heuristic Analysis:** Functions in `lint.py` handle complex rules that Regex cannot validate alone. Examples include:
+* **Passive Voice Detection:** Uses dependency parsing to identify passive voice, but filters out false positives where the agent is unknown or the construction is deliberate.
+* **Token-Level Checks:** Validates casing consistency (e.g., "Government" vs "government") based on the surrounding tokens.
+
+
+3. **Source Mapping:**
+* The linter maps findings back to specific lines in the Markdown file.
+* It generates a **GitHub Deep Link** (`githubUrl`) for every error, allowing developers to click from the report directly to the offending line in the repository file view.
+
+
+
+## 🧠 Logic & Heuristics Breakdown
+
+The repository implements specific logic to handle the nuances of Australian English and Government writing conventions:
+
+| Category | Logic Implementation |
+| --- | --- |
+| **Australian Place Names** | Enforces official naming authorities, strictly forbidding possessives (e.g., "Kings Cross" not "King's Cross") and checking capitalization of thoroughfares (Street, Road) when part of a proper noun. |
+| **Medical Terms** | Differentiates between generic terms (lower case) and proprietary drug names (Capitalized), and enforces italics for scientific binomials (*Genus species*). |
+| **Numbers & Currency** | Enforces the "rules of ten" (words for zero-one, numerals for 2+), proper non-breaking spaces between numerals and units (e.g., `10 km`), and strict formatting for AUD/USD currency codes. |
+| **Indigenous Terminology** | Specific checks to ensure respectful language and correct casing for terms related to Aboriginal and Torres Strait Islander peoples. |
+| **Passive Voice** | While the style guide discourages passive voice, the linter includes logic to allow it in specific "agent-less" contexts often required in policy writing. |
+
+## 📊 Output Artifacts
+
+The system produces `report.json`, a comprehensive audit log containing an array of finding objects:
+
+```json
+{
+  "fileName": "CopyrightInfringement.md",
+  "lineNumber": 45,
+  "ruleId": "APS-GPC-Partsofsentences-H-009",
+  "ruleDescription": "Reserve passive voice for good reasons.",
+  "severity": "warn",
+  "offendingText": "The form was submitted.",
+  "githubUrl": "https://github.com/.../CopyrightInfringement.md#L45"
+}
+
+```
+
+## ⚙️ Configuration
+
+* **Targeting:** Modifications to `config.json` determine the scope of the audit. The system expects a list of objects containing `url` and `output` keys.
+* **Rule Management:** The `Trinity.json` file is the source of truth. Updates to the APS Style Guide are implemented by modifying the JSON patterns here, rather than altering the Python code (unless new heuristic logic is required).
+
+## 🛠 Dependencies
+
+* **Selenium & Chrome:** Used for the headless browser engine.
+* **BeautifulSoup4:** Used for DOM parsing and cleanup.
+* **spaCy:** utilized for Natural Language Processing tasks (specifically dependency parsing for grammar checks).
+* **en_core_web_sm:** The specific English language model used by spaCy.
